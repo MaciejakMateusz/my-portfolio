@@ -4,13 +4,35 @@ export const NavBar = () => {
     const {t} = useTranslation();
 
     return (
-        <div className={'fixed-nav-bar-wrapper'}>
-            <div className={'nav-button active'}>Home</div>
-            <div className={'nav-button'}>{t('activity')}</div>
-            <div className={'nav-button'}>{t('experience')}</div>
-            <div className={'nav-button'}>{t('projects')}</div>
-            <div className={'nav-button'}>{t('about')}</div>
-            <div className={'nav-button'}>{t('contact')}</div>
-        </div>
+        <nav className="nav-header">
+            <div className={'nav-buttons-container'}>
+                <div className={'nav-buttons-wrapper'}>
+                    <span className={`nav-btn active`}>
+                        <span className={'nav-text'}>Home
+                    </span>
+                </span>
+                    <span className={`nav-btn`}>
+                        <span className={'nav-text'}>{t('activity')}
+                    </span>
+                </span>
+                    <span className={`nav-btn`}>
+                        <span className={'nav-text'}>{t('experience')}
+                    </span>
+                </span>
+                    <span className={`nav-btn`}>
+                        <span className={'nav-text'}>{t('projects')}
+                    </span>
+                </span>
+                    <span className={`nav-btn`}>
+                        <span className={'nav-text'}>{t('about')}
+                    </span>
+                </span>
+                    <span className={'nav-btn'}>
+                        <span className={'nav-text'}>{t('contact')}
+                    </span>
+                </span>
+                </div>
+            </div>
+        </nav>
     );
 }
