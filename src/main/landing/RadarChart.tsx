@@ -36,7 +36,7 @@ export const RadarChart = () => {
                 keys={['commercial', 'projects']}
                 indexBy="experience"
                 valueFormat=">-.2f"
-                margin={{top: 70, right: 0, bottom: 40, left: 0}}
+                margin={{top: 70, right: 100, bottom: 20, left: 100}}
                 borderColor={{from: 'color'}}
                 gridLevels={3}
                 gridLabelOffset={35}
