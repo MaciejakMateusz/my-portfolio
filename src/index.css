@@ -16,31 +16,53 @@ body {
     position: relative;
 }
 
-.fixed-nav-bar-wrapper {
-    position: fixed;
-    height: 100px;
+.nav-header {
     width: 100%;
+    height: 50px;
     display: flex;
+    align-items: end;
     justify-content: center;
-    align-items: center;
-    z-index: 9000;
+    z-index: 999;
+    position: fixed;
+    background: rgb(255, 255, 255, 0%);
+    margin-top: 15px;
 }
 
-.fixed-nav-bar {
-
+.nav-buttons-container {
+    margin-right: 2.5rem;
 }
 
-.nav-button {
-    padding: 6px 14px;
-    margin-right: 15px;
-    cursor: pointer;
+.nav-buttons-wrapper{
     border-radius: 100px;
-    font-size: 0.9rem;
+    background: transparent;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(6px);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 5px 0 5px;
 }
 
-.nav-button.active, .nav-button:hover {
+.nav-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    position: relative;
+    justify-self: center;
+    color: #919191;
+    padding: 9px 14px;
+    margin-right: 16px;
+}
+
+.nav-btn.active, .nav-btn:hover {
+    color: #000;
     background: #F59906;
-    color: #000
+    border-radius: 100px;
+    padding: 9px 14px;
 }
 
 .logo-icons-wrapper {
@@ -80,9 +102,60 @@ body {
 
 .introduction-container {
     grid-column: 1;
+    padding-right: 105px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .radar-chart-container {
     grid-column: 2;
     height: 60vh;
+}
+
+.introduction-welcome {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 23px;
+    display: block;
+}
+
+.my-name {
+    border-bottom: 1px solid #F59906;
+    padding-bottom: 5px;
+}
+
+.introduction-full-stack {
+    margin-top: 5px;
+    color: #FFF;
+    font-size: 5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.introduction-developer {
+    line-height: 0.2;
+    color: #FFF;
+    font-size: 5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.introduction-description {
+    margin-top: 50px;
+    display: block;
+}
+
+.contact-button {
+    padding: 9px 14px;
+    cursor: pointer;
+    border-radius: 100px;
+    color: #000;
+    background: #F59906;
+    max-width: fit-content;
+    margin: 30px 0 0 26px;
+}
+
+.activity {
+    height: 400px;
+    padding: 0 168px
 }
