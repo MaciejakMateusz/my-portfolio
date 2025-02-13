@@ -4,6 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translation_en from './locales/en/translation_en.json';
 import translation_pl from './locales/pl/translation_pl.json';
+import translation_nl from './locales/nl/translation_nl.json';
 
 const languageDetector = new LanguageDetector(null, {
     order: ['cookie', 'localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
@@ -17,6 +18,7 @@ i18n
         resources: {
             en: { translation: translation_en },
             pl: { translation: translation_pl },
+            nl: { translation: translation_nl },
         },
         lng: 'pl',
         fallbackLng: 'pl',
