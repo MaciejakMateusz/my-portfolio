@@ -33,7 +33,7 @@ export const fetchContributions =
                 }
             }
         }`;
-            const response = await fetch('https://api.github.com/graphql', {
+            const response = await fetch(import.meta.env.VITE_GITHUB_GRAPHQL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
