@@ -13,52 +13,19 @@ export const fetchContributions =
     createAsyncThunk<Contribution[] | undefined, YearRange>(
         'contributions/fetchContributions',
         async (range) => {
-            const yearBegin: string = range.yearBegin.toISOString();
-            const yearEnd: string = range.yearEnd.toISOString();
-            const query: string = `
-            query {
-            user(login: "${import.meta.env.VITE_GITHUB_LOGIN}") {
-            contributionsCollection(
-                from: "${yearBegin}"
-                to: "${yearEnd}"
-                ) {
-                    contributionCalendar {
-                        weeks {
-                            contributionDays {
-                                date
-                                contributionCount
-                            }
-                        }
-                    }
-                }
-            }
-        }`;
-            const response = await fetch(import.meta.env.VITE_GITHUB_GRAPHQL, {
+            const response = await fetch(`${import.meta.env.VITE_PORTFOLIO_REST}/contributions`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({query}),
+                body: JSON.stringify(range),
             });
 
             if (!response.ok) {
                 throw new Error(`GitHub API error: ${response.statusText}`);
             }
 
-            const json = await response.json();
-
-            const weeks = json.data.user.contributionsCollection.contributionCalendar.weeks;
-            const contributions: Contribution[] = weeks.flatMap((week: any) =>
-                week.contributionDays
-                    .filter((day: any) => day.contributionCount > 0)
-                    .map((day: any) => ({
-                        day: day.date,
-                        value: day.contributionCount,
-                    }))
-            );
-
-            return contributions;
+            return await response.json();
         });
 
 export const fetchContributionsSlice = createSlice(
