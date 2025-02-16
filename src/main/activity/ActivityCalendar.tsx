@@ -4,21 +4,28 @@ import {fetchContributions} from "../../slices/contributionsSlice.ts";
 import {useAppDispatch} from "../../hooks/hooks.ts";
 import {useSelector} from "react-redux";
 
-export const ActivityCalendar = () => {
+interface ActivityCalendarProps {
+    year: number | undefined
+}
+
+export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
     const dispatch = useAppDispatch();
     const {data} = useSelector<any, any>(state => state.contributions.contributions);
+
     useEffect(() => {
-        dispatch(fetchContributions({
-            yearBegin: new Date(2024, 0, 1),
-            yearEnd: new Date(2024, 11, 31)
-        }));
-    }, []);
+        if (typeof year === "number") {
+            dispatch(fetchContributions({
+                yearBegin: new Date(year, 0, 1),
+                yearEnd: new Date(year, 11, 31)
+            }));
+        }
+    }, [year]);
 
     return (
         <ResponsiveCalendar
             data={data}
-            from="2024-01-01"
-            to="2024-12-31"
+            from={`${year}-01-01`}
+            to={`${year}-12-31`}
             emptyColor="#171A21"
             colors={['#593802', '#7E4E02', '#b87403', '#F59906']}
             margin={{ top: 40, right: 0, bottom: 40, left: 0 }}
