@@ -181,6 +181,10 @@ body {
     display: flex;
 }
 
+.aq-range-control {
+    display: flex;
+}
+
 .aq-select {
     margin-right: 15px;
 }
