@@ -1,9 +1,9 @@
-import {useAppDispatch} from "../../../hooks/hooks.ts";
+import {useAppDispatch} from "../../../../hooks/hooks.ts";
 import {useEffect} from "react";
-import {fetchAQCountries, fetchAQLocations} from "../../../slices/airQualitySlice.ts";
+import {fetchAQCountries, fetchAQLocations} from "../../../../slices/airQualitySlice.ts";
 import {ResponsiveLine} from "@nivo/line";
 
-export const AirQuality = () => {
+export const AirQualityChart = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
