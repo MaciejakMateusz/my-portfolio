@@ -1,10 +1,9 @@
-import {AirQualityChart} from "./AirQualityChart.tsx";
-import Select from "react-select";
-import {chartStyles} from "../../../../styles/styles.ts";
-import 'react-datepicker/dist/react-datepicker.css';
-import {YearSelect} from "../../../../types/YearSelect.ts";
+import {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../../../hooks/hooks.ts";
+import Select from "react-select";
+import {chartStyles} from "../../../../styles/styles.ts";
+import {AirQualityChart} from "./AirQualityChart.tsx";
 import {
     fetchAQCountries,
     fetchAQLocations,
@@ -12,29 +11,39 @@ import {
     setChosenLocation,
     setChosenYear
 } from "../../../../slices/airQualitySlice.ts";
-import {useEffect} from "react";
 
 export const AirQuality = () => {
+    const dispatch = useAppDispatch();
     const {chosenCountry, chosenLocation, chosenYear} = useSelector((state: any) => state.airQuality.view);
     const {data: countriesData} = useSelector((state: any) => state.airQuality.fetchCountries);
     const {data: locationsData} = useSelector((state: any) => state.airQuality.fetchLocations);
-    const dispatch = useAppDispatch();
+
     const getYears = () => {
         const currentYear = new Date().getFullYear();
-        let years: YearSelect[] = [];
-        for(let y = 1980; y <= currentYear; y++) {
-            years.push({value: y, label: y});
-        }
-        return years;
-    }
+        return Array.from({length: currentYear - 1979}, (_, index) => ({
+            value: 1980 + index,
+            label: 1980 + index
+        }));
+    };
 
     useEffect(() => {
         dispatch(fetchAQCountries());
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
-        dispatch(fetchAQLocations(chosenCountry.value));
-    }, [chosenCountry]);
+        if (chosenCountry) {
+            dispatch(fetchAQLocations(chosenCountry.value));
+        }
+    }, [chosenCountry, dispatch]);
+
+    useEffect(() => {
+        if (locationsData?.results?.length) {
+            dispatch(setChosenLocation({
+                value: locationsData.results[0].id,
+                label: locationsData.results[0].name
+            }));
+        }
+    }, [locationsData, dispatch]);
 
     return (
         <section className={'aq-container'}>
@@ -45,7 +54,9 @@ export const AirQuality = () => {
                             id="aq-country"
                             name="aq-country"
                             value={chosenCountry}
-                            options={countriesData?.results?.map((data: any) => ({value: data.id, label: data.name}))}
+                            options={countriesData?.results?.map((data: any) => ({
+                                value: data.id, label: data.name
+                            }))}
                             onChange={(selected) => dispatch(setChosenCountry(selected))}
                             styles={chartStyles}
                             isSearchable={true}
@@ -56,7 +67,9 @@ export const AirQuality = () => {
                             id="aq-location"
                             name="aq-location"
                             value={chosenLocation}
-                            options={locationsData?.results?.map((data: any) => ({value: data.id, label: data.name}))}
+                            options={locationsData?.results?.map((data: any) => ({
+                                value: data.id, label: data.name
+                            }))}
                             onChange={(selected) => dispatch(setChosenLocation(selected))}
                             styles={chartStyles}
                             isSearchable={true}
@@ -80,4 +93,4 @@ export const AirQuality = () => {
             <AirQualityChart/>
         </section>
     );
-}
+};
