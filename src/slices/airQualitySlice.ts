@@ -1,5 +1,6 @@
 import {combineReducers, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {GenericState} from "../interfaces/GenericState.ts";
+import {getLanguage} from "../util/util.ts";
 
 const initialCountriesState: GenericState = {
     isLoading: false,
@@ -13,10 +14,43 @@ const initialLocationsState: GenericState = {
     error: undefined
 }
 
+const initialMeasurementsSlice: GenericState = {
+    isLoading: false,
+    data: [],
+    error: undefined
+}
+
 const initialViewState: any = {
     chosenYear: {value: 2024, label: 2024},
-    chosenCountry: {value: 77, label: 'Poland'},
-    chosenLocation: {value: 7274, label: 'Katowice, ul. Plebiscytowa/A4'}
+    chosenMonth: {value: "01", label: getLanguage() === 'pl' ? 'Styczeń' : 'January'},
+    chosenCountry: {value: 156, label: 'Canada'},
+    chosenLocation: {
+        value: {
+            "sensors": [
+                {
+                    "id": 473,
+                    "name": "no2 ppm",
+                    "parameter": {
+                        "id": 7,
+                        "name": "no2",
+                        "units": "ppm",
+                        "displayName": "NO₂"
+                    }
+                },
+                {
+                    "id": 472,
+                    "name": "so2 ppm",
+                    "parameter": {
+                        "id": 9,
+                        "name": "so2",
+                        "units": "ppm",
+                        "displayName": "SO₂"
+                    }
+                }
+            ]
+        },
+        label: 'Wagner2'
+    }
 }
 
 export const fetchAQCountries =
@@ -29,16 +63,10 @@ export const fetchAQCountries =
                     'Content-Type': 'application/json'
                 }
             });
-
-            const body = await response.json();
-
-            console.log("COUNTRIES", body)
-
             if (!response.ok) {
                 throw new Error(`OpenAQ API error: ${response.statusText}`);
             }
-
-            return body;
+            return await response.json();
         });
 
 export const fetchAQCountriesSlice = createSlice(
@@ -105,7 +133,54 @@ export const fetchAQLocationsSlice = createSlice(
     }
 )
 
-export const aqSlice = createSlice(
+export const fetchAQMeasurements =
+    createAsyncThunk<any, any>(
+        'airQuality/fetchAQMeasurements',
+        async (params: any) => {
+            const response = await fetch(`${import.meta.env.VITE_PORTFOLIO_REST}/aq/measurements`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    sensorIds: params.sensorIds,
+                    dateFrom: params.dateFrom,
+                    dateTo: params.dateTo
+                })
+            });
+            const body = await response.json();
+
+            console.log("MEASUREMENTS", body)
+
+            if (!response.ok) {
+                throw new Error(`OpenAQ API error: ${response.statusText}`);
+            }
+
+            return body;
+        });
+
+export const fetchAQMeasurementsSlice = createSlice(
+    {
+        name: 'fetchAQMeasurements',
+        reducerPath: undefined,
+        selectors: undefined,
+        initialState: initialMeasurementsSlice,
+        reducers: {},
+        extraReducers: (builder: any) => {
+            builder.addCase(fetchAQMeasurements.pending, (state: GenericState) => {
+                state.isLoading = true;
+            }).addCase(fetchAQMeasurements.fulfilled, (state: GenericState, action: any) => {
+                state.isLoading = false;
+                state.data = action.payload;
+            }).addCase(fetchAQMeasurements.rejected, (state: GenericState, action: any) => {
+                state.isLoading = false;
+                state.error = action.payload;
+            })
+        }
+    }
+)
+
+export const aqViewSlice = createSlice(
     {
         name: 'view',
         reducerPath: undefined,
@@ -120,6 +195,9 @@ export const aqSlice = createSlice(
             },
             setChosenYear: (state, action) => {
                 state.chosenYear = action.payload;
+            },
+            setChosenMonth: (state, action) => {
+                state.chosenMonth = action.payload;
             }
         }
     });
@@ -127,12 +205,15 @@ export const aqSlice = createSlice(
 export const {
     setChosenCountry,
     setChosenLocation,
-    setChosenYear} = aqSlice.actions;
+    setChosenYear,
+    setChosenMonth
+} = aqViewSlice.actions;
 
 const airQualityReducer = combineReducers({
     fetchCountries: fetchAQCountriesSlice.reducer,
     fetchLocations: fetchAQLocationsSlice.reducer,
-    view: aqSlice.reducer
+    fetchMeasurements: fetchAQMeasurementsSlice.reducer,
+    view: aqViewSlice.reducer
 });
 
 export default airQualityReducer;
