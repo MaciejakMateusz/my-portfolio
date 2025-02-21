@@ -9,20 +9,35 @@ import {
     fetchAQLocations,
     setChosenCountry,
     setChosenLocation,
+    setChosenMonth,
     setChosenYear
 } from "../../../../slices/airQualitySlice.ts";
+import {useTranslation} from "react-i18next";
+import {getMonth} from "../../../../util/util.ts";
 
 export const AirQuality = () => {
     const dispatch = useAppDispatch();
-    const {chosenCountry, chosenLocation, chosenYear} = useSelector((state: any) => state.airQuality.view);
+    const {t} = useTranslation();
+    const {chosenCountry, chosenLocation, chosenYear, chosenMonth} = useSelector((state: any) => state.airQuality.view);
     const {data: countriesData} = useSelector((state: any) => state.airQuality.fetchCountries);
     const {data: locationsData} = useSelector((state: any) => state.airQuality.fetchLocations);
 
     const getYears = () => {
         const currentYear = new Date().getFullYear();
-        return Array.from({length: currentYear - 1979}, (_, index) => ({
+        return Array.from({ length: currentYear - 1979 }, (_, index) => ({
             value: 1980 + index,
             label: 1980 + index
+        })).sort((a, b) => b.value - a.value);
+    };
+
+    const getMonths = () => {
+        const currentDate = new Date();
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth();
+        const monthsLength = chosenYear.value === currentYear ? currentMonth : 12;
+        return Array.from({length: monthsLength}, (_, index) => ({
+            value: (index + 1).toString().padStart(2, '0'),
+            label: getMonth(index + 1, t)
         }));
     };
 
@@ -39,7 +54,7 @@ export const AirQuality = () => {
     useEffect(() => {
         if (locationsData?.results?.length) {
             dispatch(setChosenLocation({
-                value: locationsData.results[0].id,
+                value: locationsData.results[0],
                 label: locationsData.results[0].name
             }));
         }
@@ -68,7 +83,7 @@ export const AirQuality = () => {
                             name="aq-location"
                             value={chosenLocation}
                             options={locationsData?.results?.map((data: any) => ({
-                                value: data.id, label: data.name
+                                value: data, label: data.name
                             }))}
                             onChange={(selected) => dispatch(setChosenLocation(selected))}
                             styles={chartStyles}
@@ -84,6 +99,17 @@ export const AirQuality = () => {
                             value={chosenYear}
                             options={getYears()}
                             onChange={(selected) => dispatch(setChosenYear(selected))}
+                            styles={chartStyles}
+                            isSearchable={true}
+                        />
+                    </label>
+                    <label className={'aq-select'}>
+                        <Select
+                            id="aq-month"
+                            name="aq-month"
+                            value={chosenMonth}
+                            options={getMonths()}
+                            onChange={(selected) => dispatch(setChosenMonth(selected))}
                             styles={chartStyles}
                             isSearchable={true}
                         />
