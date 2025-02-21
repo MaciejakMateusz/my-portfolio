@@ -1,8 +1,9 @@
 {
   "activity": "Activity",
-  "experience": "Experience",
+  "career": "Career",
   "projects": "Projects",
   "about": "About me",
+  "books": "Books",
   "contact": "Contact",
   "hiIm": "Hi, I'm",
   "myName": "Mateusz",

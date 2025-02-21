@@ -8,29 +8,26 @@ export const NavBar = () => {
             <div className={'nav-buttons-container'}>
                 <div className={'nav-buttons-wrapper'}>
                     <span className={`nav-btn active`}>
-                        <span className={'nav-text'}>Home
+                        <span className={'nav-text'}>Start</span>
                     </span>
-                </span>
                     <span className={`nav-btn`}>
-                        <span className={'nav-text'}>{t('activity')}
+                        <span className={'nav-text'}>{t('projects')}</span>
                     </span>
-                </span>
                     <span className={`nav-btn`}>
-                        <span className={'nav-text'}>{t('experience')}
+                        <span className={'nav-text'}>{t('activity')}</span>
                     </span>
-                </span>
                     <span className={`nav-btn`}>
-                        <span className={'nav-text'}>{t('projects')}
+                        <span className={'nav-text'}>{t('career')}</span>
                     </span>
-                </span>
                     <span className={`nav-btn`}>
-                        <span className={'nav-text'}>{t('about')}
+                        <span className={'nav-text'}>{t('about')}</span>
                     </span>
-                </span>
+                    <span className={`nav-btn`}>
+                        <span className={'nav-text'}>{t('books')}</span>
+                    </span>
                     <span className={'nav-btn'}>
-                        <span className={'nav-text'}>{t('contact')}
+                        <span className={'nav-text'}>{t('contact')}</span>
                     </span>
-                </span>
                 </div>
             </div>
         </nav>
