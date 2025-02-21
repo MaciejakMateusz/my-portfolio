@@ -3,11 +3,13 @@ import { useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../../../hooks/hooks.ts";
 import { fetchAQMeasurements } from "../../../../slices/airQualitySlice.ts";
+import {useTranslation} from "react-i18next";
 
 export const AirQualityChart = () => {
     const dispatch = useAppDispatch();
+    const {t} = useTranslation();
     const { chosenLocation, chosenYear, chosenMonth } = useSelector((state: any) => state.airQuality.view);
-    const { data } = useSelector((state: any) => state.airQuality.fetchMeasurements);
+    const { data , isLoading} = useSelector((state: any) => state.airQuality.fetchMeasurements);
 
     const sensorIds = useMemo(() =>
             chosenLocation.value?.sensors?.map((sensor: any) => sensor.id).join(",") || "",
@@ -32,11 +34,12 @@ export const AirQualityChart = () => {
     };
 
     return (
-        <>
+        <div className={'air-quality-chart-wrapper'}>
+            {isLoading ? <div className="loader"/> : <></>}
             <ResponsiveLine
                 data={data && data.length ? data : fallbackData()}
-                margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-                xScale={{ type: 'point' }}
+                margin={{top: 50, right: 110, bottom: 50, left: 100}}
+                xScale={{type: 'point'}}
                 yScale={{
                     type: 'linear',
                     min: 'auto',
@@ -62,20 +65,21 @@ export const AirQualityChart = () => {
                     tickValues: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'µg / m ³',
-                    legendOffset: -40,
+                    legend: `${t('sensorValue')}`,
+                    legendOffset: -60,
                     legendPosition: 'middle',
                     truncateTickAt: 0
                 }}
                 pointSize={8}
-                pointColor={{ theme: 'background' }}
+                gridYValues={5}
+                pointColor={{theme: 'background'}}
                 pointBorderWidth={2}
-                pointBorderColor={{ from: 'serieColor' }}
+                pointBorderColor={{from: 'serieColor'}}
                 pointLabel="data.yFormatted"
                 pointLabelYOffset={-12}
-                enableArea={true}
-                areaOpacity={0.05}
                 enableTouchCrosshair={true}
+                enableSlices={'x'}
+                enableGridX={false}
                 useMesh={true}
                 legends={[
                     {
@@ -104,6 +108,6 @@ export const AirQualityChart = () => {
                     }
                 ]}
             />
-        </>
+        </div>
     );
 }
