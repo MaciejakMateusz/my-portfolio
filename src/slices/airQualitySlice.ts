@@ -101,15 +101,10 @@ export const fetchAQLocations =
                 },
                 body: JSON.stringify(countryId)
             });
-            const body = await response.json();
-
-            console.log("LOCATIONS", body)
-
             if (!response.ok) {
                 throw new Error(`OpenAQ API error: ${response.statusText}`);
             }
-
-            return body;
+            return await response.json();
         });
 
 export const fetchAQLocationsSlice = createSlice(
@@ -148,15 +143,10 @@ export const fetchAQMeasurements =
                     dateTo: params.dateTo
                 })
             });
-            const body = await response.json();
-
-            console.log("MEASUREMENTS", body)
-
             if (!response.ok) {
                 throw new Error(`OpenAQ API error: ${response.statusText}`);
             }
-
-            return body;
+            return await response.json();
         });
 
 export const fetchAQMeasurementsSlice = createSlice(
