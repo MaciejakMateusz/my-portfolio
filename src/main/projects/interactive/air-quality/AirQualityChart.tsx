@@ -107,6 +107,43 @@ export const AirQualityChart = () => {
                         ]
                     }
                 ]}
+                theme={{
+                    grid: {
+                        line: {
+                            stroke: '#EFEFEF'
+                        }
+                    },
+                    text: {
+                        fontFamily: 'Poppins, sans-serif',
+                        fill: '#93939E'
+                    },
+                    annotations: {
+                        text: {
+                            fontFamily: 'Poppins, sans-serif',
+                            fill: '#93939E'
+                        }
+                    },
+                    axis: {
+                        ticks: {
+                            line: {
+                                strokeWidth: '0'
+                            },
+                            text: {
+                                fill: '#93939E'
+                            }
+                        }
+                    },
+                    crosshair: {
+                        line: {
+                            stroke: '#93939E',
+                        }
+                    },
+                    legends: {
+                        text: {
+                            fill: '#93939E'
+                        }
+                    },
+                }}
             />
         </div>
     );
