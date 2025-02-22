@@ -131,11 +131,12 @@ button {
     justify-content: center;
 }
 
-.introduction-wrapper {
+.centered-container-wrapper {
     text-align: center;
+    max-width: 30rem;
 }
 
-.introduction-full-stack {
+.section-header-title {
     color: var(--font-white);
     font-size: 5rem;
     font-weight: 500;
@@ -143,18 +144,22 @@ button {
     letter-spacing: -0.8px;
 }
 
-.introduction-full-stack.developer {
+.section-header-title.developer {
     line-height: 0.4;
     letter-spacing: -4px;
 }
 
-.introduction-description {
-    margin-top: 50px;
+.section-header-description {
     display: block;
     color: var(--font-grey);
     font-weight: 400;
     font-size: 1.25rem;
     font-family: var(--font-family-secondary), serif;
+    line-height: 150%;
+}
+
+.section-header-description.landing {
+    margin-top: 50px;
 }
 
 .introduction-buttons-wrapper {
@@ -171,6 +176,36 @@ button {
     color: var(--font-black);
     background: var(--button-primary);
     max-width: fit-content;
+}
+
+.section-header {
+    width: 100%;
+}
+
+.skills {
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.skills-box {
+    position: relative;
+    background: var(--background-secondary);
+    border-radius: 20px;
+    height: 30rem;
+}
+
+.continuous-scroll {
+    position: absolute;
+    left: 0;
+}
+
+.radar-chart-container {
+    height: 30rem;
+    width: 100%;
 }
 
 .activity {
@@ -216,6 +251,9 @@ button {
     height: 100%;
 }
 
+
+
+/*----- LOADER -----*/
 .loader {
     position: absolute;
     z-index: 9999;
@@ -238,3 +276,4 @@ button {
         background-position: 0 0, 50% 0, 100% 0
     }
 }
+/*----- END OF LOADER -----*/
