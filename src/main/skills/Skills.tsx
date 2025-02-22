@@ -3,6 +3,7 @@ import {SectionHeader} from "../shared/SectionHeader.tsx";
 import {RadarChart} from "./RadarChart.tsx";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import {SkillsInfiniteScroll} from "./SkillsInfiniteScroll.tsx";
 
 export const Skills = () => {
     const {t} = useTranslation();
@@ -17,8 +18,9 @@ export const Skills = () => {
             className="p-10 bg-gray-100 rounded-lg shadow-lg">
             <section className={'skills'}>
                 <SectionHeader title={t('skills')} description={t('skillsDescription')}/>
-                <div className={'chart-container'}>
+                <div className={'chart-container skills-chart'}>
                     <div className={'chart-box'}>
+                        <SkillsInfiniteScroll/>
                         <div className={'continuous-scroll'}></div>
                         <RadarChart/>
                     </div>

@@ -22,18 +22,19 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
     }, [year]);
 
     return (
-        <div className={'chart-box'}>
+        <div className={'chart-box activity-chart'}>
             <ResponsiveCalendar
                 data={data}
                 from={`${year}-01-01`}
                 to={`${year}-12-31`}
                 emptyColor="#171A21"
                 colors={['#604b01', '#9f7801', '#cc9500', '#FFB000']}
-                margin={{top: 40, right: 0, bottom: 40, left: 0}}
+                margin={{top: 0, right: 70, bottom: 0, left: 78}}
                 yearSpacing={40}
                 monthBorderColor="#0E0E0E"
                 dayBorderWidth={4}
                 dayBorderColor="#0E0E0E"
+                yearLegend={() => ''}
                 monthLegend={(_, month) => {
                     const monthNames = [
                         t('januaryShort'), t('februaryShort'), t('marchShort'), t('aprilShort'),
