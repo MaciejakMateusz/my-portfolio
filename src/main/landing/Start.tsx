@@ -6,14 +6,13 @@ export const Start = () => {
     return (
         <div className={'landing-section'}>
             <div className={'centered-container'}>
-                <div className={'introduction-wrapper'}>
-                    <span className={'introduction-full-stack'}>Full Stack</span>
-                    <span className={'introduction-full-stack developer'}>Developer</span>
-                    <span className={'introduction-description'}>{t('')}</span>
+                <div className={'centered-container-wrapper'}>
+                    <span className={'section-header-title'}>Full Stack</span>
+                    <span className={'section-header-title developer'}>Developer</span>
+                    <span className={'section-header-description landing'}>{t('introductionMessage')}</span>
                     <IntroductionButtons/>
                 </div>
             </div>
         </div>
-
     );
 }
