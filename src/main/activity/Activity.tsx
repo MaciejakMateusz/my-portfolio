@@ -40,7 +40,7 @@ export const Activity = () => {
                 <SectionHeader title={t('activity')} description={t('activityDescription')}/>
                 <div className={'chart-container'}>
                     <div className={'activity-control-panel'}>
-                        <span>Ilość commitów w {chosenYear} roku: {totalSum}</span>
+                        <span>Ilość commitów w {chosenYear} roku: <span className={'white-text'}>{totalSum}</span></span>
                         <div className={'year-buttons'}>
                             {years?.map((year: number) => (
                                 <button className={`primary-button spaced ${chosenYear !== year ? 'inactive' : ''}`}

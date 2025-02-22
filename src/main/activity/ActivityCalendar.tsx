@@ -33,6 +33,7 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
                 yearSpacing={40}
                 monthBorderColor="#0E0E0E"
                 dayBorderWidth={4}
+                daySpacing={1}
                 dayBorderColor="#0E0E0E"
                 yearLegend={() => ''}
                 monthLegend={(_, month) => {

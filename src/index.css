@@ -283,6 +283,10 @@ button {
     margin-bottom: 16px;
 }
 
+.white-text {
+    color: var(--font-white);
+}
+
 .aq-container {
     width: 100%;
     height: 50vh;
