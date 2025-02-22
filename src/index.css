@@ -208,6 +208,10 @@ button {
     width: 100%;
 }
 
+.projects {
+    margin-top: 170px;
+}
+
 .activity {
     height: 400px;
     padding: 0 168px
