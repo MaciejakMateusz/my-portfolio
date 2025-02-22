@@ -1,16 +1,12 @@
 import {NavBar} from "./navigation/NavBar.tsx";
-import {Landing} from "./landing/Landing.tsx";
-import {SocialButtons} from "./SocialButtons.tsx";
-import {Activity} from "./activity/Activity.tsx";
+import {Start} from "./landing/Start.tsx";
 
 export const Main = () => {
 
     return (
         <>
-            <SocialButtons/>
             <NavBar/>
-            <Landing/>
-            <Activity/>
+            <Start/>
         </>
     );
 }
