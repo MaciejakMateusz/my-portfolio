@@ -126,9 +126,11 @@ button {
 }
 
 .centered-container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 .centered-container-wrapper {
@@ -169,13 +171,34 @@ button {
     justify-content: center;
 }
 
-.projects-button {
-    padding: 10px 18px;
+.primary-button {
+    padding: 6px 12px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 10px;
     color: var(--font-black);
     background: var(--button-primary);
     max-width: fit-content;
+    font-size: 0.85rem;
+}
+
+.primary-button.big {
+    padding: 10px 18px;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.primary-button.spaced {
+    margin-left: 16px;
+}
+
+.primary-button.inactive {
+    color: var(--font-white);
+    background: var(--button-secondary);
+}
+
+.primary-button.inactive:hover {
+    color: var(--font-black);
+    background: var(--button-primary);
 }
 
 .section-header {
@@ -185,17 +208,26 @@ button {
 .skills {
 }
 
-.skills-container {
+.chart-container {
+    position: relative;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto 0;
     padding: 0 20px;
+    z-index: 20;
 }
 
-.skills-box {
+.chart-box{
     position: relative;
     background: var(--background-secondary);
     border-radius: 20px;
-    height: 30rem;
+}
+
+.chart-box.skills-chart {
+    height: 28.75rem;
+}
+
+.chart-box.activity-chart {
+    height: 18.75rem;
 }
 
 .continuous-scroll {
@@ -208,9 +240,51 @@ button {
     width: 100%;
 }
 
+.projects {
+    position: relative;
+    margin-top: 345px;
+}
+
+.blurred-light {
+    position: absolute;
+    object-fit: contain;
+    width: 100%;
+    height: 1000px;
+    z-index: 9;
+    top: -200px
+}
+
+.projects-horizontal-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+.project-card {
+    width: 220px;
+    height: 300px;
+    background: var(--background-primary);
+    border-radius: 20px;
+    margin-right: 30px;
+    z-index: 12;
+}
+
 .activity {
+    margin-top: 345px;
     height: 400px;
     padding: 0 168px
+}
+
+.activity-control-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.white-text {
+    color: var(--font-white);
 }
 
 .aq-container {
@@ -277,3 +351,50 @@ button {
     }
 }
 /*----- END OF LOADER -----*/
+
+.scroll-wrapper {
+    position: absolute;
+    left: 60px;
+}
+
+.scroll-container {
+    overflow: hidden;
+    position: relative;
+    width: 200px;
+    height: 28.75rem;
+}
+
+.scroll-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+}
+
+.skill-item {
+    padding: 10px 18px;
+    background-color: var(--button-secondary);
+    color: white;
+    border-radius: 12px;
+    width: fit-content;
+    font-weight: 300;
+}
+
+.gradient-top, .gradient-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.gradient-top {
+    top: 0;
+    background: linear-gradient(to bottom, var(--background-secondary), transparent);
+    height: 200px;
+}
+
+.gradient-bottom {
+    bottom: 0;
+    background: linear-gradient(to top, var(--background-secondary), transparent);
+    height: 200px;
+}
