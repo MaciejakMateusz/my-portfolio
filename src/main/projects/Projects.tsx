@@ -16,7 +16,6 @@ export const Projects = () => {
             className="p-10 bg-gray-100 rounded-lg shadow-lg">
             <section className={'projects'}>
                 <SectionHeader title={t('projects')} description={t('projectsDescription')}/>
-                <img src={'/blurred-light.png'} className={'blurred-light'} alt={'Blurred light'}/>
                 <div className={'projects-horizontal-scroll'}>
                     <div className={'project-card'}></div>
                     <div className={'project-card'}></div>

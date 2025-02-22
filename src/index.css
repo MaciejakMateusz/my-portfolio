@@ -126,9 +126,11 @@ button {
 }
 
 .centered-container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 .centered-container-wrapper {
@@ -169,13 +171,34 @@ button {
     justify-content: center;
 }
 
-.projects-button {
-    padding: 10px 18px;
+.primary-button {
+    padding: 6px 12px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 10px;
     color: var(--font-black);
     background: var(--button-primary);
     max-width: fit-content;
+    font-size: 0.85rem;
+}
+
+.primary-button.big {
+    padding: 10px 18px;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.primary-button.spaced {
+    margin-left: 16px;
+}
+
+.primary-button.inactive {
+    color: var(--font-white);
+    background: var(--button-secondary);
+}
+
+.primary-button.inactive:hover {
+    color: var(--font-black);
+    background: var(--button-primary);
 }
 
 .section-header {
@@ -185,17 +208,19 @@ button {
 .skills {
 }
 
-.skills-container {
+.chart-container {
+    position: relative;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto 0;
     padding: 0 20px;
+    z-index: 20;
 }
 
-.skills-box {
+.chart-box {
     position: relative;
     background: var(--background-secondary);
     border-radius: 20px;
-    height: 30rem;
+    height: 28.75rem;
 }
 
 .continuous-scroll {
@@ -210,17 +235,15 @@ button {
 
 .projects {
     position: relative;
-    margin-top: 170px;
+    margin-top: 345px;
 }
 
 .blurred-light {
-    z-index: 9;
     position: absolute;
     object-fit: none;
     width: 1200px;
     height: 800px;
-    top: -100px;
-    left: 150px;
+    z-index: 9;
 }
 
 .projects-horizontal-scroll {
@@ -240,8 +263,16 @@ button {
 }
 
 .activity {
+    margin-top: 345px;
     height: 400px;
     padding: 0 168px
+}
+
+.activity-control-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
 }
 
 .aq-container {

@@ -17,8 +17,8 @@ export const Skills = () => {
             className="p-10 bg-gray-100 rounded-lg shadow-lg">
             <section className={'skills'}>
                 <SectionHeader title={t('skills')} description={t('skillsDescription')}/>
-                <div className={'skills-container'}>
-                    <div className={'skills-box'}>
+                <div className={'chart-container'}>
+                    <div className={'chart-box'}>
                         <div className={'continuous-scroll'}></div>
                         <RadarChart/>
                     </div>
