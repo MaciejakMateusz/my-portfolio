@@ -36,5 +36,7 @@
   "octoberShort": "Paź",
   "novemberShort": "Lis",
   "decemberShort": "Gru",
-  "sensorValue": "Wartość czujnika"
+  "sensorValue": "Wartość czujnika",
+  "translatorAI": "Tłumacz AI",
+  "digitalMenu": "Cyfrowe menu"
 }
