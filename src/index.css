@@ -53,7 +53,6 @@ button {
     z-index: 999;
     position: fixed;
     background: rgb(255, 255, 255, 0%);
-    margin-top: 15px;
 }
 
 .nav-buttons-container {
@@ -73,23 +72,18 @@ button {
 
 .nav-btn {
     cursor: pointer;
-    background: none;
     border: none;
     font-family: var(--font-family-primary), serif;
     font-weight: 400;
-    font-style: normal;
-    font-size: 1rem;
+    font-size: 0.85rem;
     position: relative;
     justify-self: center;
     color: var(--font-grey);
-    padding: 9px 14px;
-    margin-right: 16px;
+    padding: 0 15px;
 }
 
 .nav-btn.active, .nav-btn:hover {
     color: var(--font-white);
-    border-radius: 100px;
-    padding: 9px 14px;
 }
 
 .logo-icons-wrapper {
