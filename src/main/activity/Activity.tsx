@@ -44,7 +44,8 @@ export const Activity = () => {
                         <div className={'year-buttons'}>
                             {years?.map((year: number) => (
                                 <button className={`primary-button spaced ${chosenYear !== year ? 'inactive' : ''}`}
-                                        onClick={() => setChosenYear(year)}>
+                                        onClick={() => setChosenYear(year)}
+                                        key={year}>
                                     {year}
                                 </button>
                             ))}
