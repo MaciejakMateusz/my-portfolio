@@ -38,7 +38,7 @@ export const Activity = () => {
             className="p-10 bg-gray-100 rounded-lg shadow-lg">
             <section className={'activity'}>
                 <SectionHeader title={t('activity')} description={t('activityDescription')}/>
-                <div className={'chart-container'}>
+                <div className={'chart-container activity-chart'}>
                     <div className={'activity-control-panel'}>
                         <span>Ilość commitów w {chosenYear} roku: <span className={'white-text'}>{totalSum}</span></span>
                         <div className={'year-buttons'}>

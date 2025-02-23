@@ -10,6 +10,7 @@
     --font-family-primary: "Poppins";
     --font-family-secondary: "Inter";
 }
+
 /*----- END OF VARIABLES -----*/
 
 root, body {
@@ -216,18 +217,18 @@ button {
     z-index: 20;
 }
 
-.chart-box{
-    position: relative;
-    background: var(--background-secondary);
-    border-radius: 20px;
-}
-
-.chart-box.skills-chart {
+.chart-container.skills-chart {
     height: 28.75rem;
 }
 
-.chart-box.activity-chart {
+.chart-container.activity-chart {
     height: 18.75rem;
+}
+
+.chart-box {
+    position: relative;
+    background: var(--background-secondary);
+    border-radius: 20px;
 }
 
 .continuous-scroll {
@@ -237,6 +238,11 @@ button {
 
 .radar-chart-container {
     height: 30rem;
+    width: 100%;
+}
+
+.calendar-chart-container {
+    height: 18.75rem;
     width: 100%;
 }
 
@@ -272,8 +278,6 @@ button {
 
 .activity {
     margin-top: 345px;
-    height: 400px;
-    padding: 0 168px
 }
 
 .activity-control-panel {
@@ -326,7 +330,6 @@ button {
 }
 
 
-
 /*----- LOADER -----*/
 .loader {
     position: absolute;
@@ -350,6 +353,7 @@ button {
         background-position: 0 0, 50% 0, 100% 0
     }
 }
+
 /*----- END OF LOADER -----*/
 
 .scroll-wrapper {
