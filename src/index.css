@@ -10,6 +10,7 @@
     --font-family-primary: "Poppins";
     --font-family-secondary: "Inter";
 }
+
 /*----- END OF VARIABLES -----*/
 
 root, body {
@@ -216,18 +217,18 @@ button {
     z-index: 20;
 }
 
-.chart-box{
-    position: relative;
-    background: var(--background-secondary);
-    border-radius: 20px;
-}
-
-.chart-box.skills-chart {
+.chart-container.skills-chart {
     height: 28.75rem;
 }
 
-.chart-box.activity-chart {
+.chart-container.activity-chart {
     height: 18.75rem;
+}
+
+.chart-box {
+    position: relative;
+    background: var(--background-secondary);
+    border-radius: 20px;
 }
 
 .continuous-scroll {
@@ -237,6 +238,11 @@ button {
 
 .radar-chart-container {
     height: 30rem;
+    width: 100%;
+}
+
+.calendar-chart-container {
+    height: 18.75rem;
     width: 100%;
 }
 
@@ -254,26 +260,143 @@ button {
     top: -200px
 }
 
-.projects-horizontal-scroll {
+.projects-carousel {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 56px;
+    z-index: 50;
+    padding: 0 100px;
+}
+
+.carousel-item-padding {
+    display: flex;
+    justify-content: center;
+}
+
+.projects-carousel .react-multi-carousel-list {
+    padding-bottom: 25px;
 }
 
 .project-card {
+    display: inline-block;
     width: 220px;
     height: 300px;
-    background: var(--background-primary);
+    background: var(--background-secondary);
     border-radius: 20px;
     margin-right: 30px;
     z-index: 12;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.5s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.project-card:hover {
+    background: transparent;
+}
+
+.project-card-inner-wrapper,
+.project-card-turned {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.project-card-inner-wrapper {
+    opacity: 1;
+}
+
+.project-card-turned {
+    opacity: 0;
+    background: transparent;
+    border-radius: 20px;
+    font-family: var(--font-family-secondary), serif;
+    color: var(--font-white);
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+
+.project-card:hover .project-card-inner-wrapper {
+    opacity: 0;
+}
+
+.project-card:hover .project-card-turned {
+    opacity: 1;
+}
+
+.project-card-inner-wrapper {
+    position: relative;
+}
+
+.project-card-image {
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    height: 180px;
+    width: 220px;
+    -moz-border-radius-topleft: 20px;
+    -moz-border-radius-topright: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.project-card-image-gradient {
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+}
+
+.project-card-name {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-family: var(--font-family-secondary), serif;
+    color: var(--font-white);
+}
+
+.project-card-description {
+    line-height: 21px;
+    padding: 20px;
+    margin: 0;
+}
+
+.project-card-technologies-container {
+    padding: 0 20px;
+}
+
+.project-card-technologies {
+    padding: 0 0 10px 0;
+    margin: 0;
+    color: var(--font-grey);
+    font-weight: 500;
+}
+
+.project-card-button-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card-button-container .primary-button {
+    font-family: var(--font-family-primary), serif;
+    font-weight: 500;
 }
 
 .activity {
     margin-top: 345px;
-    height: 400px;
-    padding: 0 168px
 }
 
 .activity-control-panel {
@@ -326,7 +449,6 @@ button {
 }
 
 
-
 /*----- LOADER -----*/
 .loader {
     position: absolute;
@@ -350,6 +472,7 @@ button {
         background-position: 0 0, 50% 0, 100% 0
     }
 }
+
 /*----- END OF LOADER -----*/
 
 .scroll-wrapper {

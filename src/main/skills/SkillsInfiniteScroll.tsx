@@ -20,7 +20,7 @@ export const SkillsInfiniteScroll = () => {
                     animate={{y: [0, -100 * skills.length]}}
                     transition={{
                         ease: "linear",
-                        duration: 40,
+                        duration: 60,
                         repeat: Infinity,
                         repeatType: "loop"
                     }}>

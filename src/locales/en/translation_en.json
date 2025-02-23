@@ -36,5 +36,7 @@
   "octoberShort": "Oct",
   "novemberShort": "Nov",
   "decemberShort": "Dec",
-  "sensorValue": "Sensor value"
+  "sensorValue": "Sensor value",
+  "translatorAI": "Translator AI",
+  "digitalMenu": "Digital menu"
 }

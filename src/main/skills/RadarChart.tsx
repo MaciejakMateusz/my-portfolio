@@ -56,11 +56,11 @@ export const RadarChart = () => {
                     {
                         anchor: 'bottom-right',
                         direction: 'column',
-                        translateX: -200,
-                        translateY: -200,
+                        translateX: -250,
+                        translateY: -150,
                         itemWidth: 80,
                         itemHeight: 20,
-                        itemsSpacing: 15,
+                        itemsSpacing: 20,
                         itemTextColor: '#F9F9F9',
                         symbolSize: 12,
                         symbolShape: 'circle',
@@ -85,7 +85,7 @@ export const RadarChart = () => {
                                 fontSize: 15,
                                 fontWeight: 300,
                                 fill: '#F9F9F9',
-                                fontFamily: "Poppins, serif",
+                                fontFamily: "Inter, serif",
                             },
                         },
                     },
@@ -101,7 +101,9 @@ export const RadarChart = () => {
                     },
                     legends: {
                         text: {
-                            fontSize: 16
+                            fontSize: 16,
+                            fontFamily: "Inter, serif",
+                            fontWeight: 300
                         }
                     }
                 }}
