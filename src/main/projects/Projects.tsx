@@ -2,6 +2,7 @@ import {SectionHeader} from "../shared/SectionHeader.tsx";
 import {useTranslation} from "react-i18next";
 import {useInView} from "react-intersection-observer";
 import { motion } from "framer-motion";
+import {ProjectsCarousel} from "./ProjectsCarousel.tsx";
 
 
 export const Projects = () => {
@@ -16,12 +17,7 @@ export const Projects = () => {
             className="p-10 bg-gray-100 rounded-lg shadow-lg">
             <section className={'projects'}>
                 <SectionHeader title={t('projects')} description={t('projectsDescription')}/>
-                <div className={'projects-horizontal-scroll'}>
-                    <div className={'project-card'}></div>
-                    <div className={'project-card'}></div>
-                    <div className={'project-card'}></div>
-                    <div className={'project-card'}></div>
-                </div>
+                <ProjectsCarousel/>
             </section>
         </motion.div>
     );
