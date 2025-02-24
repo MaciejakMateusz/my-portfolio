@@ -2,7 +2,7 @@ import {motion} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {SectionHeader} from "../shared/SectionHeader.tsx";
 import {useTranslation} from "react-i18next";
-import {HorizontalCard} from "./HorizontalCard.tsx";
+import {HorizontalCard} from "../shared/HorizontalCard.tsx";
 
 export const About = () => {
     const {t} = useTranslation();
