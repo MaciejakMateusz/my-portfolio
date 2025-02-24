@@ -2,7 +2,7 @@ import {motion} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {SectionHeader} from "../shared/SectionHeader.tsx";
 import {useTranslation} from "react-i18next";
-import {HobbyCard} from "./HobbyCard.tsx";
+import {HorizontalCard} from "./HorizontalCard.tsx";
 
 export const About = () => {
     const {t} = useTranslation();
@@ -16,7 +16,7 @@ export const About = () => {
             transition={{duration: 0.8, ease: "easeOut"}}>
             <div className={'about'}>
                 <SectionHeader title={t('about')} description={t('aboutDescription')}/>
-                <div className={'about-container'}>
+                <div className={'main-container'}>
 
                     <div className={'about-wrapper'}>
                         <div className={'about-photo-container'}>
@@ -37,15 +37,15 @@ export const About = () => {
                             </p>
                         </div>
                         <div className={'about-hobbies-container about-typography'}>
-                            <HobbyCard header={t('coding')}
-                                       description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
-                                       icon={'/placeholder-icon.svg'}/>
-                            <HobbyCard header={'Gaming'}
-                                       description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
-                                       icon={'/placeholder-icon.svg'}/>
-                            <HobbyCard header={t('guitar')}
-                                       description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
-                                       icon={'/placeholder-icon.svg'}/>
+                            <HorizontalCard header={t('coding')}
+                                            description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
+                                            icon={'/placeholder-icon.svg'}/>
+                            <HorizontalCard header={'Gaming'}
+                                            description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
+                                            icon={'/placeholder-icon.svg'}/>
+                            <HorizontalCard header={t('guitar')}
+                                            description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
+                                            icon={'/placeholder-icon.svg'}/>
                         </div>
                     </div>
 

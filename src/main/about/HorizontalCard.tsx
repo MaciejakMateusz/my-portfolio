@@ -6,7 +6,7 @@ type HobbyCardProps = {
     icon: string;
 }
 
-export const HobbyCard = (props: HobbyCardProps) => {
+export const HorizontalCard = (props: HobbyCardProps) => {
     return (
         <div className={'hobby-card-wrapper'}>
             <div className={'hobby-card-icon-container'}>
