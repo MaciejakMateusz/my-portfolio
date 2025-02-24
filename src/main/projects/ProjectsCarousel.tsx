@@ -19,9 +19,40 @@ export const ProjectsCarousel = () => {
             items: 2,
         },
     };
+    const cards = [
+        <ProjectCard name={'UI Designer Portfolio'}
+                     description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
+                     technologies={"Spreng but, Rekt, REST, AI"}
+                     img={'/designer-image.png'}/>,
+        <ProjectCard name={'Time Tracker'}
+                     description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
+                     technologies={"Spreng but, Rekt, REST, AI"}
+                     img={'/designer-image.png'}/>,
+        <ProjectCard name={t('translatorAI')}
+                     description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
+                     technologies={"Spreng but, Rekt, REST, AI"}
+                     img={'/translator-image.png'}/>,
+        <ProjectCard name={'Air Quality'}
+                     description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
+                     technologies={"Spreng but, Rekt, REST, AI"}
+                     img={'/air-quality-image.png'}/>,
+        <ProjectCard name={t('digitalMenu')}
+                     description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
+                     technologies={"Spreng but, Rekt, REST, AI"}
+                     img={'/digital-menu-image.png'}/>,
+        <ProjectCard name={'Tolerance measure'}
+                     description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
+                     technologies={"Spreng but, Rekt, REST, AI"}
+                     img={'/air-quality-image.png'}/>,
+        <ProjectCard name={'Portfolio REST-API'}
+                     description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
+                     technologies={"Spreng but, Rekt, REST, AI"}
+                     img={'/air-quality-image.png'}/>
+    ]
+    const repeatedCards = [...cards, ...cards, ...cards, ...cards]
 
     return (
-        <div className="projects-carousel">
+        <div className="carousel">
             <Carousel
                 swipeable={true}
                 draggable={true}
@@ -39,34 +70,9 @@ export const ProjectsCarousel = () => {
                 itemClass="carousel-item-padding"
                 deviceType="desktop"
                 pauseOnHover={true}>
-                <ProjectCard name={'UI Designer Portfolio'}
-                             description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
-                             technologies={"Spreng but, Rekt, REST, AI"}
-                             img={'/designer-image.png'}/>
-                <ProjectCard name={'Time Tracker'}
-                             description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
-                             technologies={"Spreng but, Rekt, REST, AI"}
-                             img={'/designer-image.png'}/>
-                <ProjectCard name={t('translatorAI')}
-                             description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
-                             technologies={"Spreng but, Rekt, REST, AI"}
-                             img={'/translator-image.png'}/>
-                <ProjectCard name={'Air Quality'}
-                             description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
-                             technologies={"Spreng but, Rekt, REST, AI"}
-                             img={'/air-quality-image.png'}/>
-                <ProjectCard name={t('digitalMenu')}
-                             description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
-                             technologies={"Spreng but, Rekt, REST, AI"}
-                             img={'/digital-menu-image.png'}/>
-                <ProjectCard name={'Tolerance measure'}
-                             description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
-                             technologies={"Spreng but, Rekt, REST, AI"}
-                             img={'/air-quality-image.png'}/>
-                <ProjectCard name={'Portfolio REST-API'}
-                             description={'Lorem ipsum dolor sit amet consectetur. Viverra vulputate morbi est adipiscing consequat. Ut venenatis suspendisse egestas ut. Faucibus nam.'}
-                             technologies={"Spreng but, Rekt, REST, AI"}
-                             img={'/air-quality-image.png'}/>
+                {repeatedCards.map((card, index) => (
+                    <div key={index}>{card}</div>
+                ))}
             </Carousel>
         </div>
     );
