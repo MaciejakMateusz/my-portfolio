@@ -254,7 +254,7 @@ button {
     top: -200px
 }
 
-.projects-carousel {
+.carousel {
     position: relative;
     display: flex;
     align-items: center;
@@ -273,7 +273,7 @@ button {
     padding-bottom: 40px;
 }
 
-.project-card {
+.carousel-card {
     display: inline-block;
     width: 220px;
     height: 300px;
@@ -290,12 +290,12 @@ button {
     -ms-user-select: none;
 }
 
-.project-card:hover {
+.carousel-card:hover {
     background: transparent;
 }
 
-.project-card-inner-wrapper,
-.project-card-turned {
+.carousel-card-inner-wrapper,
+.carousel-card-turned {
     position: absolute;
     top: 0;
     left: 0;
@@ -304,11 +304,11 @@ button {
     transition: opacity 0.5s ease-in-out;
 }
 
-.project-card-inner-wrapper {
+.carousel-card-inner-wrapper {
     opacity: 1;
 }
 
-.project-card-turned {
+.carousel-card-turned {
     opacity: 0;
     background: transparent;
     border-radius: 20px;
@@ -318,15 +318,15 @@ button {
     font-weight: 300;
 }
 
-.project-card:hover .project-card-inner-wrapper {
+.carousel-card:hover .carousel-card-inner-wrapper {
     opacity: 0;
 }
 
-.project-card:hover .project-card-turned {
+.carousel-card:hover .carousel-card-turned {
     opacity: 1;
 }
 
-.project-card-inner-wrapper {
+.carousel-card-inner-wrapper {
     position: relative;
 }
 
@@ -375,7 +375,7 @@ button {
     font-weight: 500;
 }
 
-.project-card-button-container {
+.carousel-card-button-container {
     position: absolute;
     bottom: 20px;
     width: 100%;
@@ -384,7 +384,7 @@ button {
     justify-content: center;
 }
 
-.project-card-button-container .primary-button {
+.carousel-card-button-container .primary-button {
     font-family: var(--font-family-primary), serif;
     font-weight: 500;
 }
@@ -598,6 +598,33 @@ button {
 .hobby-card-description {
     grid-column: 2;
     color: var(--font-grey);
+}
+
+.books {
+    position: relative;
+    margin-top: 345px;
+}
+
+.book-card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.book-p-header {
+    color: var(--font-grey);
+    font-weight: 400;
+    line-height: 150%;
+    padding-left: 20px;
+}
+
+.book-title {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.book-author {
+    padding-left: 20px;
 }
 
 .custom-dot {
