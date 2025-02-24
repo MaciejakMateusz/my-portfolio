@@ -43,5 +43,17 @@
   "currently": "Currently",
   "devIntern": "Intern - programmer",
   "careerBreak": "Career break",
-  "cncProgrammer": "CNC programmer"
+  "cncProgrammer": "CNC programmer",
+  "aboutDescription": "Who am I, when I don't code?",
+  "coding": "Coding",
+  "guitar": "Guitar",
+  "booksDescription": "Code is not everything! Read, tested, worth recommending",
+  "atlasShrugged": "Atlas Shrugged",
+  "cleanCode": "Clean Code: A Handbook of Agile Software Craftsmanship",
+  "designPatterns": "Design Patterns: Elements of Reusable Object-Oriented Software",
+  "javaBook": "Core Java: Fundamentals, 12th Edition",
+  "hackingAPI": "Hacking APIs: Breaking Web Application Programming Interfaces",
+  "cantHurt": "Can't Hurt Me",
+  "winFriends": "How to Win Friends and Influence People",
+  "seeBook": "See book"
 }

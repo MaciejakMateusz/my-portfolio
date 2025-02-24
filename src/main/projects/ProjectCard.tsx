@@ -8,8 +8,8 @@ type ProjectCardProps = {
 
 export const ProjectCard = (props: ProjectCardProps) => {
     return (
-        <div className="project-card">
-            <div className="project-card-inner-wrapper">
+        <div className="carousel-card">
+            <div className="carousel-card-inner-wrapper">
                 <img
                     src={props.img}
                     alt={props.name}
@@ -18,13 +18,13 @@ export const ProjectCard = (props: ProjectCardProps) => {
                 <span className={'project-card-name'}>{props.name}</span>
             </div>
 
-            <div className="project-card-turned">
+            <div className="carousel-card-turned">
                 <p className={'project-card-description'}>{props.description}</p>
                 <div className={'project-card-technologies-container'}>
                     <p className={'project-card-technologies'}>Technologie:</p>
                     <span>{props.technologies}</span>
                 </div>
-                <div className={'project-card-button-container'}>
+                <div className={'carousel-card-button-container'}>
                     <button className={'primary-button'}>Zobacz projekt</button>
                 </div>
             </div>

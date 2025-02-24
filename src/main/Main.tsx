@@ -4,6 +4,8 @@ import {Skills} from "./skills/Skills.tsx";
 import {Projects} from "./projects/Projects.tsx";
 import {Activity} from "./activity/Activity.tsx";
 import {Career} from "./career/Career.tsx";
+import {About} from "./about/About.tsx";
+import {Books} from "./books/Books.tsx";
 
 export const Main = () => {
 
@@ -15,6 +17,8 @@ export const Main = () => {
             <Projects/>
             <Activity/>
             <Career/>
+            <About/>
+            <Books/>
         </>
     );
 }
