@@ -34,8 +34,7 @@ export const Activity = () => {
             ref={ref}
             initial={{opacity: 0, y: 100}}
             animate={inView ? {opacity: 1, y: 0} : {}}
-            transition={{duration: 0.8, ease: "easeOut"}}
-            className="p-10 bg-gray-100 rounded-lg shadow-lg">
+            transition={{duration: 0.8, ease: "easeOut"}}>
             <section className={'activity'}>
                 <SectionHeader title={t('activity')} description={t('activityDescription')}/>
                 <div className={'chart-container activity-chart'}>
