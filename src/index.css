@@ -478,16 +478,126 @@ button {
     width: 8px;
 }
 
-/* Scrollbar track */
 .duty-list::-webkit-scrollbar-track {
-    background: var(--button-secondary); /* Dark background */
+    background: var(--button-secondary);
     border-radius: 4px;
 }
 
-/* Scrollbar thumb */
 .duty-list::-webkit-scrollbar-thumb {
     background: var(--button-primary);
     border-radius: 4px;
+}
+
+.about {
+    margin-top: 345px;
+}
+
+.about-container {
+    position: relative;
+    max-width: 1200px;
+    height: 28.75rem;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    z-index: 20;
+    background: var(--background-secondary);
+    border-radius: 20px;
+}
+
+.about-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.about-photo-container {
+    grid-column: 1;
+    position: relative;
+    width: 341px;
+    align-self: start;
+    justify-self: center;
+}
+
+.about-photo {
+    object-fit: contain;
+    width: 341px;
+    height: auto;
+}
+
+.about-photo-gradient {
+    position: absolute;
+    bottom: 6px;
+    width: 100%;
+    height: 250px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+}
+
+.about-photo-signature {
+    position: absolute;
+    bottom: -20px;
+    left: 25px;
+    display: flex;
+    width: 270px;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.21);
+    color: var(--font-white);
+    font-family: var(--font-family-primary), serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.about-typography {
+    font-family: var(--font-family-secondary), serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.about-description-container {
+    grid-column: 2;
+    padding: 40px
+}
+
+.about-description-header {
+    color: var(--font-white);
+}
+
+.about-description {
+    color: var(--font-grey);
+}
+
+.about-hobbies-container {
+    grid-column: 3;
+    padding: 40px;
+}
+
+.hobby-card-wrapper {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    margin-bottom: 20px;
+}
+
+.hobby-card-icon-container {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hobby-card-header {
+    grid-column: 2;
+    color: var(--font-white);
+}
+
+.hobby-card-description {
+    grid-column: 2;
+    color: var(--font-grey);
 }
 
 .custom-dot {
