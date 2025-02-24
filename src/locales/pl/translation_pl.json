@@ -46,5 +46,14 @@
   "cncProgrammer": "Programista CNC",
   "aboutDescription": "Kim jestem, gdy nie piszę kodu?",
   "coding": "Programowanie",
-  "guitar": "Gitara"
+  "guitar": "Gitara",
+  "booksDescription": "Kod to nie wszystko! Przeczytane, sprawdzone, godne polecenia",
+  "atlasShrugged": "Atlas Zbuntowany",
+  "cleanCode": "Czysty kod: Podręcznik dobrego programisty",
+  "designPatterns": "Wzorce projektowe: Elementy oprogramowania obiektowego wielokrotnego użytku",
+  "javaBook": "Java: Podstawy, Wydanie XII",
+  "hackingAPI": "Hackowanie Interfejsów API",
+  "cantHurt": "Nic mnie nie złamie",
+  "winFriends": "Jak zdobyć przyjaciół i zjednać sobie ludzi",
+  "seeBook": "Zobacz książkę"
 }
