@@ -55,5 +55,13 @@
   "hackingAPI": "Hacking APIs: Breaking Web Application Programming Interfaces",
   "cantHurt": "Can't Hurt Me",
   "winFriends": "How to Win Friends and Influence People",
-  "seeBook": "See book"
+  "seeBook": "See book",
+  "callMe": "Call me",
+  "emailMe": "Email me",
+  "location": "Location",
+  "nameSurname": "Name and surname",
+  "subject": "Subject",
+  "message": "Message",
+  "send": "Send",
+  "contactDescription": "Every project begins with a conversation"
 }
