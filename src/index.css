@@ -44,6 +44,23 @@ button {
     outline: none;
 }
 
+input {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: var(--font-white);
+    font-family: var(--font-family-primary), serif;
+}
+
+textarea {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: var(--font-white);
+    font-family: var(--font-family-primary), serif;
+    resize: none;
+}
+
 .nav-header {
     width: 100%;
     height: 50px;
@@ -552,7 +569,7 @@ button {
     line-height: 150%;
 }
 
-.about-typography {
+.main-typography {
     font-family: var(--font-family-secondary), serif;
     font-size: 1rem;
     font-weight: 400;
@@ -580,7 +597,7 @@ button {
 .hobby-card-wrapper {
     display: grid;
     grid-template-columns: 15% 85%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .hobby-card-icon-container {
@@ -598,6 +615,10 @@ button {
 .hobby-card-description {
     grid-column: 2;
     color: var(--font-grey);
+}
+
+.hobby-card-description.contact-type {
+    cursor: pointer;
 }
 
 .books {
@@ -625,6 +646,74 @@ button {
 
 .book-author {
     padding-left: 20px;
+}
+
+.contact-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-details-container {
+    grid-column: 1;
+    padding: 70px 40px 20px 40px;
+}
+
+.contact-social-buttons-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.contact-form-container {
+    grid-column: 2;
+    padding: 40px 40px 20px 40px;
+}
+
+.contact-form {
+    font-family: var(--font-family-secondary), serif;
+}
+
+.form-field-label {
+    font-size: 0.85rem;
+    line-height: 171%;
+}
+
+.form-text-field {
+    display: block;
+    width: 100%;
+    height: 44px;
+    border-radius: 10px;
+    background: #141414;
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.form-text-area-field {
+    display: block;
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    background: #141414;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.form-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 20px;
+}
+
+.footer {
+    margin-top: 200px;
+    width: 100%;
+    height: 30rem;
+    background: var(--button-primary);
 }
 
 .custom-dot {
