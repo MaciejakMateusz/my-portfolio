@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 export const Activity = () => {
     const {t} = useTranslation();
-    const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.2 });
+    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
     const [years, setYears] = useState<number[]>();
     const defaultYear: number = 2024;
     const [chosenYear, setChosenYear] = useState<number>(defaultYear);

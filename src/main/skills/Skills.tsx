@@ -7,7 +7,7 @@ import {SkillsInfiniteScroll} from "./SkillsInfiniteScroll.tsx";
 
 export const Skills = () => {
     const {t} = useTranslation();
-    const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.2 });
+    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
     return (
         <motion.div

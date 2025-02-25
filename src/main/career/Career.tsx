@@ -6,7 +6,7 @@ import {useInView} from "react-intersection-observer";
 
 export const Career = () => {
     const {t} = useTranslation();
-    const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.2 });
+    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
     return (
         <motion.div

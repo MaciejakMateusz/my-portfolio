@@ -6,7 +6,7 @@ import {HorizontalCard} from "../shared/HorizontalCard.tsx";
 
 export const About = () => {
     const {t} = useTranslation();
-    const {ref, inView} = useInView({triggerOnce: false, threshold: 0.2});
+    const {ref, inView} = useInView({triggerOnce: true, threshold: 0.2});
 
     return (
         <motion.div
@@ -24,7 +24,7 @@ export const About = () => {
                             <div className={'about-photo-gradient'}/>
                             <div className={'about-photo-signature'}>Mateusz Maciejak</div>
                         </div>
-                        <div className={'about-description-container about-typography'}>
+                        <div className={'about-description-container main-typography'}>
                             <p className={'about-description-header'}>A po godzinach...</p>
                             <p className={'about-description'}>
                                 Lorem ipsum dolor sit amet consectetur. Faucibus consectetur dictum vestibulum
@@ -36,7 +36,7 @@ export const About = () => {
                                 nunc pellentesque.
                             </p>
                         </div>
-                        <div className={'about-hobbies-container about-typography'}>
+                        <div className={'about-hobbies-container main-typography'}>
                             <HorizontalCard header={t('coding')}
                                             description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
                                             icon={'/placeholder-icon.svg'}/>
