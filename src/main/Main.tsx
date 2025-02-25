@@ -8,20 +8,36 @@ import {About} from "./about/About.tsx";
 import {Books} from "./books/Books.tsx";
 import {Contact} from "./contact/Contact.tsx";
 import {Footer} from "./footer/Footer.tsx";
+import {useRef} from "react";
 
 export const Main = () => {
+    const startRef = useRef();
+    const skillsRef = useRef();
+    const projectsRef = useRef();
+    const activityRef = useRef();
+    const careerRef = useRef();
+    const aboutRef = useRef();
+    const booksRef = useRef();
+    const contactRef = useRef();
 
     return (
         <>
-            <NavBar/>
-            <Start/>
-            <Skills/>
-            <Projects/>
-            <Activity/>
-            <Career/>
-            <About/>
-            <Books/>
-            <Contact/>
+            <NavBar startRef={startRef}
+                    skillsRef={skillsRef}
+                    projectsRef={projectsRef}
+                    activityRef={activityRef}
+                    careerRef={careerRef}
+                    aboutRef={aboutRef}
+                    booksRef={booksRef}
+                    contactRef={contactRef}/>
+            <Start ref={startRef}/>
+            <Skills ref={skillsRef}/>
+            <Projects ref={projectsRef}/>
+            <Activity ref={activityRef}/>
+            <Career ref={careerRef}/>
+            <About ref={aboutRef}/>
+            <Books ref={booksRef}/>
+            <Contact ref={contactRef}/>
             <Footer/>
         </>
     );
