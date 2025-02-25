@@ -55,5 +55,13 @@
   "hackingAPI": "Hackowanie Interfejsów API",
   "cantHurt": "Nic mnie nie złamie",
   "winFriends": "Jak zdobyć przyjaciół i zjednać sobie ludzi",
-  "seeBook": "Zobacz książkę"
+  "seeBook": "Zobacz książkę",
+  "callMe": "Zadzwoń",
+  "emailMe": "Napisz",
+  "location": "Lokalizacja",
+  "nameSurname": "Imię i nazwisko",
+  "subject": "Temat",
+  "message": "Wiadomość",
+  "send": "Wyślij",
+  "contactDescription": "Każdy projekt zaczyna się od rozmowy"
 }

@@ -6,6 +6,8 @@ import {Activity} from "./activity/Activity.tsx";
 import {Career} from "./career/Career.tsx";
 import {About} from "./about/About.tsx";
 import {Books} from "./books/Books.tsx";
+import {Contact} from "./contact/Contact.tsx";
+import {Footer} from "./footer/Footer.tsx";
 
 export const Main = () => {
 
@@ -19,6 +21,8 @@ export const Main = () => {
             <Career/>
             <About/>
             <Books/>
+            <Contact/>
+            <Footer/>
         </>
     );
 }

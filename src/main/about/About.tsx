@@ -2,11 +2,11 @@ import {motion} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {SectionHeader} from "../shared/SectionHeader.tsx";
 import {useTranslation} from "react-i18next";
-import {HobbyCard} from "./HobbyCard.tsx";
+import {HorizontalCard} from "../shared/HorizontalCard.tsx";
 
 export const About = () => {
     const {t} = useTranslation();
-    const {ref, inView} = useInView({triggerOnce: false, threshold: 0.2});
+    const {ref, inView} = useInView({triggerOnce: true, threshold: 0.2});
 
     return (
         <motion.div
@@ -16,7 +16,7 @@ export const About = () => {
             transition={{duration: 0.8, ease: "easeOut"}}>
             <div className={'about'}>
                 <SectionHeader title={t('about')} description={t('aboutDescription')}/>
-                <div className={'about-container'}>
+                <div className={'main-container'}>
 
                     <div className={'about-wrapper'}>
                         <div className={'about-photo-container'}>
@@ -24,7 +24,7 @@ export const About = () => {
                             <div className={'about-photo-gradient'}/>
                             <div className={'about-photo-signature'}>Mateusz Maciejak</div>
                         </div>
-                        <div className={'about-description-container about-typography'}>
+                        <div className={'about-description-container main-typography'}>
                             <p className={'about-description-header'}>A po godzinach...</p>
                             <p className={'about-description'}>
                                 Lorem ipsum dolor sit amet consectetur. Faucibus consectetur dictum vestibulum
@@ -36,16 +36,16 @@ export const About = () => {
                                 nunc pellentesque.
                             </p>
                         </div>
-                        <div className={'about-hobbies-container about-typography'}>
-                            <HobbyCard header={t('coding')}
-                                       description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
-                                       icon={'/placeholder-icon.svg'}/>
-                            <HobbyCard header={'Gaming'}
-                                       description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
-                                       icon={'/placeholder-icon.svg'}/>
-                            <HobbyCard header={t('guitar')}
-                                       description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
-                                       icon={'/placeholder-icon.svg'}/>
+                        <div className={'about-hobbies-container main-typography'}>
+                            <HorizontalCard header={t('coding')}
+                                            description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
+                                            icon={'/placeholder-icon.svg'}/>
+                            <HorizontalCard header={'Gaming'}
+                                            description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
+                                            icon={'/placeholder-icon.svg'}/>
+                            <HorizontalCard header={t('guitar')}
+                                            description={'Lorem ipsum dolor sit amet consectetur. Sagittis nibh in at diam eget. Aliquam.'}
+                                            icon={'/placeholder-icon.svg'}/>
                         </div>
                     </div>
 
