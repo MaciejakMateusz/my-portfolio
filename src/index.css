@@ -130,11 +130,25 @@ textarea {
     cursor: pointer;
 }
 
+.logo-container.small {
+    width: 35px;
+    height: 35px;
+}
+
 .social-icon {
     margin-top: 6px;
     transition: transform 0.3s ease-in-out;
 }
 
+.social-icon.small {
+    margin-top: 3px;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(0.9);
+}
+
+.logo-container:hover .social-icon.small {
+    transform: scale(1);
+}
 .logo-container:hover .social-icon {
     transform: scale(1.2);
 }

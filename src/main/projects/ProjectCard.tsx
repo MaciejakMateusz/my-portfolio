@@ -1,12 +1,13 @@
 import {useTranslation} from "react-i18next";
+import {SocialButton} from "../landing/SocialButton.tsx";
 
 type ProjectCardProps = {
     name: string;
     description: string;
     technologies: string;
     img: string;
-    projectUrl?: string | undefined;
-    githubUrl?: string | undefined;
+    projectUrl: string;
+    githubUrl: string;
 };
 
 export const ProjectCard = (props: ProjectCardProps) => {
@@ -33,6 +34,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
                             onClick={() => window.open(props.projectUrl, '_blank')}>
                         {t('seeProject')}
                     </button>
+                    <SocialButton url={props?.githubUrl} icon={'/github-logo.svg'} small={true}/>
                 </div>
             </div>
         </div>
