@@ -1,24 +1,9 @@
-import Carousel from "react-multi-carousel";
-import {BookCard} from "./BookCard.tsx";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from 'react-i18next';
+import {BookCard} from "../main/books/BookCard.tsx";
 
-export const BooksCarousel = () => {
+export const useBookCards = (): JSX.Element[] => {
     const {t} = useTranslation();
-    const responsive = {
-        desktop: {
-            breakpoint: {max: 3000, min: 1024},
-            items: 5,
-        },
-        tablet: {
-            breakpoint: {max: 1024, min: 464},
-            items: 3,
-        },
-        mobile: {
-            breakpoint: {max: 464, min: 0},
-            items: 2,
-        },
-    };
-    const cards = [
+    return [
         <BookCard title={t('atlasShrugged')}
                   author={'Ayn Rand'}
                   img={'/books/atlas-book.png'}
@@ -48,30 +33,4 @@ export const BooksCarousel = () => {
                   img={'/books/how-to-gain-friends-book.png'}
                   url={'https://www.empik.com/jak-zdobyc-przyjaciol-i-zjednac-sobie-ludzi-carnegie-dale,62283,ksiazka-p'}/>
     ];
-    const repeatedCards = [...cards, ...cards, ...cards, ...cards];
-    return (
-        <div className={'carousel'}>
-            <Carousel
-                swipeable={true}
-                draggable={true}
-                showDots={false}
-                responsive={responsive}
-                ssr={true}
-                infinite={true}
-                autoPlay={true}
-                arrows={false}
-                autoPlaySpeed={3000}
-                keyBoardControl={true}
-                customTransition="all 1.5s"
-                transitionDuration={500}
-                containerClass="carousel-container"
-                itemClass="carousel-item-padding"
-                deviceType="desktop"
-                pauseOnHover={true}>
-                {repeatedCards.map((card, index) => (
-                    <div key={index}>{card}</div>
-                ))}
-            </Carousel>
-        </div>
-    );
-}
+};
