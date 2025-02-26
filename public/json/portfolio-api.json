@@ -1,0 +1,335 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Portfolio REST API",
+    "description": "REST API server for handling www.maciejakmateusz.pl portfolio, it handles necessary communication for the webpage to work.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/api"
+    }
+  ],
+  "paths": {
+    "/api": {
+      "options": {
+        "summary": "OPTIONS api",
+        "operationId": "options_api",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Void"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/contributions": {
+      "post": {
+        "summary": "POST api/contributions",
+        "operationId": "post_contributions",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/YearRange"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/aq": {
+      "options": {
+        "summary": "OPTIONS api/aq",
+        "operationId": "options_aq",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Void"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/aq/countries": {
+      "get": {
+        "summary": "GET api/aq/countries",
+        "operationId": "get_aq_countries",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/aq/locations": {
+      "post": {
+        "summary": "POST api/aq/locations",
+        "operationId": "post_aq_locations",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/aq/measurements": {
+      "post": {
+        "summary": "POST api/aq/measurements",
+        "operationId": "post_aq_measurements",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tolerance-measure": {
+      "options": {
+        "summary": "OPTIONS api/tolerance-measure",
+        "operationId": "options_tolerance_measure",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Void"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tolerance-measure/calculate": {
+      "post": {
+        "summary": "POST api/tolerance-measure/calculate",
+        "operationId": "post_tolerance_measure_calculate",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeasurementsDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/translate": {
+      "post": {
+        "summary": "POST api/translate",
+        "operationId": "post_translate",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "summary": "OPTIONS api/translate",
+        "operationId": "options_translate",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Void"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/email": {
+      "post": {
+        "summary": "POST api/email",
+        "operationId": "post_email",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "summary": "OPTIONS api/email",
+        "operationId": "options_email",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Void"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Void": {
+        "type": "object",
+        "properties": {}
+      },
+      "Instant": {
+        "type": "object",
+        "properties": {}
+      },
+      "YearRange": {
+        "type": "object",
+        "properties": {
+          "yearBegin": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "yearEnd": {
+            "$ref": "#/components/schemas/Instant"
+          }
+        }
+      },
+      "MeasurementsDTO": {
+        "type": "object",
+        "properties": {
+          "productLength": {
+            "type": "number",
+            "format": "double"
+          },
+          "negTolerance": {
+            "type": "number",
+            "format": "double"
+          },
+          "posTolerance": {
+            "type": "number",
+            "format": "double"
+          },
+          "measurements": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        }
+      }
+    }
+  }
+}
