@@ -1,12 +1,17 @@
+import {useTranslation} from "react-i18next";
+import {SocialButton} from "../landing/SocialButton.tsx";
 
 type ProjectCardProps = {
     name: string;
     description: string;
     technologies: string;
     img: string;
+    projectUrl: string;
+    githubUrl: string;
 };
 
 export const ProjectCard = (props: ProjectCardProps) => {
+    const {t} = useTranslation();
     return (
         <div className="carousel-card">
             <div className="carousel-card-inner-wrapper">
@@ -21,11 +26,15 @@ export const ProjectCard = (props: ProjectCardProps) => {
             <div className="carousel-card-turned">
                 <p className={'project-card-description'}>{props.description}</p>
                 <div className={'project-card-technologies-container'}>
-                    <p className={'project-card-technologies'}>Technologie:</p>
+                    <p className={'project-card-technologies'}>{t('technologies')}:</p>
                     <span>{props.technologies}</span>
                 </div>
                 <div className={'carousel-card-button-container'}>
-                    <button className={'primary-button'}>Zobacz projekt</button>
+                    <button className={'primary-button'}
+                            onClick={() => window.open(props.projectUrl, '_blank')}>
+                        {t('seeProject')}
+                    </button>
+                    <SocialButton url={props?.githubUrl} icon={'/github-logo.svg'} small={true}/>
                 </div>
             </div>
         </div>
