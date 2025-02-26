@@ -63,5 +63,14 @@
   "subject": "Temat",
   "message": "Wiadomość",
   "send": "Wyślij",
-  "contactDescription": "Każdy projekt zaczyna się od rozmowy"
+  "contactDescription": "Każdy projekt zaczyna się od rozmowy",
+  "technologies": "Technologie",
+  "seeProject": "Zobacz projekt",
+  "uiDesignerDescription": "Projekt mający na celu przedstawienie portfolio projektantki UX/UI.",
+  "timeTrackerDescription": "Aplikacja umożliwiająca tworzenie, zarządzanie i śledzenie zadań i ich operacji.",
+  "translatorAIDescription": "Widget do tłumaczenia tekstu, używający modelu AI DeepL. Posiada funkcjonalność nadania kontekstu.",
+  "airQualityDescription": "Widget pokazujący jakość powietrza w wybranych miejscach na świecie, pokazuje różne wskaźniki w podanym zakresie miesiąca.",
+  "digitalMenuDescription": "Cyfrowe menu używane przez klientów restauracji, definiowane poprzez CMS restauracji.",
+  "toleranceMeasureDescription": "Program do analizowania precyzji maszyn tnących, który bazuje na podanych parametrach i wymiarach produktów.",
+  "portfolioApiDescription": "Serwer REST API do obsługi portfolio maciejakmateusz.pl, obsługuje potrzebną do działania strony komunikację."
 }
