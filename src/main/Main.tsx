@@ -9,6 +9,7 @@ import {Books} from "./books/Books.tsx";
 import {Contact} from "./contact/Contact.tsx";
 import {Footer} from "./footer/Footer.tsx";
 import {useRef} from "react";
+import 'react-multi-carousel/lib/styles.css';
 
 export const Main = () => {
     const startRef = useRef();
