@@ -1,10 +1,11 @@
 import {useTranslation} from "react-i18next";
 import {IntroductionButtons} from "./IntroductionButtons.tsx";
+import {forwardRef} from "react";
 
-export const Start = () => {
+export const Start =  forwardRef((_, ref: any) => {
     const {t} = useTranslation();
     return (
-        <div className={'landing-section'}>
+        <div className={'landing-section'} ref={ref}>
             <div className={'centered-container'}>
                 <div className={'centered-container-wrapper'}>
                     <span className={'section-header-title'}>Full Stack</span>
@@ -15,4 +16,4 @@ export const Start = () => {
             </div>
         </div>
     );
-}
+});

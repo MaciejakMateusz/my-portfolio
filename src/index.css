@@ -281,6 +281,21 @@ textarea {
     padding: 0 100px;
 }
 
+.infinite-x-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.infinite-x-wrapper {
+    margin-top: 56px;
+    position: relative;
+    z-index: 50;
+}
+
+.infinite-x-card-wrapper {
+    min-width: 250px;
+}
+
 .carousel-item-padding {
     display: flex;
     justify-content: center;

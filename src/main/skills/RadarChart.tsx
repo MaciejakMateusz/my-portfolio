@@ -1,4 +1,4 @@
-import {ResponsiveRadar} from '@nivo/radar'
+import {RadarSliceTooltipDatum, RadarSliceTooltipProps, ResponsiveRadar} from '@nivo/radar'
 import {useTranslation} from "react-i18next";
 
 export const RadarChart = () => {
@@ -78,6 +78,22 @@ export const RadarChart = () => {
                         ]
                     }
                 ]}
+                sliceTooltip={({ index, data }: RadarSliceTooltipProps) => (
+                    <div style={{
+                        background: 'white',
+                        padding: '8px 12px',
+                        borderRadius: 10,
+                        fontWeight: 400
+                    }}>
+                        <strong>{index}</strong>
+                        {data.map((datum: RadarSliceTooltipDatum) => (
+                            <div key={datum.id} style={{ color: datum.color }}>
+                                {translatedKeys[datum.id] || datum.id}: {datum.value}
+                            </div>
+                        ))}
+                    </div>
+                )}
+
                 theme={{
                     axis: {
                         ticks: {
