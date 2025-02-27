@@ -741,11 +741,31 @@ textarea {
     box-sizing: border-box;
 }
 
+.form-text-area-field::-webkit-scrollbar {
+    width: 8px;
+}
+
+.form-text-area-field::-webkit-scrollbar-track {
+    background: var(--button-secondary);
+    border-radius: 4px;
+}
+
+.form-text-area-field::-webkit-scrollbar-thumb {
+    background: var(--button-primary);
+    border-radius: 4px;
+}
+
 .form-button-wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-top: 20px;
+}
+
+.confirmation-msg {
+    font-size: 0.85rem;
+    margin-right: 15px;
+    color: darkgreen;
 }
 
 .footer {
@@ -812,25 +832,38 @@ textarea {
 
 /*----- LOADER -----*/
 .loader {
-    position: absolute;
-    z-index: 9999;
-    background: linear-gradient(#0000 calc(1 * 100% / 6), #fae29f 0 calc(3 * 100% / 6), #0000 0) no-repeat,
-    linear-gradient(#0000 calc(2 * 100% / 6), #fde479 0 calc(4 * 100% / 6), #0000 0) no-repeat,
-    linear-gradient(#0000 calc(3 * 100% / 6), #f8ce35 0 calc(5 * 100% / 6), #0000 0) no-repeat;
-    background-size: 10px 400%;
-    width: 45px;
-    height: 40px;
-    animation: matrix 1s infinite linear;
+    display: block;
+    --height-of-loader: 4px;
+    --loader-color: var(--button-primary);
+    width: 100%;
+    height: var(--height-of-loader);
+    border-radius: 30px;
+    background-color: var(--background-primary);
+    position: relative;
 }
 
+.loader::before {
+    content: "";
+    position: absolute;
+    background: var(--loader-color);
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 1s ease-in-out infinite;
+;
+}
 
-@keyframes matrix {
-    0% {
-        background-position: 0 100%, 50% 100%, 100% 100%
+@keyframes moving {
+    50% {
+        width: 100%;
     }
 
     100% {
-        background-position: 0 0, 50% 0, 100% 0
+        width: 0;
+        right: 0;
+        left: unset;
     }
 }
 
