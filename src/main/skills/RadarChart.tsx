@@ -1,40 +1,14 @@
 import {RadarSliceTooltipDatum, RadarSliceTooltipProps, ResponsiveRadar} from '@nivo/radar'
 import {useTranslation} from "react-i18next";
+import {useSkillsData} from "../../hooks/useSkillsData.ts";
 
 export const RadarChart = () => {
     const {t} = useTranslation();
+    const data = useSkillsData();
     const translatedKeys: Record<string, string> = {
         private: t('privateProjects'),
         commercial: t('commercialProjects')
     };
-
-    const data = [
-        {
-            "experience": "Java",
-            "private": 79,
-            "commercial": 112
-        },
-        {
-            "experience": "React",
-            "private": 62,
-            "commercial": 45
-        },
-        {
-            "experience": "Redux",
-            "private": 51,
-            "commercial": 26
-        },
-        {
-            "experience": "SQL",
-            "private": 54,
-            "commercial": 110
-        },
-        {
-            "experience": "REST-API",
-            "private": 92,
-            "commercial": 81
-        }
-    ];
 
     return (
         <div className={'radar-chart-container'}>
