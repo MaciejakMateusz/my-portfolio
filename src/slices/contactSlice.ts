@@ -17,7 +17,7 @@ const initialFormState: ContactState = {
 export const sendEmail =
     createAsyncThunk<void, ContactState>(
         'contact/sendEmail',
-        async (params) => {
+        async (params, {rejectWithValue}) => {
             const response = await fetch(`${import.meta.env.VITE_PORTFOLIO_REST}/email`, {
                 method: 'POST',
                 headers: {
@@ -27,10 +27,15 @@ export const sendEmail =
             });
 
             if (!response.ok) {
-                throw new Error(`GitHub API error: ${response.statusText}`);
+                const errorData = await response.json().catch(() => null);
+                return rejectWithValue(errorData || {message: 'Failed to send email.'});
             }
 
-            return await response.json();
+            try {
+                return await response.json();
+            } catch (error) {
+                return {};
+            }
         });
 
 export const sendEmailSlice = createSlice(
@@ -45,6 +50,7 @@ export const sendEmailSlice = createSlice(
                 state.isLoading = true;
             }).addCase(sendEmail.fulfilled, state => {
                 state.isLoading = false;
+                state.data = 'fulfilled';
             }).addCase(sendEmail.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
