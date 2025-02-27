@@ -15,7 +15,7 @@ export const Contact = forwardRef((_, ref: any) => {
     const dispatch = useAppDispatch();
     const {ref: motionRef, inView} = useInView({triggerOnce: true, threshold: 0.2});
     const {from, subject, text} = useSelector<any, any>(state => state.contact.form);
-    const {data} = useSelector<any, any>(state => state.contact.contact);
+    const {data, isLoading} = useSelector<any, any>(state => state.contact.contact);
 
     const submitMessage = (e: any) => {
         e.preventDefault();
@@ -90,6 +90,7 @@ export const Contact = forwardRef((_, ref: any) => {
                                                   name={'text'}
                                                   onChange={(e) => dispatch(setText(e.target.value))}/>
                                     </label>
+                                    {isLoading && <div className={'loader'}/>}
                                     <div className={'form-button-wrapper'}>
                                         {data && <span className={'confirmation-msg'}>Wiadomość wysłana pomyślnie</span>}
                                         <button className={'primary-button'}
@@ -100,7 +101,6 @@ export const Contact = forwardRef((_, ref: any) => {
                                 </form>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </motion.div>
