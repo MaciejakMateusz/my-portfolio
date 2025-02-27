@@ -15,6 +15,7 @@ export const Contact = forwardRef((_, ref: any) => {
     const dispatch = useAppDispatch();
     const {ref: motionRef, inView} = useInView({triggerOnce: true, threshold: 0.2});
     const {from, subject, text} = useSelector<any, any>(state => state.contact.form);
+    const {data} = useSelector<any, any>(state => state.contact.contact);
 
     const submitMessage = (e: any) => {
         e.preventDefault();
@@ -90,6 +91,7 @@ export const Contact = forwardRef((_, ref: any) => {
                                                   onChange={(e) => dispatch(setText(e.target.value))}/>
                                     </label>
                                     <div className={'form-button-wrapper'}>
+                                        {data && <span className={'confirmation-msg'}>Wiadomość wysłana pomyślnie</span>}
                                         <button className={'primary-button'}
                                                 onClick={(e) => submitMessage(e)}>
                                             {t('send')}

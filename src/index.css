@@ -741,11 +741,31 @@ textarea {
     box-sizing: border-box;
 }
 
+.form-text-area-field::-webkit-scrollbar {
+    width: 8px;
+}
+
+.form-text-area-field::-webkit-scrollbar-track {
+    background: var(--button-secondary);
+    border-radius: 4px;
+}
+
+.form-text-area-field::-webkit-scrollbar-thumb {
+    background: var(--button-primary);
+    border-radius: 4px;
+}
+
 .form-button-wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-top: 20px;
+}
+
+.confirmation-msg {
+    font-size: 0.85rem;
+    margin-right: 15px;
+    color: darkgreen;
 }
 
 .footer {
