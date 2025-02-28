@@ -237,6 +237,12 @@ textarea {
     background: var(--button-primary);
 }
 
+.primary-button.deactivated {
+    background: var(--font-grey);
+    color: var(--font-black);
+    cursor: not-allowed;
+}
+
 .section-header {
     width: 100%;
 }
@@ -766,6 +772,16 @@ textarea {
     font-size: 0.85rem;
     margin-right: 15px;
     color: darkgreen;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.confirmation-msg.show {
+    opacity: 1;
+}
+
+.confirmation-msg.hide {
+    opacity: 0;
 }
 
 .footer {

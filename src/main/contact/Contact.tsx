@@ -5,7 +5,7 @@ import {useTranslation} from "react-i18next";
 import {HorizontalCard} from "../shared/HorizontalCard.tsx";
 import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../hooks/hooks.ts";
-import {resetForm, sendEmail, setFrom, setSubject, setText} from "../../slices/contactSlice.ts";
+import {resetForm, sendEmail, setData, setFrom, setSubject, setText} from "../../slices/contactSlice.ts";
 import {ContactState} from "../../interfaces/ContactState.ts";
 import {SocialButton} from "../landing/SocialButton.tsx";
 import {forwardRef} from "react";
@@ -17,15 +17,22 @@ export const Contact = forwardRef((_, ref: any) => {
     const {from, subject, text} = useSelector<any, any>(state => state.contact.form);
     const {data, isLoading} = useSelector<any, any>(state => state.contact.contact);
 
-    const submitMessage = (e: any) => {
+    const submitMessage = async (e: any) => {
         e.preventDefault();
+        if (isLoading) return;
         const params: ContactState = {
             from: from,
             subject: subject,
             text: text
         };
-        dispatch(sendEmail(params));
-        dispatch(resetForm());
+        const sendAction = await dispatch(sendEmail(params))
+        if (sendEmail.fulfilled.match(sendAction)) {
+            dispatch(resetForm());
+            dispatch(setData('fulfilled'));
+            setTimeout(() => {
+                dispatch(setData(undefined));
+            }, 3000)
+        }
     }
 
     return (
@@ -92,8 +99,10 @@ export const Contact = forwardRef((_, ref: any) => {
                                     </label>
                                     {isLoading && <div className={'loader'}/>}
                                     <div className={'form-button-wrapper'}>
-                                        {data && <span className={'confirmation-msg'}>Wiadomość wysłana pomyślnie</span>}
-                                        <button className={'primary-button'}
+                                        <span className={`confirmation-msg ${data ? 'show' : 'hide'}`}>
+                                            {t('messageSent')}
+                                        </span>
+                                        <button className={`primary-button ${isLoading && 'deactivated'}`}
                                                 onClick={(e) => submitMessage(e)}>
                                             {t('send')}
                                         </button>
