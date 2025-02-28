@@ -8,7 +8,7 @@
   "introductionMessage": "Tworzę skalowalne aplikacje. Zerknij do portfolio!",
   "skills": "Skille",
   "skillsDescription": "Stack technologiczny - języki, frameworki i narzędzia, które tworzą rozwiązania.",
-  "activityDescription": "Aktywność na Github - rozwój w liczbach.",
+  "activityDescription": "Aktywność na GitHub - rozwój w liczbach.",
   "commercialProjects": "Projekty komercyjne",
   "privateProjects": "Projekty prywatne",
   "projectsDescription": "Eksperymenty, rozwiązania i wdrożone projekty w jednym miejscu.",
@@ -72,5 +72,6 @@
   "airQualityDescription": "Widget pokazujący jakość powietrza w wybranych miejscach na świecie, pokazuje różne wskaźniki w podanym zakresie miesiąca.",
   "digitalMenuDescription": "Cyfrowe menu używane przez klientów restauracji, definiowane poprzez CMS restauracji.",
   "toleranceMeasureDescription": "Program do analizowania precyzji maszyn tnących, który bazuje na podanych parametrach i wymiarach produktów.",
-  "portfolioApiDescription": "Serwer REST API do obsługi portfolio maciejakmateusz.pl, obsługuje potrzebną do działania strony komunikację."
+  "portfolioApiDescription": "Serwer REST API do obsługi portfolio maciejakmateusz.pl, obsługuje potrzebną do działania strony komunikację.",
+  "messageSent": "Wiadomość wysłana pomyślnie"
 }
