@@ -237,6 +237,12 @@ textarea {
     background: var(--button-primary);
 }
 
+.primary-button.deactivated {
+    background: var(--font-grey);
+    color: var(--font-black);
+    cursor: not-allowed;
+}
+
 .section-header {
     width: 100%;
 }
@@ -731,6 +737,10 @@ textarea {
     margin-bottom: 10px;
 }
 
+.form-text-field.invalid {
+    border: solid #C2000B 1px;
+}
+
 .form-text-area-field {
     display: block;
     width: 100%;
@@ -739,6 +749,10 @@ textarea {
     background: var(--button-secondary);
     padding: 15px;
     box-sizing: border-box;
+}
+
+.form-text-area-field.invalid {
+    border: solid #C2000B 1px;
 }
 
 .form-text-area-field::-webkit-scrollbar {
@@ -766,6 +780,22 @@ textarea {
     font-size: 0.85rem;
     margin-right: 15px;
     color: darkgreen;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.confirmation-msg.show {
+    opacity: 1;
+}
+
+.confirmation-msg.hide {
+    opacity: 0;
+}
+
+.validation-msg {
+    display: block;
+    font-size: 0.85rem;
+    color: #C2000B;
 }
 
 .footer {

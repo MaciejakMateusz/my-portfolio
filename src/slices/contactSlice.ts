@@ -44,13 +44,16 @@ export const sendEmailSlice = createSlice(
         reducerPath: undefined,
         selectors: undefined,
         initialState: initialFetchState,
-        reducers: {},
+        reducers: {
+            setData: (state, action) => {
+                state.data = action.payload;
+            }
+        },
         extraReducers: (builder) => {
             builder.addCase(sendEmail.pending, state => {
                 state.isLoading = true;
             }).addCase(sendEmail.fulfilled, state => {
                 state.isLoading = false;
-                state.data = 'fulfilled';
             }).addCase(sendEmail.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
@@ -88,6 +91,8 @@ export const {
     setText,
     resetForm
 } = contactFormSlice.actions;
+
+export const {setData} = sendEmailSlice.actions
 
 const contactReducer = combineReducers({
     contact: sendEmailSlice.reducer,
