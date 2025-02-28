@@ -47,9 +47,6 @@ export const sendEmailSlice = createSlice(
         reducers: {
             setData: (state, action) => {
                 state.data = action.payload;
-            },
-            clearData: state => {
-                state.data = undefined;
             }
         },
         extraReducers: (builder) => {
@@ -95,7 +92,7 @@ export const {
     resetForm
 } = contactFormSlice.actions;
 
-export const {clearData, setData} = sendEmailSlice.actions
+export const {setData} = sendEmailSlice.actions
 
 const contactReducer = combineReducers({
     contact: sendEmailSlice.reducer,
