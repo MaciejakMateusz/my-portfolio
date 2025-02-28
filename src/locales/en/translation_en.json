@@ -73,5 +73,7 @@
   "digitalMenuDescription": "Digital menu used by restaurant visitors, defined in restaurant CMS.",
   "toleranceMeasureDescription": "Program for analysing precision of sawing machines based on given measurements of products made by the machine.",
   "portfolioApiDescription": "REST API server for handling www.maciejakmateusz.pl portfolio, it handles necessary communication for the webpage to work.",
-  "messageSent": "Message sent successfully"
+  "messageSent": "Message sent successfully",
+  "invalidFieldLength": "Field should be {{from}} to {{to}} characters long",
+  "fieldRequired": "Field is required"
 }
