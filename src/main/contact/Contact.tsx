@@ -9,6 +9,10 @@ import {resetForm, sendEmail, setData, setFrom, setSubject, setText} from "../..
 import {ContactState} from "../../interfaces/ContactState.ts";
 import {SocialButton} from "../landing/SocialButton.tsx";
 import {forwardRef} from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import {useContactFormValidator} from "../../hooks/validator/useContactFormValidator.ts";
+import {ContactFormFields} from "../../interfaces/ContactFormFields.ts";
 
 export const Contact = forwardRef((_, ref: any) => {
     const {t} = useTranslation();
@@ -16,10 +20,18 @@ export const Contact = forwardRef((_, ref: any) => {
     const {ref: motionRef, inView} = useInView({triggerOnce: true, threshold: 0.2});
     const {from, subject, text} = useSelector<any, any>(state => state.contact.form);
     const {data, isLoading} = useSelector<any, any>(state => state.contact.contact);
+    const schema = useContactFormValidator();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors, isSubmitting }
+    } = useForm<ContactFormFields>({
+        resolver: yupResolver(schema)
+    });
 
-    const submitMessage = async (e: any) => {
-        e.preventDefault();
-        if (isLoading) return;
+    const onSubmit = async () => {
+        if (isLoading || isSubmitting) return;
+
         const params: ContactState = {
             from: from,
             subject: subject,
@@ -73,37 +85,39 @@ export const Contact = forwardRef((_, ref: any) => {
                                 </div>
                             </div>
                             <div className={'contact-form-container'}>
-                                <form className={'contact-form'}>
+                                <form className={'contact-form'} onSubmit={handleSubmit(onSubmit)}>
                                     <label className={'form-field-label'}>
                                         {t('nameSurname')}
                                         <input type={'text'}
-                                               className={'form-text-field'}
-                                               name={'from'}
+                                               {...register('from')}
+                                               className={`form-text-field ${errors.from ? 'invalid' : ''}`}
                                                value={from}
                                                onChange={(e) => dispatch(setFrom(e.target.value))}/>
+                                        {errors.from && <span className="validation-msg">{errors.from.message}</span>}
                                     </label>
                                     <label className={'form-field-label'}>
                                         {t('subject')}
                                         <input type={'text'}
-                                               className={'form-text-field'}
-                                               name={'subject'}
+                                               {...register('subject')}
+                                               className={`form-text-field ${errors.subject ? 'invalid' : ''}`}
                                                value={subject}
                                                onChange={(e) => dispatch(setSubject(e.target.value))}/>
+                                        {errors.subject && <span className="validation-msg">{errors.subject.message}</span>}
                                     </label>
                                     <label className={'form-field-label'}>
                                         {t('message')}
                                         <textarea value={text}
-                                                  className={'form-text-area-field'}
-                                                  name={'text'}
+                                                  {...register('text')}
+                                                  className={`form-text-area-field ${errors.text ? 'invalid' : ''}`}
                                                   onChange={(e) => dispatch(setText(e.target.value))}/>
+                                        {errors.text && <span className="validation-msg">{errors.text.message}</span>}
                                     </label>
                                     {isLoading && <div className={'loader'}/>}
                                     <div className={'form-button-wrapper'}>
                                         <span className={`confirmation-msg ${data ? 'show' : 'hide'}`}>
                                             {t('messageSent')}
                                         </span>
-                                        <button className={`primary-button ${isLoading && 'deactivated'}`}
-                                                onClick={(e) => submitMessage(e)}>
+                                        <button className={`primary-button ${isLoading && 'deactivated'}`} disabled={isLoading || isSubmitting}>
                                             {t('send')}
                                         </button>
                                     </div>

@@ -737,6 +737,10 @@ textarea {
     margin-bottom: 10px;
 }
 
+.form-text-field.invalid {
+    border: solid #C2000B 1px;
+}
+
 .form-text-area-field {
     display: block;
     width: 100%;
@@ -745,6 +749,10 @@ textarea {
     background: var(--button-secondary);
     padding: 15px;
     box-sizing: border-box;
+}
+
+.form-text-area-field.invalid {
+    border: solid #C2000B 1px;
 }
 
 .form-text-area-field::-webkit-scrollbar {
@@ -782,6 +790,12 @@ textarea {
 
 .confirmation-msg.hide {
     opacity: 0;
+}
+
+.validation-msg {
+    display: block;
+    font-size: 0.85rem;
+    color: #C2000B;
 }
 
 .footer {
