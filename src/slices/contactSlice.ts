@@ -18,23 +18,22 @@ export const sendEmail =
     createAsyncThunk<void, ContactState>(
         'contact/sendEmail',
         async (params, {rejectWithValue}) => {
-            const response = await fetch(`${import.meta.env.VITE_PORTFOLIO_REST}/email`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(params)
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json().catch(() => null);
-                return rejectWithValue(errorData || {message: 'Failed to send email.'});
-            }
-
             try {
+                const response = await fetch(`${import.meta.env.VITE_PORTFOLIO_REST}/email`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(params)
+                });
+
+                if (!response.ok) {
+                    return rejectWithValue(`Server responded with ${response.status} - ${response.statusText}`);
+                }
+
                 return await response.json();
-            } catch (error) {
-                return {};
+            } catch (error: any) {
+                return rejectWithValue(error.message || 'Could not connect to server');
             }
         });
 
@@ -56,7 +55,11 @@ export const sendEmailSlice = createSlice(
                 state.isLoading = false;
             }).addCase(sendEmail.rejected, (state, action) => {
                 state.isLoading = false;
-                state.error = action.payload;
+                if (action.payload) {
+                    state.error = action.payload as string;
+                } else {
+                    state.error = action.error.message || 'Failed to fetch contributions';
+                }
             })
         }
     });
