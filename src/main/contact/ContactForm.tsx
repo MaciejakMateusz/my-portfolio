@@ -45,9 +45,24 @@ export const ContactForm = () => {
     return (
         <div className={'contact-form-container'}>
             <form className={'contact-form'} onSubmit={handleSubmit(onSubmit)}>
-                <TextField register={register} error={errors.from} value={from} action={setFrom}/>
-                <TextField register={register} error={errors.subject} value={subject} action={setSubject}/>
-                <TextAreaField register={register} error={errors.text} value={text} action={setText}/>
+                <TextField label={t('nameSurname')}
+                           name={'from'}
+                           register={register}
+                           error={errors.from}
+                           value={from}
+                           action={setFrom}/>
+                <TextField label={t('subject')}
+                           name={'subject'}
+                           register={register}
+                           error={errors.subject}
+                           value={subject}
+                           action={setSubject}/>
+                <TextAreaField label={t('message')}
+                               name={'text'}
+                               register={register}
+                               error={errors.text}
+                               value={text}
+                               action={setText}/>
                 {isLoading && <div className={'loader'}/>}
                 <div className={'form-button-wrapper'}>
                     <span className={`confirmation-msg ${data ? 'show' : 'hide'}`}>
