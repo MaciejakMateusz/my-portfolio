@@ -76,5 +76,12 @@
   "messageSent": "Wiadomość wysłana pomyślnie",
   "invalidFieldLength": "Pole powinno mieć od {{from}} do {{to}} znaków",
   "fieldRequired": "Pole jest wymagane",
-  "restApiDown": "Serwer jest wyłączony. Proszę o kontakt, jeśli problem będzie się powtarzał."
+  "restApiDown": "Serwer jest wyłączony. Proszę o kontakt, jeśli problem będzie się powtarzał.",
+  "invalidDimensionValue": "Wymiar powinien mieć od {{from}} do {{to}} mm",
+  "minDimension": "Wymiar powinien mieć minimum {{dimension}} mm",
+  "productLength": "Długość produktu (mm)",
+  "posTolerance": "Tolerancja dodatnia (mm)",
+  "negTolerance": "Tolerancja ujemna (mm)",
+  "measurements": "Pomiary produktów (po przecinku np. 34.33, 34.52, 34.61)",
+  "minMeasurements": "Wpisz co najmniej {{number}} wymiary"
 }

@@ -76,5 +76,12 @@
   "messageSent": "Message sent successfully",
   "invalidFieldLength": "Field should be {{from}} to {{to}} characters long",
   "fieldRequired": "Field is required",
-  "restApiDown": "Server is down, please contact me if the issue persists."
+  "restApiDown": "Server is down, please contact me if the issue persists.",
+  "invalidDimensionValue": "Dimension should be from {{from}} to {{to}} mm",
+  "minDimension": "Dimension should be minimum {{dimension}} mm",
+  "productLength": "Product length (mm)",
+  "posTolerance": "Positive tolerance (mm)",
+  "negTolerance": "Negative tolerance (mm)",
+  "measurements": "Product measurements (comma separated: e.g. 34.33, 34.52, 34.61)",
+  "minMeasurements": "Please enter at least 2 measurements"
 }
