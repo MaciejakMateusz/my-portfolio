@@ -1,6 +1,8 @@
 import {combineReducers, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {GenericState} from "../interfaces/GenericState.ts";
-import {ToleranceMeasureState} from "../interfaces/ToleranceMeasureState.ts";
+import {Chip} from "../interfaces/Chip.ts";
+import {ToleranceMeasureFields} from "../interfaces/ToleranceMeasureFields.ts";
+import {PreparedMeasurements} from "../interfaces/PreparedMeasurements.ts";
 
 const initialFetchState: GenericState = {
     isLoading: false,
@@ -8,15 +10,15 @@ const initialFetchState: GenericState = {
     error: undefined
 };
 
-const initialFormState: ToleranceMeasureState = {
+const initialFormState: ToleranceMeasureFields = {
     productLength: 0,
     posTolerance: 0,
     negTolerance: 0,
-    measurements: []
+    measurements: [] as Chip[]
 };
 
 export const fetchAnalysis =
-    createAsyncThunk<void, ToleranceMeasureState>(
+    createAsyncThunk<void, PreparedMeasurements>(
         'contact/fetchAnalysis',
         async (params, {rejectWithValue}) => {
             try {
@@ -92,7 +94,7 @@ export const toleranceMeasureFormSlice = createSlice(
                 state.productLength = 0;
                 state.posTolerance = 0;
                 state.negTolerance = 0;
-                state.measurements = [];
+                state.measurements = [] as Chip[];
             }
         }
     });
