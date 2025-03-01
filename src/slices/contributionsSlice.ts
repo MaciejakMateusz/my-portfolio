@@ -27,9 +27,7 @@ export const fetchContributions = createAsyncThunk<
             );
 
             if (!response.ok) {
-                return rejectWithValue(
-                    `Server responded with ${response.status} - ${response.statusText}`
-                );
+                return rejectWithValue(`Server responded with ${response.status} - ${response.statusText}`);
             }
 
             return (await response.json()) as Contribution[];
