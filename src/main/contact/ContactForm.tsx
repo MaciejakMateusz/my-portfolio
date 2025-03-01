@@ -44,6 +44,7 @@ export const ContactForm = () => {
 
     return (
         <div className={'contact-form-container'}>
+            {isLoading && <div className={'loader'}/>}
             <form className={'contact-form'} onSubmit={handleSubmit(onSubmit)}>
                 <TextField label={t('nameSurname')}
                            name={'from'}
@@ -63,12 +64,13 @@ export const ContactForm = () => {
                                error={errors.text}
                                value={text}
                                action={setText}/>
-                {isLoading && <div className={'loader'}/>}
                 <div className={'form-button-wrapper'}>
-                    <span className={`form-msg error-msg ${error ? 'show' : 'hide'}`}>{t('restApiDown')}</span>
-                    <span className={`form-msg-msg confirmation-msg ${data ? 'show' : 'hide'}`}>
+                    {error && <span className={'form-msg error-msg'}>
+                        {t('restApiDown')}
+                    </span>}
+                    {data && <span className={'form-msg confirmation-msg'}>
                         {t('messageSent')}
-                    </span>
+                    </span>}
                     <button className={`primary-button ${isLoading && 'deactivated'}`}
                             disabled={isLoading || isSubmitting}>
                         {t('send')}
