@@ -798,6 +798,10 @@ textarea {
     padding-top: 10px;
 }
 
+.chips-multiselect {
+    margin-bottom: 10px;
+}
+
 @keyframes fadeInOut {
     0% {
         opacity: 0;
