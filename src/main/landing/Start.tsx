@@ -3,7 +3,7 @@ import {IntroductionButtons} from "./IntroductionButtons.tsx";
 import {forwardRef} from "react";
 import {LanguageSwitcher} from "../../locales/LanguageSwitcher.tsx";
 
-export const Start =  forwardRef((_, ref: any) => {
+export const Start =  forwardRef(({projectsRef}: any, ref: any) => {
     const {t} = useTranslation();
     return (
         <div className={'landing-section'} ref={ref}>
@@ -13,7 +13,7 @@ export const Start =  forwardRef((_, ref: any) => {
                     <span className={'section-header-title'}>Full Stack</span>
                     <span className={'section-header-title developer'}>Developer</span>
                     <span className={'section-header-description landing'}>{t('introductionMessage')}</span>
-                    <IntroductionButtons/>
+                    <IntroductionButtons projectsRef={projectsRef}/>
                 </div>
             </div>
         </div>
