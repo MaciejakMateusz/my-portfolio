@@ -31,7 +31,7 @@ export const Main = () => {
                     aboutRef={aboutRef}
                     booksRef={booksRef}
                     contactRef={contactRef}/>
-            <Start ref={startRef}/>
+            <Start ref={startRef} projectsRef={projectsRef}/>
             <Skills ref={skillsRef}/>
             <Projects ref={projectsRef}/>
             <Activity ref={activityRef}/>

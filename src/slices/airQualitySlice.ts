@@ -56,17 +56,21 @@ const initialViewState: any = {
 export const fetchAQCountries =
     createAsyncThunk<any, void>(
         'airQuality/fetchAQCountries',
-        async () => {
-            const response = await fetch(`${import.meta.env.VITE_PORTFOLIO_REST}/aq/countries`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
+        async (_, {rejectWithValue}) => {
+            try {
+                const response = await fetch(`${import.meta.env.VITE_PORTFOLIO_REST}/aq/countries`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                if (!response.ok) {
+                    return rejectWithValue(`Server responded with ${response.status} - ${response.statusText}`);
                 }
-            });
-            if (!response.ok) {
-                throw new Error(`OpenAQ API error: ${response.statusText}`);
+                return await response.json();
+            } catch (error: any) {
+                return rejectWithValue(error.message || 'Could not connect to server');
             }
-            return await response.json();
         });
 
 export const fetchAQCountriesSlice = createSlice(
@@ -84,7 +88,11 @@ export const fetchAQCountriesSlice = createSlice(
                 state.data = action.payload;
             }).addCase(fetchAQCountries.rejected, (state: GenericState, action: any) => {
                 state.isLoading = false;
-                state.error = action.payload;
+                if (action.payload) {
+                    state.error = action.payload as string;
+                } else {
+                    state.error = action.error.message || 'Failed to fetch from OpenAQ';
+                }
             })
         }
     }

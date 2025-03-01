@@ -12,7 +12,7 @@ export const TextAreaField = (props: TextFieldProps) => {
                       name={props.name}
                       className={`form-text-area-field ${props.error ? 'invalid' : ''}`}
                       onChange={(e) => dispatch(setText(e.target.value))}/>
-            {props.error && <span className="validation-msg">{props.error.message}</span>}
+            {props.error && <span className='validation-msg text-area'>{props.error.message}</span>}
         </label>
     );
 }

@@ -75,5 +75,6 @@
   "portfolioApiDescription": "Serwer REST API do obsługi portfolio maciejakmateusz.pl, obsługuje potrzebną do działania strony komunikację.",
   "messageSent": "Wiadomość wysłana pomyślnie",
   "invalidFieldLength": "Pole powinno mieć od {{from}} do {{to}} znaków",
-  "fieldRequired": "Pole jest wymagane"
+  "fieldRequired": "Pole jest wymagane",
+  "restApiDown": "Serwer jest wyłączony. Proszę o kontakt, jeśli problem będzie się powtarzał."
 }

@@ -577,7 +577,7 @@ textarea {
 .main-container {
     position: relative;
     max-width: 1200px;
-    height: 28.75rem;
+    height: fit-content;
     margin: 40px auto 0;
     padding: 0 20px;
     z-index: 20;
@@ -734,10 +734,11 @@ textarea {
 
 .contact-form-container {
     grid-column: 2;
-    padding: 40px 40px 20px 40px;
+    padding: 30px 40px 20px 40px;
 }
 
 .contact-form {
+    margin-top: 10px;
     font-family: var(--font-family-secondary), serif;
 }
 
@@ -769,6 +770,7 @@ textarea {
     background: var(--button-secondary);
     padding: 15px;
     box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 .form-text-area-field.invalid {
@@ -793,27 +795,73 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-top: 20px;
+    padding-top: 10px;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.form-msg {
+    font-size: 0.85rem;
+    margin-right: 15px;
+    opacity: 0;
 }
 
 .confirmation-msg {
-    font-size: 0.85rem;
-    margin-right: 15px;
+    animation: fadeInOut 3s ease-in-out forwards;
     color: darkgreen;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 
-.confirmation-msg.show {
-    opacity: 1;
+.error-msg {
+    animation: fadeIn 1s ease-in-out forwards;
+    color: #C2000B;
 }
 
-.confirmation-msg.hide {
-    opacity: 0;
+.confirmation-msg {
+    color: darkgreen;
+}
+
+.error-msg {
+    color: #C2000B;
 }
 
 .validation-msg {
     display: block;
+    font-size: 0.85rem;
+    color: #C2000B;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.validation-msg.text-area {
+    margin-bottom: 0;
+}
+
+.server-down-msg {
+    position: absolute;
+    left: 15px;
+    top: 15px;
     font-size: 0.85rem;
     color: #C2000B;
 }
@@ -852,6 +900,7 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 5px;
 }
 
 .aq-locality-controls {
@@ -883,6 +932,7 @@ textarea {
 /*----- LOADER -----*/
 .loader {
     display: block;
+    margin-bottom: -4px;
     --height-of-loader: 4px;
     --loader-color: var(--button-primary);
     width: 100%;
