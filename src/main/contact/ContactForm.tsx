@@ -14,7 +14,7 @@ export const ContactForm = () => {
     const {t} = useTranslation();
     const dispatch = useAppDispatch();
     const {from, subject, text} = useSelector<any, any>(state => state.contact.form);
-    const {data, isLoading} = useSelector<any, any>(state => state.contact.contact);
+    const {data, isLoading, error} = useSelector<any, any>(state => state.contact.contact);
     const schema = useContactFormValidator();
     const {
         register,
@@ -65,7 +65,8 @@ export const ContactForm = () => {
                                action={setText}/>
                 {isLoading && <div className={'loader'}/>}
                 <div className={'form-button-wrapper'}>
-                    <span className={`confirmation-msg ${data ? 'show' : 'hide'}`}>
+                    <span className={`form-msg error-msg ${error ? 'show' : 'hide'}`}>{t('restApiDown')}</span>
+                    <span className={`form-msg-msg confirmation-msg ${data ? 'show' : 'hide'}`}>
                         {t('messageSent')}
                     </span>
                     <button className={`primary-button ${isLoading && 'deactivated'}`}

@@ -577,7 +577,7 @@ textarea {
 .main-container {
     position: relative;
     max-width: 1200px;
-    height: 28.75rem;
+    height: fit-content;
     margin: 40px auto 0;
     padding: 0 20px;
     z-index: 20;
@@ -769,6 +769,7 @@ textarea {
     background: var(--button-secondary);
     padding: 15px;
     box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 .form-text-area-field.invalid {
@@ -793,15 +794,18 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-top: 20px;
+    padding-top: 10px;
+}
+
+.form-msg {
+    font-size: 0.85rem;
+    margin-right: 15px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 .confirmation-msg {
-    font-size: 0.85rem;
-    margin-right: 15px;
     color: darkgreen;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 
 .confirmation-msg.show {
@@ -812,10 +816,28 @@ textarea {
     opacity: 0;
 }
 
+.error-msg {
+    color: #C2000B;
+}
+
+.error-msg.show {
+    opacity: 1;
+}
+
+.error-msg.hide {
+    opacity: 0;
+}
+
 .validation-msg {
     display: block;
     font-size: 0.85rem;
     color: #C2000B;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.validation-msg.text-area {
+    margin-bottom: 0;
 }
 
 .server-down-msg {
