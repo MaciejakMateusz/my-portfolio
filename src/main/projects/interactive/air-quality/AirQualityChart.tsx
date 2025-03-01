@@ -1,15 +1,16 @@
-import { ResponsiveLine } from "@nivo/line";
-import { useEffect, useMemo } from "react";
-import { useSelector } from "react-redux";
-import { useAppDispatch } from "../../../../hooks/hooks.ts";
-import { fetchAQMeasurements } from "../../../../slices/airQualitySlice.ts";
+import {ResponsiveLine} from "@nivo/line";
+import {useEffect, useMemo} from "react";
+import {useSelector} from "react-redux";
+import {useAppDispatch} from "../../../../hooks/hooks.ts";
+import {fetchAQMeasurements} from "../../../../slices/airQualitySlice.ts";
 import {useTranslation} from "react-i18next";
 
 export const AirQualityChart = () => {
     const dispatch = useAppDispatch();
     const {t} = useTranslation();
-    const { chosenLocation, chosenYear, chosenMonth } = useSelector((state: any) => state.airQuality.view);
-    const { data , isLoading} = useSelector((state: any) => state.airQuality.fetchMeasurements);
+    const {chosenLocation, chosenYear, chosenMonth} = useSelector((state: any) => state.airQuality.view);
+    const {data} = useSelector((state: any) => state.airQuality.fetchMeasurements);
+    const {error} = useSelector((state: any) => state.airQuality.fetchCountries);
 
     const sensorIds = useMemo(() =>
             chosenLocation.value?.sensors?.map((sensor: any) => sensor.id).join(",") || "",
@@ -22,20 +23,20 @@ export const AirQualityChart = () => {
 
     useEffect(() => {
         if (sensorIds) {
-            dispatch(fetchAQMeasurements({ sensorIds, dateFrom, dateTo }));
+            dispatch(fetchAQMeasurements({sensorIds, dateFrom, dateTo}));
         }
     }, [dispatch, sensorIds, chosenYear.value, chosenMonth.value]);
 
     const fallbackData = () => {
         return [{
             id: "No data",
-            data: Array.from({ length: 31 }, (_, index) => ({ x: (++index).toString(), y: 0 }))
+            data: Array.from({length: 31}, (_, index) => ({x: (++index).toString(), y: 0}))
         }];
     };
 
     return (
         <div className={'air-quality-chart-wrapper'}>
-            {isLoading ? <div className="loader"/> : <></>}
+            {error && <span className={'server-down-msg'}>{t('restApiDown')}</span>}
             <ResponsiveLine
                 data={data && data.length ? data : fallbackData()}
                 margin={{top: 50, right: 110, bottom: 50, left: 100}}

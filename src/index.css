@@ -860,6 +860,7 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 5px;
 }
 
 .aq-locality-controls {
@@ -891,6 +892,7 @@ textarea {
 /*----- LOADER -----*/
 .loader {
     display: block;
+    margin-bottom: -4px;
     --height-of-loader: 4px;
     --loader-color: var(--button-primary);
     width: 100%;
