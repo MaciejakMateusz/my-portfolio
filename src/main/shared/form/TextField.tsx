@@ -1,5 +1,5 @@
 import {useAppDispatch} from "../../../hooks/hooks.ts";
-import {TextFieldProps} from "../../../types/TextFieldProps.tsx";
+import {TextFieldProps} from "../../../types/TextFieldProps.ts";
 
 
 

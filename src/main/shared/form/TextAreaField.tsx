@@ -1,6 +1,6 @@
 import {useAppDispatch} from "../../../hooks/hooks.ts";
 import {setText} from "../../../slices/contactSlice.ts";
-import {TextFieldProps} from "../../../types/TextFieldProps.tsx";
+import {TextFieldProps} from "../../../types/TextFieldProps.ts";
 
 export const TextAreaField = (props: TextFieldProps) => {
     const dispatch = useAppDispatch();
