@@ -1,6 +1,6 @@
 import {combineReducers, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {GenericState} from "../interfaces/GenericState.ts";
-import {ContactState} from "../interfaces/ContactState.ts";
+import {ContactFormFields} from "../interfaces/ContactFormFields.ts";
 
 const initialFetchState: GenericState = {
     isLoading: false,
@@ -8,14 +8,14 @@ const initialFetchState: GenericState = {
     error: undefined
 };
 
-const initialFormState: ContactState = {
+const initialFormState: ContactFormFields = {
     from: '',
     subject: '',
     text: ''
 };
 
 export const sendEmail =
-    createAsyncThunk<void, ContactState>(
+    createAsyncThunk<void, ContactFormFields>(
         'contact/sendEmail',
         async (params, {rejectWithValue}) => {
             try {
