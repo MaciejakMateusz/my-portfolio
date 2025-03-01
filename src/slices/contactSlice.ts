@@ -31,7 +31,11 @@ export const sendEmail =
                     return rejectWithValue(`Server responded with ${response.status} - ${response.statusText}`);
                 }
 
-                return await response.json();
+                try {
+                    return await response.json();
+                } catch (error: any) {
+                    return {};
+                }
             } catch (error: any) {
                 return rejectWithValue(error.message || 'Could not connect to server');
             }
