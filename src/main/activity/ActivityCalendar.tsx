@@ -12,7 +12,7 @@ interface ActivityCalendarProps {
 export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
     const dispatch = useAppDispatch();
     const {t} = useTranslation();
-    const {data} = useSelector<any, any>(state => state.contributions.contributions);
+    const {data, isLoading, error} = useSelector<any, any>(state => state.contributions.contributions);
 
     useEffect(() => {
         dispatch(fetchContributions({
@@ -23,6 +23,7 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
 
     return (
         <div className={'chart-box'}>
+            {error && <span className={'server-down-msg'}>{t('restApiDown')}</span>}
             <div className={'calendar-chart-container'}>
                 <ResponsiveCalendar
                     data={data}
@@ -65,6 +66,7 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
                         }
                     }}
                 />
+                {isLoading && <div className={'loader'}/>}
             </div>
         </div>
     );

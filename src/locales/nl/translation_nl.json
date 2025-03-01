@@ -75,5 +75,6 @@
   "portfolioApiDescription": "REST API-server voor het beheer van het portfolio op www.maciejakmateusz.pl, verantwoordelijk voor de nodige communicatie voor de website.",
   "messageSent": "Bericht succesvol verzonden",
   "invalidFieldLength": "Veld moet tussen {{from}} en {{to}} tekens lang zijn",
-  "fieldRequired": "Veld is verplicht"
+  "fieldRequired": "Veld is verplicht",
+  "restApiDown": "De server is down. Neem contact met mij op als het probleem zich blijft voordoen."
 }

@@ -818,6 +818,14 @@ textarea {
     color: #C2000B;
 }
 
+.server-down-msg {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    font-size: 0.85rem;
+    color: #C2000B;
+}
+
 .footer {
     margin-top: 200px;
     width: 100%;
