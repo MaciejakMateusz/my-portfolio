@@ -1,5 +1,6 @@
 import {SocialButton} from "./SocialButton.tsx";
 import {useTranslation} from "react-i18next";
+import {CvDownloadBtn} from "./CvDownloadBtn.tsx";
 
 export const IntroductionButtons = () => {
     const {t} = useTranslation();
@@ -8,6 +9,7 @@ export const IntroductionButtons = () => {
             <button className={'primary-button big'}>{t('projects')}</button>
             <SocialButton url={'https://www.linkedin.com/in/mateusz-maciejak/'} icon={'/linkedin-logo.svg'}/>
             <SocialButton url={'https://github.com/MaciejakMateusz'} icon={'/github-logo.svg'}/>
+            <CvDownloadBtn/>
         </div>
     );
 }

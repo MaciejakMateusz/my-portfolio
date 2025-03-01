@@ -1,6 +1,7 @@
 import {HorizontalCard} from "../shared/HorizontalCard.tsx";
 import {SocialButton} from "../landing/SocialButton.tsx";
 import {useTranslation} from "react-i18next";
+import {CvDownloadBtn} from "../landing/CvDownloadBtn.tsx";
 
 export const ContactDetails = () => {
     const {t} = useTranslation();
@@ -25,8 +26,7 @@ export const ContactDetails = () => {
                                   icon={'/linkedin-logo.svg'}/>
                     <SocialButton url={'https://github.com/MaciejakMateusz'}
                                   icon={'/github-logo.svg'}/>
-                    <SocialButton url={'https://github.com/MaciejakMateusz'}
-                                  icon={'/github-logo.svg'}/>
+                    <CvDownloadBtn/>
                 </div>
             </div>
         </div>

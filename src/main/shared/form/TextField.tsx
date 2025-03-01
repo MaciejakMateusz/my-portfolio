@@ -1,22 +1,16 @@
-import {useTranslation} from "react-i18next";
-import {FieldError, UseFormRegister} from "react-hook-form";
 import {useAppDispatch} from "../../../hooks/hooks.ts";
+import {TextFieldProps} from "../../../types/TextFieldProps.tsx";
 
-type TextFieldProps = {
-    register: UseFormRegister<any>;
-    error: FieldError | undefined;
-    value: string;
-    action: any;
-}
+
 
 export const TextField = (props: TextFieldProps) => {
-    const {t} = useTranslation();
     const dispatch = useAppDispatch();
     return (
         <label className={'form-field-label'}>
-            {t('nameSurname')}
+            {props.label}
             <input type={'text'}
-                   {...props.register('from')}
+                   {...props.register(props.name)}
+                   name={props.name}
                    className={`form-text-field ${props.error ? 'invalid' : ''}`}
                    value={props.value}
                    onChange={(e) => dispatch(props.action(e.target.value))}/>
