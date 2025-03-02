@@ -9,7 +9,7 @@ export const NumberField = (props: NumberFieldProps) => {
             <input type={'number'}
                    {...props.register(props.name)}
                    name={props.name}
-                   step={0.01}
+                   step={0.001}
                    className={`form-text-field ${props.error ? 'invalid' : ''}`}
                    value={props.value}
                    onChange={(e) => dispatch(props.action(e.target.value))}/>
