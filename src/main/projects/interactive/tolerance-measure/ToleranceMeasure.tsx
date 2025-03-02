@@ -16,6 +16,8 @@ import {useToleranceMeasureFormValidator} from "../../../../hooks/validator/useT
 import {ToleranceMeasureFields} from "../../../../interfaces/ToleranceMeasureFields.ts";
 import {ChipsField} from "./ChipsField.tsx";
 import {PreparedMeasurements} from "../../../../interfaces/PreparedMeasurements.ts";
+import {Analysis} from "./Analysis.tsx";
+import {generateRandomMeasurements} from "../../../../util/util.ts";
 
 export const ToleranceMeasure = () => {
     const {t} = useTranslation();
@@ -26,10 +28,11 @@ export const ToleranceMeasure = () => {
         negTolerance,
         measurements
     }: ToleranceMeasureFields = useSelector<any, any>(state => state.toleranceMeasure.form);
-    const {isLoading, error} = useSelector<any, any>(state => state.contact.contact);
+    const {isLoading, error} = useSelector<any, any>(state => state.toleranceMeasure.analysis);
     const schema = useToleranceMeasureFormValidator();
     const {
         reset,
+        setValue,
         control,
         register,
         handleSubmit,
@@ -50,7 +53,6 @@ export const ToleranceMeasure = () => {
 
         const action = await dispatch(fetchAnalysis(params))
         if (fetchAnalysis.fulfilled.match(action)) {
-            console.log(action.payload);
             dispatch(resetForm());
             reset({
                 productLength: 0,
@@ -62,7 +64,7 @@ export const ToleranceMeasure = () => {
     }
 
     return (
-        <>
+        <section>
             <div className={'contact-form-container'}>
                 {isLoading && <div className={'loader'}/>}
                 <form className={'contact-form'} onSubmit={handleSubmit(onSubmit)}>
@@ -101,13 +103,21 @@ export const ToleranceMeasure = () => {
                         {error && <span className={'form-msg error-msg'}>
                         {t('restApiDown')}
                         </span>}
-                        <button className={`primary-button ${isLoading && 'deactivated'}`}
+                        <button type={'button'}
+                                className={`primary-button ${isLoading && 'deactivated'}`}
+                                disabled={isLoading || isSubmitting}
+                                onClick={() => generateRandomMeasurements(dispatch, setValue)}>
+                            {t('generateRandomData')}
+                        </button>
+                        <button type={'submit'}
+                                className={`primary-button ${isLoading && 'deactivated'}`}
                                 disabled={isLoading || isSubmitting}>
-                            {t('send')}
+                            {t('analyse')}
                         </button>
                     </div>
                 </form>
             </div>
-        </>
+            <Analysis/>
+        </section>
     );
 }

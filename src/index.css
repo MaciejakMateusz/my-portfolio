@@ -870,6 +870,20 @@ textarea {
     color: #C2000B;
 }
 
+.analysis {
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.analysis-line {
+    display: block;
+}
+
+.analysis-separator {
+    margin-bottom: 20px;
+}
+
 .footer {
     margin-top: 200px;
     width: 100%;
