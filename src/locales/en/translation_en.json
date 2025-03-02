@@ -85,6 +85,7 @@
   "measurements": "Product measurements (comma separated: e.g. 34.331, 34.524, 34.613)",
   "minMeasurements": "Please enter at least {{number}} measurements",
   "analyse": "Analyse",
+  "analysis": "Analysis",
   "generateRandomData": "Generate random data",
   "analysisDate": "Measurement session date: ",
   "allMeasurements": "All measurements (mm): ",

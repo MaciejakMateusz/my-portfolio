@@ -85,6 +85,7 @@
   "measurements": "Productmetingen (door komma's gescheiden: bijv. 34.331, 34.524, 34.613)",
   "minMeasurements": "Voer minimaal {{number}} metingen in",
   "analyse": "Analyseren",
+  "analysis": "Analyse",
   "generateRandomData": "Genereer willekeurige gegevens",
   "analysisDate": "Datum meetsessie: ",
   "allMeasurements": "Alle afmetingen (mm): ",
