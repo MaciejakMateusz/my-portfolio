@@ -82,6 +82,20 @@
   "productLength": "Productlengte (mm)",
   "posTolerance": "Positieve tolerantie (mm)",
   "negTolerance": "Negatieve tolerantie (mm)",
-  "measurements": "Productmetingen (door komma's gescheiden: bijv. 34.33, 34.52, 34.61)",
-  "minMeasurements": "Voer minimaal 2 metingen in"
+  "measurements": "Productmetingen (door komma's gescheiden: bijv. 34.331, 34.524, 34.613)",
+  "minMeasurements": "Voer minimaal {{number}} metingen in",
+  "analyse": "Analyseren",
+  "generateRandomData": "Genereer willekeurige gegevens",
+  "analysisDate": "Datum meetsessie: ",
+  "allMeasurements": "Alle afmetingen (mm): ",
+  "amountMeasured": "Aantal metingen: ",
+  "pieces": " stuk(s)",
+  "avgMeasurements": "Gemiddelde van alle afmetingen: ",
+  "greaterThan": "Groter dan {{upperBound}} mm: ",
+  "smallerThan": "Kleiner dan {{lowerBound}} mm: ",
+  "greatestMeasurement": "Grootste afmeting: ",
+  "smallestMeasurement": "Kleinste afmeting: ",
+  "measurementsDiff": "Het verschil tussen de kleinste en de grootste afmeting: ",
+  "measurementsAsc": "Afmetingen oplopend gesorteerd: ",
+  "downloadReport": "Rapport downloaden"
 }
