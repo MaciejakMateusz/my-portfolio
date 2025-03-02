@@ -798,6 +798,10 @@ textarea {
     padding-top: 10px;
 }
 
+.chips-multiselect {
+    margin-bottom: 10px;
+}
+
 @keyframes fadeInOut {
     0% {
         opacity: 0;
@@ -864,6 +868,20 @@ textarea {
     top: 15px;
     font-size: 0.85rem;
     color: #C2000B;
+}
+
+.analysis {
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.analysis-line {
+    display: block;
+}
+
+.analysis-separator {
+    margin-bottom: 20px;
 }
 
 .footer {

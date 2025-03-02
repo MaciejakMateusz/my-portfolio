@@ -5,9 +5,9 @@ export const LanguageSwitcher = () => {
     const { i18n } = useTranslation();
     const activeLng = getLanguage();
 
-    const changeLanguage = (lng :string) => {
+    const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
-        document.cookie = `i18next=${lng}`;
+        document.cookie = `i18next=${lng}; path=/`;
     };
 
     return (

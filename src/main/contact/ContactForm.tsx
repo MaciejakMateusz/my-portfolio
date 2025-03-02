@@ -2,7 +2,6 @@ import {resetForm, sendEmail, setData, setFrom, setSubject, setText} from "../..
 import {useForm} from "react-hook-form";
 import {ContactFormFields} from "../../interfaces/ContactFormFields.ts";
 import {yupResolver} from "@hookform/resolvers/yup";
-import {ContactState} from "../../interfaces/ContactState.ts";
 import {useSelector} from "react-redux";
 import {useContactFormValidator} from "../../hooks/validator/useContactFormValidator.ts";
 import {useAppDispatch} from "../../hooks/hooks.ts";
@@ -27,7 +26,7 @@ export const ContactForm = () => {
     const onSubmit = async () => {
         if (isLoading || isSubmitting) return;
 
-        const params: ContactState = {
+        const params: ContactFormFields = {
             from: from,
             subject: subject,
             text: text

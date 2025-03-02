@@ -20,7 +20,6 @@ i18n
             pl: { translation: translation_pl },
             nl: { translation: translation_nl },
         },
-        lng: 'pl',
         fallbackLng: 'pl',
         interpolation: {
             escapeValue: false,
