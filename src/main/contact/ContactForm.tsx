@@ -42,7 +42,7 @@ export const ContactForm = () => {
     }
 
     return (
-        <div className={'contact-form-container'}>
+        <div className={'form-container'}>
             {isLoading && <div className={'loader'}/>}
             <form className={'contact-form'} onSubmit={handleSubmit(onSubmit)}>
                 <TextField label={t('nameSurname')}
