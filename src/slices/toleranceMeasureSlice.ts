@@ -1,13 +1,15 @@
 import {combineReducers, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {GenericState} from "../interfaces/GenericState.ts";
 import {Chip} from "../interfaces/Chip.ts";
 import {ToleranceMeasureFields} from "../interfaces/ToleranceMeasureFields.ts";
 import {PreparedMeasurements} from "../interfaces/PreparedMeasurements.ts";
+import {AnalysisState} from "../interfaces/AnalysisState.ts";
+import {AnalysisType} from "../types/AnalysisType.ts";
 
-const initialFetchState: GenericState = {
+const initialFetchState: AnalysisState = {
+    pdf: undefined,
+    analysis: undefined,
     isLoading: false,
-    data: undefined,
-    error: undefined
+    error: undefined,
 };
 
 const initialFormState: ToleranceMeasureFields = {
@@ -18,58 +20,59 @@ const initialFormState: ToleranceMeasureFields = {
 };
 
 export const fetchAnalysis =
-    createAsyncThunk<void, PreparedMeasurements>(
+    createAsyncThunk<{ pdf: string; analysis: AnalysisType }, PreparedMeasurements>(
         'contact/fetchAnalysis',
         async (params, {rejectWithValue}) => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_PORTFOLIO_REST}/tolerance-measure/calculate`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(params)
-                });
+                const response = await fetch(
+                    `${import.meta.env.VITE_PORTFOLIO_REST}/tolerance-measure/calculate`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(params)
+                    }
+                );
 
                 if (!response.ok) {
-                    return rejectWithValue(`Server responded with ${response.status} - ${response.statusText}`);
+                    return rejectWithValue(
+                        `Server responded with ${response.status} - ${response.statusText}`
+                    );
                 }
 
-                try {
-                    return await response.json();
-                } catch (error: any) {
-                    return {};
-                }
+                return await response.json();
             } catch (error: any) {
-                return rejectWithValue(error.message || 'Could not connect to server');
+                return rejectWithValue(
+                    error.message || 'Could not connect to server'
+                );
             }
-        });
-
-export const fetchAnalysisSlice = createSlice(
-    {
-        name: 'fetchAnalysis',
-        reducerPath: undefined,
-        selectors: undefined,
-        initialState: initialFetchState,
-        reducers: {
-            setData: (state, action) => {
-                state.data = action.payload;
-            }
-        },
-        extraReducers: (builder) => {
-            builder.addCase(fetchAnalysis.pending, state => {
-                state.isLoading = true;
-            }).addCase(fetchAnalysis.fulfilled, state => {
-                state.isLoading = false;
-            }).addCase(fetchAnalysis.rejected, (state, action) => {
-                state.isLoading = false;
-                if (action.payload) {
-                    state.error = action.payload as string;
-                } else {
-                    state.error = action.error.message || 'Failed to fetch analysis.';
-                }
-            })
         }
-    });
+    );
+
+
+export const fetchAnalysisSlice = createSlice({
+    name: 'fetchAnalysis',
+    initialState: initialFetchState,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchAnalysis.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(fetchAnalysis.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.pdf = action.payload.pdf;
+                state.analysis = action.payload.analysis;
+            })
+            .addCase(fetchAnalysis.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload
+                    ? (action.payload as string)
+                    : action.error.message || 'Failed to fetch analysis.';
+            });
+    }
+});
 
 export const toleranceMeasureFormSlice = createSlice(
     {
@@ -106,8 +109,6 @@ export const {
     setMeasurements,
     resetForm
 } = toleranceMeasureFormSlice.actions;
-
-export const {setData} = fetchAnalysisSlice.actions
 
 const toleranceMeasureReducer = combineReducers({
     analysis: fetchAnalysisSlice.reducer,
