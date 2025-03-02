@@ -26,7 +26,7 @@ export const useToleranceMeasureFormValidator = () => {
                     label: yup.string().required()
                 })
             )
-            .min(2, t('minMeasurements'))
+            .min(2, t('minMeasurements', {number: 2}))
             .required(t('fieldRequired'))
     });
 };
