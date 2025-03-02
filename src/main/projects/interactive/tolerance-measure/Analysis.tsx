@@ -21,7 +21,7 @@ export const Analysis = () => {
 
     return (
         <div className={'analysis'}>
-            <h3>Analiza:</h3>
+            <h3>{t('analysis')}</h3>
             <span className={'analysis-line'}>
                 <strong>{t('analysisDate')}</strong>{analysis.reportDate}
             </span>

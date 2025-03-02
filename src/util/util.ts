@@ -15,7 +15,7 @@ export const getCookie = (cookieName: string) => {
 };
 
 export const getLanguage = () => {
-    return i18n?.language ? i18n.language : getCookie('lng');
+    return i18n?.language ? i18n.language : getCookie('i18next');
 }
 
 export const getMonth = (month: number, t: TFunction) => {
