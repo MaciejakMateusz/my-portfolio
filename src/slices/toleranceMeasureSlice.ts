@@ -4,6 +4,7 @@ import {ToleranceMeasureFields} from "../interfaces/ToleranceMeasureFields.ts";
 import {PreparedMeasurements} from "../interfaces/PreparedMeasurements.ts";
 import {AnalysisState} from "../interfaces/AnalysisState.ts";
 import {AnalysisType} from "../types/AnalysisType.ts";
+import {getLanguage} from "../util/util.ts";
 
 const initialFetchState: AnalysisState = {
     pdf: undefined,
@@ -29,7 +30,8 @@ export const fetchAnalysis =
                     {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
+                            'Accept-Language': getLanguage()
                         },
                         body: JSON.stringify(params)
                     }
