@@ -1,5 +1,4 @@
 import {useAppDispatch} from "../../../hooks/hooks.ts";
-import {setText} from "../../../slices/contactSlice.ts";
 import {TextFieldProps} from "../../../types/TextFieldProps.ts";
 
 export const TextAreaField = (props: TextFieldProps) => {
@@ -10,8 +9,9 @@ export const TextAreaField = (props: TextFieldProps) => {
             <textarea value={props.value}
                       {...props.register(props.name)}
                       name={props.name}
+                      readOnly={props.readonly}
                       className={`form-text-area-field ${props.error ? 'invalid' : ''}`}
-                      onChange={(e) => dispatch(setText(e.target.value))}/>
+                      onChange={(e) => dispatch(props.action(e.target.value))}/>
             {props.error && <span className='validation-msg text-area'>{props.error.message}</span>}
         </label>
     );
