@@ -11,25 +11,32 @@ const initialFetchState: GenericState = {
 
 const initialFormState: TranslationFormFields = {
     text: "",
-    source_lang: {value: "EN", label: "EN"},
-    target_lang: {value: "EN", label: "EN"},
+    source_lang: undefined,
+    target_lang: undefined,
+    translation: "",
+    detectedSource: undefined,
     context: ""
 };
 
 export const fetchTranslation =
     createAsyncThunk<any, TranslationFormFields>(
-        'contact/fetchAnalysis',
+        'translation/fetchTranslation',
         async (params, {rejectWithValue}) => {
             try {
                 const response = await fetch(
-                    `${import.meta.env.VITE_PORTFOLIO_REST}/translate`,
+                    `${import.meta.env.VITE_PORTFOLIO_REST}/translator/translate`,
                     {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'Accept-Language': getLanguage()
                         },
-                        body: JSON.stringify(params)
+                        body: JSON.stringify({
+                            text: [params.text],
+                            source_lang: params.source_lang,
+                            target_lang: params.target_lang,
+                            context: params.context
+                        })
                     }
                 );
 
@@ -87,6 +94,12 @@ export const translationFormSlice = createSlice(
             setTargetLang: (state, action) => {
                 state.target_lang = action.payload;
             },
+            setTranslation: (state, action) => {
+                state.translation = action.payload;
+            },
+            setDetectedSource: (state, action) => {
+                state.detectedSource = action.payload;
+            },
             setContext: (state, action) => {
                 state.context = action.payload;
             }
@@ -97,6 +110,8 @@ export const {
     setText,
     setSourceLang,
     setTargetLang,
+    setTranslation,
+    setDetectedSource,
     setContext
 } = translationFormSlice.actions;
 
