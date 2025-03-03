@@ -732,7 +732,7 @@ textarea {
     bottom: 20px;
 }
 
-.contact-form-container {
+.form-container {
     grid-column: 2;
     padding: 30px 40px 20px 40px;
 }
