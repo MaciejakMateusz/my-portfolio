@@ -1,6 +1,6 @@
 import {NavBar} from "./navigation/NavBar.tsx";
 import {Start} from "./landing/Start.tsx";
-import {Skills} from "./skills/Skills.tsx";
+import {TechStack} from "./tech-stack/TechStack.tsx";
 import {Projects} from "./projects/Projects.tsx";
 import {Activity} from "./activity/Activity.tsx";
 import {Career} from "./career/Career.tsx";
@@ -13,7 +13,7 @@ import 'react-multi-carousel/lib/styles.css';
 
 export const Main = () => {
     const startRef = useRef();
-    const skillsRef = useRef();
+    const techStack = useRef();
     const projectsRef = useRef();
     const activityRef = useRef();
     const careerRef = useRef();
@@ -24,7 +24,7 @@ export const Main = () => {
     return (
         <>
             <NavBar startRef={startRef}
-                    skillsRef={skillsRef}
+                    techStackRef={techStack}
                     projectsRef={projectsRef}
                     activityRef={activityRef}
                     careerRef={careerRef}
@@ -32,7 +32,7 @@ export const Main = () => {
                     booksRef={booksRef}
                     contactRef={contactRef}/>
             <Start ref={startRef} projectsRef={projectsRef}/>
-            <Skills ref={skillsRef}/>
+            <TechStack ref={techStack}/>
             <Projects ref={projectsRef}/>
             <Activity ref={activityRef}/>
             <Career ref={careerRef}/>

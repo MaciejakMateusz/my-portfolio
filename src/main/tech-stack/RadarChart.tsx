@@ -1,6 +1,7 @@
 import {RadarSliceTooltipDatum, RadarSliceTooltipProps, ResponsiveRadar} from '@nivo/radar'
 import {useTranslation} from "react-i18next";
 import {useSkillsData} from "../../hooks/useSkillsData.ts";
+import {RadarChartLegend} from "./RadarChartLegend.tsx";
 
 export const RadarChart = () => {
     const {t} = useTranslation();
@@ -12,9 +13,10 @@ export const RadarChart = () => {
 
     return (
         <div className={'radar-chart-container'}>
+            <RadarChartLegend/>
             <ResponsiveRadar
                 data={data}
-                keys={[ 'commercial', 'private']}
+                keys={['commercial', 'private']}
                 indexBy="experience"
                 valueFormat=">-.2f"
                 margin={{top: 70, right: 100, bottom: 70, left: 100}}
@@ -26,48 +28,17 @@ export const RadarChart = () => {
                 colors={['#FF454E', '#F59906']}
                 fillOpacity={0.25}
                 motionConfig="wobbly"
-                legends={[
-                    {
-                        anchor: 'bottom-right',
-                        direction: 'column',
-                        translateX: -250,
-                        translateY: -150,
-                        itemWidth: 80,
-                        itemHeight: 20,
-                        itemsSpacing: 20,
-                        itemTextColor: '#F9F9F9',
-                        symbolSize: 12,
-                        symbolShape: 'circle',
-                        data: Object.keys(translatedKeys).map((key: string) => ({
-                            id: key,
-                            label: translatedKeys[key]
-                        })),
-                        effects: [
-                            {
-                                on: 'hover',
-                                style: {
-                                    itemTextColor: '#FFF'
-                                }
-                            }
-                        ]
-                    }
-                ]}
-                sliceTooltip={({ index, data }: RadarSliceTooltipProps) => (
-                    <div style={{
-                        background: 'white',
-                        padding: '8px 12px',
-                        borderRadius: 10,
-                        fontWeight: 400
-                    }}>
-                        <strong>{index}</strong>
+                sliceTooltip={({index, data}: RadarSliceTooltipProps) => (
+                    <div className={'radar-chart-tooltip'}>
+                        <p className={'radar-chart-tooltip-index'}>{index}</p>
                         {data.map((datum: RadarSliceTooltipDatum) => (
-                            <div key={datum.id} style={{ color: datum.color }}>
-                                {translatedKeys[datum.id] || datum.id}: {datum.value}
+                            <div key={datum.id} className={'radar-chart-tooltip-value'}>
+                                <div className={'radar-chart-dot'} style={{background: datum.color}}/>
+                                {translatedKeys[datum.id] || datum.id}: {datum.value}%
                             </div>
                         ))}
                     </div>
                 )}
-
                 theme={{
                     axis: {
                         ticks: {

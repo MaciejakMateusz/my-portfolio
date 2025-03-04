@@ -1,10 +1,11 @@
 import {useTranslation} from "react-i18next";
 import {useEffect, useState} from "react";
 import {useIntersectionObserver} from "../../hooks/useIntersectionObserver.ts";
+import {ReactSVG} from "react-svg";
 
 export const NavBar = ({
                            startRef,
-                           skillsRef,
+                           techStackRef,
                            projectsRef,
                            activityRef,
                            careerRef,
@@ -21,7 +22,7 @@ export const NavBar = ({
     };
 
     const startVisible = useIntersectionObserver(startRef, intersectionOptions);
-    const skillsVisible = useIntersectionObserver(skillsRef, intersectionOptions);
+    const techStackVisible = useIntersectionObserver(techStackRef, intersectionOptions);
     const projectsVisible = useIntersectionObserver(projectsRef, intersectionOptions);
     const activityVisible = useIntersectionObserver(activityRef, intersectionOptions);
     const careerVisible = useIntersectionObserver(careerRef, intersectionOptions);
@@ -31,14 +32,14 @@ export const NavBar = ({
 
     useEffect(() => {
         if (startVisible) setActiveBtn('start');
-         else if (skillsVisible) setActiveBtn('skills');
+         else if (techStackVisible) setActiveBtn('techStack');
          else if (projectsVisible) setActiveBtn('projects');
          else if (activityVisible) setActiveBtn('activity');
          else if (careerVisible) setActiveBtn('career');
          else if (aboutVisible) setActiveBtn('about');
          else if (booksVisible) setActiveBtn('books');
          else if (contactVisible) setActiveBtn('contact');
-    }, [skillsVisible, projectsVisible, activityVisible, careerVisible, aboutVisible, booksVisible, contactVisible]);
+    }, [techStackVisible, projectsVisible, activityVisible, careerVisible, aboutVisible, booksVisible, contactVisible]);
 
     const handleScrollTo = (ref: any, offset: number, btnName: string) => {
         setActiveBtn(btnName);
@@ -53,10 +54,15 @@ export const NavBar = ({
     return (
         <nav className="nav-header">
             <div className={'nav-buttons-container'}>
+                <ReactSVG src={'/trapezium-nav-bar.svg'} className={'trapezium-nav-bar'}/>
                 <div className={'nav-buttons-wrapper'}>
                     <span className={`nav-btn ${activeBtn === 'start' ? 'active' : ''}`}
                           onClick={() => handleScrollTo(startRef, 0, 'start')}>
                         <span className={'nav-text'}>Start</span>
+                    </span>
+                    <span className={`nav-btn ${activeBtn === 'techStack' ? 'active' : ''}`}
+                          onClick={() => handleScrollTo(projectsRef, -100, 'techStack')}>
+                        <span className={'nav-text'}>{t('techStack')}</span>
                     </span>
                     <span className={`nav-btn ${activeBtn === 'projects' ? 'active' : ''}`}
                           onClick={() => handleScrollTo(projectsRef, -100, 'projects')}>
@@ -73,10 +79,6 @@ export const NavBar = ({
                     <span className={`nav-btn ${activeBtn === 'about' ? 'active' : ''}`}
                           onClick={() => handleScrollTo(aboutRef, -30, 'about')}>
                         <span className={'nav-text'}>{t('about')}</span>
-                    </span>
-                    <span className={`nav-btn ${activeBtn === 'books' ? 'active' : ''}`}
-                          onClick={() => handleScrollTo(booksRef, -100, 'books')}>
-                        <span className={'nav-text'}>{t('books')}</span>
                     </span>
                     <span className={`nav-btn ${activeBtn === 'contact' ? 'active' : ''}`}
                           onClick={() => handleScrollTo(contactRef, -30, 'contact')}>

@@ -1,0 +1,17 @@
+<svg height="48" viewBox="0 0 640 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="blurFilter" x="-50" y="-50" width="740" height="148">
+            <feGaussianBlur stdDeviation="20"/> <!-- Increased blur intensity -->
+        </filter>
+
+        <clipPath id="clipPath">
+            <path d="M0 0H640L630.256 23.3846C624.046 38.2905 609.481 48 593.333 48H46.6667C30.5187 48 15.9544 38.2905 9.74358 23.3846L0 0Z"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#clipPath)">
+        <path d="M0 0H640L630.256 23.3846C624.046 38.2905 609.481 48 593.333 48H46.6667C30.5187 48 15.9544 38.2905 9.74358 23.3846L0 0Z"
+              fill="#090909" fill-opacity="0.6" filter="url(#blurFilter)"/>
+    </g>
+    <path d="M0 0H640L630.256 23.3846C624.046 38.2905 609.481 48 593.333 48H46.6667C30.5187 48 15.9544 38.2905 9.74358 23.3846L0 0Z"
+          fill="#090909" fill-opacity="0.6"/>
+</svg>
