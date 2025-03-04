@@ -1,6 +1,6 @@
 import {NavBar} from "./navigation/NavBar.tsx";
 import {Start} from "./landing/Start.tsx";
-import {Skills} from "./skills/Skills.tsx";
+import {TechStack} from "./tech-stack/TechStack.tsx";
 import {Projects} from "./projects/Projects.tsx";
 import {Activity} from "./activity/Activity.tsx";
 import {Career} from "./career/Career.tsx";
@@ -32,7 +32,7 @@ export const Main = () => {
                     booksRef={booksRef}
                     contactRef={contactRef}/>
             <Start ref={startRef} projectsRef={projectsRef}/>
-            <Skills ref={techStack}/>
+            <TechStack ref={techStack}/>
             <Projects ref={projectsRef}/>
             <Activity ref={activityRef}/>
             <Career ref={careerRef}/>

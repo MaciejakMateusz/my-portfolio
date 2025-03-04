@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import {SkillsInfiniteScroll} from "./SkillsInfiniteScroll.tsx";
 import {forwardRef} from "react";
 
-export const Skills = forwardRef((_, ref: any) => {
+export const TechStack = forwardRef((_, ref: any) => {
     const {t} = useTranslation();
     const { ref: motionRef, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
@@ -17,8 +17,8 @@ export const Skills = forwardRef((_, ref: any) => {
                 initial={{opacity: 0, y: 60}}
                 animate={inView ? {opacity: 1, y: 0} : {}}
                 transition={{duration: 0.8, ease: "easeOut"}}>
-                <section className={'skills'}>
-                    <SectionHeader title={t('skills')} description={t('skillsDescription')}/>
+                <section className={'tech-stack'}>
+                    <SectionHeader title={t('techStack')} description={t('techStackDescription')}/>
                     <div className={'chart-container skills-chart'}>
                         <div className={'chart-box'}>
                             <SkillsInfiniteScroll/>

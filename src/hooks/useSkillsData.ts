@@ -2,28 +2,28 @@ export const useSkillsData = () => {
     return [
         {
             "experience": "Java",
-            "private": 79,
-            "commercial": 112
+            "private": 80,
+            "commercial": 80
         },
         {
             "experience": "React",
-            "private": 62,
-            "commercial": 45
+            "private": 65,
+            "commercial": 30
         },
         {
             "experience": "Redux",
-            "private": 51,
-            "commercial": 26
+            "private": 65,
+            "commercial": 30
         },
         {
             "experience": "SQL",
-            "private": 54,
-            "commercial": 110
+            "private": 80,
+            "commercial": 65
         },
         {
             "experience": "REST-API",
-            "private": 92,
-            "commercial": 81
+            "private": 90,
+            "commercial": 70
         }
     ];
 }
