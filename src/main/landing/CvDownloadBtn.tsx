@@ -16,7 +16,7 @@ export const CvDownloadBtn = () => {
     };
 
     const getFileName = () => {
-        if (activeLng === 'pl') {
+        if (['pl', 'pl-PL'].includes(activeLng)) {
             return 'Maciejak_Spring_React_2years_PL.pdf'
         }
         return 'Maciejak_Spring_React_2years_EN.pdf'
@@ -24,9 +24,10 @@ export const CvDownloadBtn = () => {
 
     return (
         <>
-            <div className={'logo-container'}
+            <div className={'secondary-button'}
                  onClick={() => handleDownload()}>
-                <ReactSVG src={'/github-logo.svg'} className={'social-icon'}/>
+                CV
+                <ReactSVG src={'/download-icon.svg'} className={'download-icon'}/>
             </div>
         </>
     );
