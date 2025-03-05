@@ -402,8 +402,29 @@ textarea {
 }
 
 .calendar-chart-container {
+    position: relative;
     height: 18.75rem;
     width: 100%;
+}
+
+.calendar-chart-legend {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    bottom: 20px;
+    right: 70px;
+    color: var(--Text-color-Heading);
+    font-size: 0.85rem;
+}
+
+.calendar-chart-legend-label {
+    margin: 0 10px
+}
+
+.calendar-day-cell {
+    width: 14px;
+    height: 14px;
 }
 
 .projects {
