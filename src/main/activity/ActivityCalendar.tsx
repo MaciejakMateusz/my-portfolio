@@ -1,9 +1,11 @@
-import {ResponsiveCalendar} from '@nivo/calendar'
+import {CalendarTooltipProps, ResponsiveCalendar} from '@nivo/calendar'
 import {useEffect} from "react";
 import {fetchContributions} from "../../slices/contributionsSlice.ts";
 import {useAppDispatch} from "../../hooks/hooks.ts";
 import {useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
+import {ActivityCalendarLegend} from "./ActivityCalendarLegend.tsx";
+import {ActivityCalendarTooltip} from "./ActivityCalendarTooltip.tsx";
 
 interface ActivityCalendarProps {
     year: number
@@ -29,14 +31,14 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
                     data={data}
                     from={`${year}-01-01`}
                     to={`${year}-12-31`}
-                    emptyColor="#171A21"
-                    colors={['#604b01', '#9f7801', '#cc9500', '#FFB000']}
+                    emptyColor={'#081B2A'}
+                    colors={['#553A00', '#7A5400', '#CB8B02', '#FFB000']}
                     margin={{top: 25, right: 70, bottom: 0, left: 78}}
                     yearSpacing={40}
-                    monthBorderColor="#0E0E0E"
+                    monthBorderColor={'#0E0E0E'}
                     dayBorderWidth={4}
                     daySpacing={1}
-                    dayBorderColor="#0E0E0E"
+                    dayBorderColor={'#0E0E0E'}
                     yearLegend={() => ''}
                     monthLegend={(_, month) => {
                         const monthNames = [
@@ -46,6 +48,7 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
                         ];
                         return monthNames[month];
                     }}
+                    tooltip={(datum: CalendarTooltipProps) => <ActivityCalendarTooltip datum={datum}/>}
                     legends={[
                         {
                             anchor: 'bottom-right',
@@ -66,6 +69,7 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
                         }
                     }}
                 />
+                <ActivityCalendarLegend/>
                 {isLoading && <div className={'loader'}/>}
             </div>
         </div>
