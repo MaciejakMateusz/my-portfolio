@@ -605,7 +605,9 @@ textarea {
 }
 
 .white-text {
-    color: var(--font-white);
+    color: var(--Text-color-Heading);
+    font-family: var(--font-family-secondary), serif;
+    font-weight: 300;
 }
 
 .career {

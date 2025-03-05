@@ -40,8 +40,7 @@ export const Activity = forwardRef((_, ref: any) => {
                     <SectionHeader title={t('activity')} description={t('activityDescription')}/>
                     <div className={'chart-container activity-chart'}>
                         <div className={'activity-control-panel'}>
-                            <span>Ilość commitów w {chosenYear} roku: <span
-                                className={'white-text'}>{totalSum}</span></span>
+                            <span className={'white-text'}>{t('commitsAmount')} {totalSum}</span>
                             <div className={'year-buttons'}>
                                 {years?.map((year: number) => (
                                     <button className={`primary-button spaced ${chosenYear !== year ? 'inactive' : ''}`}
