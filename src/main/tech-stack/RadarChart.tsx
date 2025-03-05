@@ -32,8 +32,8 @@ export const RadarChart = () => {
                 colors={['rgba(122, 84, 0, 0.60)', 'rgba(66, 0, 3, 0.60)']}
                 motionConfig="wobbly"
                 sliceTooltip={({index, data}: RadarSliceTooltipProps) => (
-                    <div className={'radar-chart-tooltip'}>
-                        <p className={'radar-chart-tooltip-index'}>{index}</p>
+                    <div className={'chart-tooltip'}>
+                        <p className={'chart-tooltip-index'}>{index}</p>
                         {data.map((datum: RadarSliceTooltipDatum) => (
                             <div key={datum.id} className={'radar-chart-tooltip-value'}>
                                 <div className={'radar-chart-dot'}

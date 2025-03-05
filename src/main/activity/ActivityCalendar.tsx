@@ -1,10 +1,11 @@
-import {ResponsiveCalendar} from '@nivo/calendar'
+import {CalendarTooltipProps, ResponsiveCalendar} from '@nivo/calendar'
 import {useEffect} from "react";
 import {fetchContributions} from "../../slices/contributionsSlice.ts";
 import {useAppDispatch} from "../../hooks/hooks.ts";
 import {useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
 import {ActivityCalendarLegend} from "./ActivityCalendarLegend.tsx";
+import {ActivityCalendarTooltip} from "./ActivityCalendarTooltip.tsx";
 
 interface ActivityCalendarProps {
     year: number
@@ -47,6 +48,7 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
                         ];
                         return monthNames[month];
                     }}
+                    tooltip={(datum: CalendarTooltipProps) => <ActivityCalendarTooltip datum={datum}/>}
                     legends={[
                         {
                             anchor: 'bottom-right',
