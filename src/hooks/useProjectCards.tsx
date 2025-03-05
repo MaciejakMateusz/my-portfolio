@@ -8,14 +8,14 @@ export const useProjectCards = (): JSX.Element[] => {
                      name={'UX/UI Designer Portfolio'}
                      description={t('uiDesignerDescription')}
                      technologies={'React, JavaScript, HTML, CSS'}
-                     img={'/designer-image.png'}
+                     img={'/ux-ui-designer.png'}
                      projectUrl={'https://maciejakaneta.pl'}
                      githubUrl={'https://github.com/MaciejakMateusz/portfolio-website-aneta'}/>,
         <ProjectCard key={'timeTracker'}
                      name={'Time Tracker'}
                      description={t('timeTrackerDescription')}
                      technologies={'JavaScript, HTML, CSS'}
-                     img={'/designer-image.png'}
+                     img={'/timetracker.png'}
                      projectUrl={'https://t1metrack3r.netlify.app'}
                      githubUrl={'https://github.com/MaciejakMateusz/Timetracker'}/>,
         <ProjectCard key={'translatorAI'}
@@ -43,14 +43,14 @@ export const useProjectCards = (): JSX.Element[] => {
                      name={'Tolerance measure'}
                      description={t('toleranceMeasureDescription')}
                      technologies={'Spring Boot, REST, React, Redux'}
-                     img={'/air-quality-image.png'}
+                     img={'/tolerance-measure.png'}
                      projectUrl={'/tolerance-measure'}
                      githubUrl={'https://github.com/MaciejakMateusz/ToleranceMeasure'}/>,
         <ProjectCard key={'portfolioApi'}
                      name={'Portfolio REST-API'}
                      description={t('portfolioApiDescription')}
                      technologies={'Spring Boot, REST'}
-                     img="/air-quality-image.png"
+                     img="/portfolio-rest-api.png"
                      projectUrl={'/portfolio-api'}
                      githubUrl={'https://github.com/MaciejakMateusz/my-portfolio-rest'}/>,
     ];
