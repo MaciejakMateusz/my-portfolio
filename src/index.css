@@ -710,21 +710,20 @@ textarea {
     padding: 0 20px;
     z-index: 20;
     background: var(--background-secondary);
-    border-radius: 20px;
+    border-radius: 40px;
 }
 
 .about-wrapper {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
 }
 
 .about-photo-container {
     grid-column: 1;
     position: relative;
     width: 341px;
-    align-self: start;
+    align-self: center;
     justify-self: center;
 }
 
@@ -743,21 +742,22 @@ textarea {
     background: linear-gradient(180deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
 }
 
-.about-photo-signature {
-    position: absolute;
-    bottom: -20px;
-    left: 25px;
+.about-photo-signature-wrapper {
     display: flex;
-    width: 270px;
-    height: 56px;
-    justify-content: center;
     align-items: center;
+    margin-top: -60px;
+}
+
+.about-photo-signature {
+    padding: 10px 12px;
+    margin-left: 50px;
     flex-shrink: 0;
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.21);
-    color: var(--font-white);
-    font-family: var(--font-family-primary), serif;
-    font-size: 1.25rem;
+    width: fit-content;
+    border-radius: 10px;
+    background: var(--Basic-600);
+    color: var(--Text-color-Heading);
+    font-family: var(--font-family-secondary), serif;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 150%;
 }
@@ -775,7 +775,7 @@ textarea {
 }
 
 .about-description-header {
-    color: var(--font-white);
+    color: var(--Text-color-Heading);
 }
 
 .about-description {
