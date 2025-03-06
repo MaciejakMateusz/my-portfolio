@@ -141,5 +141,7 @@
   "UK": "Ukrainian",
   "HU": "Hungarian",
   "IT": "Italian",
-  "commitsAmount": "Commits amount:"
+  "commitsAmount": "Commits amount:",
+  "more": "More",
+  "less": "Less"
 }
