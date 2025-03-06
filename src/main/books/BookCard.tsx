@@ -10,12 +10,12 @@ type BookCardProps = {
 export const BookCard = (props: BookCardProps) => {
     const {t} = useTranslation();
     return (
-        <div className="carousel-card">
-            <div className="carousel-card-inner-wrapper">
+        <div className={'carousel-card non-selectable'}>
+            <div className={'carousel-card-inner-wrapper'}>
                 <img src={props.img} alt={props.title} className={"book-card-image"}/>
             </div>
 
-            <div className="carousel-card-turned">
+            <div className={'carousel-card-turned'}>
                 <p className={'book-p-header'}>Tytuł:</p>
                 <p className={'book-title'}>{props.title}</p>
                 <p className={'book-p-header'}>Autor:</p>

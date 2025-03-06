@@ -13,17 +13,17 @@ type ProjectCardProps = {
 export const ProjectCard = (props: ProjectCardProps) => {
     const {t} = useTranslation();
     return (
-        <div className="carousel-card">
-            <div className="carousel-card-inner-wrapper">
+        <div className={'carousel-card non-selectable'}>
+            <div className={'carousel-card-inner-wrapper'}>
                 <img
                     src={props.img}
                     alt={props.name}
-                    className={"project-card-image"}/>
-                <div className={"project-card-image-gradient"} />
+                    className={'project-card-image'}/>
+                <div className={'project-card-image-gradient'} />
                 <span className={'project-card-name'}>{props.name}</span>
             </div>
 
-            <div className="carousel-card-turned">
+            <div className={'carousel-card-turned'}>
                 <p className={'project-card-description'}>{props.description}</p>
                 <div className={'project-card-technologies-container'}>
                     <p className={'project-card-technologies'}>{t('technologies')}:</p>
@@ -34,7 +34,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
                             onClick={() => window.open(props.projectUrl, '_blank')}>
                         {t('seeProject')}
                     </button>
-                    <SocialButton url={props?.githubUrl} icon={'/github-logo.svg'} small={true}/>
+                    <SocialButton url={props?.githubUrl} icon={'/github-logo.svg'}/>
                 </div>
             </div>
         </div>

@@ -490,16 +490,15 @@ textarea {
     z-index: 12;
     position: relative;
     transition: background 0.5s ease-in-out;
+}
+
+.non-selectable {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     background: transparent;
 }
-
-/*.carousel-card:hover {*/
-/*    background: transparent;*/
-/*}*/
 
 .carousel-card-inner-wrapper,
 .carousel-card-turned {
