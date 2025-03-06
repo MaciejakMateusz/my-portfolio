@@ -31,7 +31,7 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
                     data={data}
                     from={`${year}-01-01`}
                     to={`${year}-12-31`}
-                    emptyColor={'#081B2A'}
+                    emptyColor={'#141414'}
                     colors={['#553A00', '#7A5400', '#CB8B02', '#FFB000']}
                     margin={{top: 25, right: 70, bottom: 0, left: 78}}
                     yearSpacing={40}
@@ -65,7 +65,8 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
                         text: {
                             fill: '#F9F9F9',
                             fontSize: 16,
-                            fontFamily: "Inter, serif"
+                            fontFamily: "Inter, serif",
+                            fontWeight: 300
                         }
                     }}
                 />
