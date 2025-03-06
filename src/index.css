@@ -161,6 +161,11 @@ textarea {
     font-size: 0.85rem;
 }
 
+.lang-switcher.mobile {
+    top: 15px;
+    right: 40px;
+}
+
 .lang-switcher-btn {
     display: inline-block;
     padding: 5px 0;
@@ -171,6 +176,34 @@ textarea {
 
 .lang-switcher-btn:hover, .active-lng {
     color: var(--font-white);
+}
+
+.lang-switcher-mobile {
+}
+
+.lang-switcher-mobile-wrapper {
+    display: flex;
+}
+
+.drop-icon {
+}
+
+.dropped {
+    rotate: 180deg;
+    margin-top: -10px;
+}
+
+.lng-mobile-display, .lng-mobile {
+    color: var(--Grey-500);
+    font-family: var(--font-family-secondary), serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-right: 10px;
+}
+
+.lng-mobile {
+    margin: 5px 0;
 }
 
 .centered-container {
