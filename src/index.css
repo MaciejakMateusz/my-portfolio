@@ -3,11 +3,13 @@
     --background-primary: #090909;
     --background-secondary: #0E0E0E;
     --Text-color-Heading: #FAFAFA;
+    --Text-color-Subtitle: #A6A6A6;
     --Orange-500: #FFB000;
     --Basic-600: #141414;
     --font-white: #F9F9F9;
     --Grey-200: #D9D9D9;
     --Grey-500: #828282;
+    --Grey-900: #383838;
     --font-black: #000;
     --font-family-primary: "Poppins";
     --font-family-secondary: "Inter";
@@ -490,16 +492,15 @@ textarea {
     z-index: 12;
     position: relative;
     transition: background 0.5s ease-in-out;
+}
+
+.non-selectable {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     background: transparent;
 }
-
-/*.carousel-card:hover {*/
-/*    background: transparent;*/
-/*}*/
 
 .carousel-card-inner-wrapper,
 .carousel-card-turned {
@@ -625,59 +626,62 @@ textarea {
 }
 
 .job-position-card {
+    font-family: var(--font-family-secondary), serif;
     width: 380px;
     height: 460px;
-    border-radius: 20px;
+    border-radius: 40px;
     background: var(--background-secondary);
     cursor: grab;
 }
 
+.job-position-card:active {
+    cursor: grabbing;
+}
+
 .job-position-card-wrapper {
-    padding: 20px;
+    padding: 16px 20px;
 }
 
 .job-position-from-to {
-    padding: 6px 12px;
+    padding: 8px 10px;
     border-radius: 10px;
     color: var(--font-black);
     background: var(--Orange-500);
-    font-family: var(--font-family-primary), serif;
     max-width: fit-content;
     font-size: 0.85rem;
     font-weight: 500;
 }
 
 .position-name-locality {
-    margin: 28px 0 20px 0;
+    margin: 20px 0;
     font-family: var(--font-family-secondary), serif;
 }
 
 .position-name {
     display: block;
-    color: var(--font-white);
-    font-size: 1.25rem;
+    color: var(--Text-color-Heading);
+    font-size: 1rem;
     font-weight: 400;
-    line-height: 30px
+    line-height: 24px
 }
 
 .position-locality {
     display: block;
-    color: var(--Grey-500);
-    font-size: 1rem;
+    color: var(--Text-color-Subtitle);
+    font-size: 0.85rem;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 20px;
 }
 
 .duty-list {
     color: var(--Grey-500);
-    font-family: var(--font-family-secondary), serif;
     font-size: 0.85rem;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 20px;
     overflow-y: auto;
     max-height: 280px;
     list-style-type: disc;
-    padding-left: 20px;
+    padding: 0 10px 0 15px;
 }
 
 .duty-list::-webkit-scrollbar {
@@ -1017,19 +1021,21 @@ textarea {
 
 .custom-dot {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: gray;
+    width: 14px;
+    height: 14px;
+    background: var(--Grey-900);
     border-radius: 50%;
     margin: 0 4px;
     cursor: pointer;
+    transition: width 0.4s ease-in-out, background 0.3s ease-in-out, border-radius 0.4s ease-in-out;
 }
 
 .custom-dot.active {
     background: var(--Orange-500);
-    width: 30px;
+    width: 28px;
     border-radius: 100px;
 }
+
 
 .aq-container {
     width: 100%;

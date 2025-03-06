@@ -10,7 +10,7 @@ type JobPositionCardProps = {
 
 export const JobPositionCard = (props: JobPositionCardProps) => {
     return (
-        <div className={'job-position-card'}>
+        <div className={'job-position-card non-selectable'}>
             <div className={'job-position-card-wrapper'}>
                 <div className={'job-position-from-to'}>{`${props.from} / ${props.to}`}</div>
                 <div className={'position-name-locality'}>
