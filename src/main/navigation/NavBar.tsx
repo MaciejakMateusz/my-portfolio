@@ -61,7 +61,7 @@ export const NavBar = ({
                         <span className={'nav-text'}>Start</span>
                     </span>
                     <span className={`nav-btn ${activeBtn === 'techStack' ? 'active' : ''}`}
-                          onClick={() => handleScrollTo(projectsRef, -100, 'techStack')}>
+                          onClick={() => handleScrollTo(techStackRef, -50, 'techStack')}>
                         <span className={'nav-text'}>{t('techStack')}</span>
                     </span>
                     <span className={`nav-btn ${activeBtn === 'projects' ? 'active' : ''}`}
