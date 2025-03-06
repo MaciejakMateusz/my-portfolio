@@ -1,13 +1,7 @@
 import Carousel from "react-multi-carousel";
 import {JobPositionCard} from "./JobPositionCard.tsx";
 import {useTranslation} from "react-i18next";
-
-const CustomDot = ({onClick, active}: any) => {
-    return (
-        <li className={`custom-dot ${active ? 'active' : ''}`}
-            onClick={onClick}/>
-    );
-};
+import {CarouselDot} from "./CarouselDot.tsx";
 
 export const JobPositions = () => {
     const {t} = useTranslation();
@@ -32,20 +26,17 @@ export const JobPositions = () => {
                 swipeable={true}
                 draggable={true}
                 showDots={true}
-                customDot={<CustomDot/>}
+                customDot={<CarouselDot/>}
                 responsive={responsive}
                 ssr={true}
-                infinite={true}
+                infinite={false}
                 autoPlay={false}
                 arrows={false}
-                autoPlaySpeed={3000}
                 keyBoardControl={true}
-                customTransition="all 1.5s"
-                transitionDuration={500}
                 containerClass="carousel-container"
                 itemClass="carousel-item-padding"
                 deviceType="desktop"
-                pauseOnHover={true}>
+                pauseOnHover={false}>
                 <JobPositionCard from={'2024-01'}
                                  to={t('currently')}
                                  positionName={'Java Developer'}
