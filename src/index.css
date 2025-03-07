@@ -505,6 +505,12 @@ textarea {
 
 .infinite-x-card-wrapper {
     min-width: 250px;
+    cursor: grab;
+}
+
+.infinite-x-card-wrapper:active {
+    min-width: 250px;
+    cursor: grabbing;
 }
 
 .carousel-item-padding {
@@ -1159,13 +1165,14 @@ textarea {
 .scroll-wrapper {
     position: absolute;
     left: 60px;
+    bottom: 11px;
 }
 
 .scroll-container {
     overflow: hidden;
     position: relative;
     width: 200px;
-    height: 28.75rem;
+    height: 27rem;
 }
 
 .scroll-content {
@@ -1201,4 +1208,18 @@ textarea {
     bottom: 0;
     background: linear-gradient(to top, var(--background-secondary), transparent);
     height: 200px;
+}
+
+@media (max-width: 800px) {
+    .nav-btn {
+        padding: 0 10px;
+    }
+
+    .section-header-title {
+       font-size: 3.75rem;
+    }
+
+    .section-header-description {
+        font-size: 1rem;
+    }
 }

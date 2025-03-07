@@ -2,14 +2,30 @@ import {RadarSliceTooltipDatum, RadarSliceTooltipProps, ResponsiveRadar} from '@
 import {useTranslation} from "react-i18next";
 import {useSkillsData} from "../../hooks/useSkillsData.ts";
 import {RadarChartLegend} from "./RadarChartLegend.tsx";
+import {useEffect, useState} from "react";
 
 export const RadarChart = () => {
     const {t} = useTranslation();
     const data = useSkillsData();
+    const initialMargins = {top: 70, right: 100, bottom: 70, left: 100};
+    const [margins, setMargins] = useState(initialMargins);
     const translatedKeys: Record<string, string> = {
         private: t('privateProjects'),
         commercial: t('commercialProjects')
     };
+
+    useEffect(() => {
+        const handleResize = () => {
+            if(window.innerWidth <= 1050) {
+                setMargins({top: 100, right: 130, bottom: 100, left: 130});
+            } else {
+                setMargins(initialMargins);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <div className={'radar-chart-container'}>
@@ -19,7 +35,7 @@ export const RadarChart = () => {
                 keys={['commercial', 'private']}
                 indexBy="experience"
                 valueFormat=">-.2f"
-                margin={{top: 70, right: 100, bottom: 70, left: 100}}
+                margin={margins}
                 gridLevels={3}
                 gridLabelOffset={35}
                 enableDots={false}
