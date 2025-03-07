@@ -18,7 +18,9 @@ export const Books = forwardRef((_, ref: any) => {
                 animate={inView ? {opacity: 1, y: 0} : {}}
                 transition={{duration: 0.8, ease: "easeOut"}}>
                 <section className={'books'}>
-                    <SectionHeader title={t('books')} description={t('booksDescription')}/>
+                    <SectionHeader title={t('books')}
+                                   description={t('booksDescription')}
+                                   lightened={true}/>
                     <InfiniteXScroll children={cards}/>
                 </section>
             </motion.div>

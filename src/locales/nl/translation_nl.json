@@ -47,8 +47,11 @@
   "careerBreak": "Carrièrepauze",
   "cncProgrammer": "CNC-programmeur",
   "aboutDescription": "Wie ben ik als ik niet codeer?",
+  "aboutMeDescription": "Buiten werktijd programmeer ik ook :) De afgelopen twee jaar heb ik gewerkt aan mijn eigen grotere project, HungryScan, dat zich richt op het vereenvoudigen van de configuratie van interactieve digitale menu's voor restaurants. Ik experimenteer ook met verschillende CI/CD-technologieën, zet mijn eigen containers op Railway op en probeer alles te integreren met Jenkins. Daarnaast maak ik tijd voor andere activiteiten. Wanneer ik van mijn bureau wegstap, ga ik hardlopen! Ik loop om de dag, gemiddeld 7 km per sessie, en op dagen dat ik niet hardloop, doe ik krachttraining met weerstandsbanden en lichaamsgewichtsoefeningen.",
   "coding": "Coderen",
   "guitar": "Gitaar",
+  "guitarDescription": "Ik begon op mijn 15e en ik oefen nog steeds, hoewel veel minder nu. Ik hou van improviseren op verschillende backingtracks en het creëren van mijn eigen instrumentale stukken.",
+  "gamingDescription": "In de avond (of laat in de nacht in het weekend) ga ik zitten met vrienden om games te spelen. Meestal zijn het open-wereld survivalgames. Als ik solo speel, geniet ik van creatieve of verhalende games.",
   "booksDescription": "Code is niet alles! Gelezen, getest, aanbevolen",
   "atlasShrugged": "Atlas Shrugged",
   "cleanCode": "Clean Code: A Handbook of Agile Software Craftsmanship",
@@ -135,4 +138,8 @@
   "UK": "Oekraïens",
   "HU": "Hongaars",
   "IT": "Italiaans",
-  "commitsAmount": "Commits-bedrag:"}
+  "commitsAmount": "Commits-bedrag:",
+  "more": "Meer",
+  "less": "Minder",
+  "allRightsReserved": "Alle rechten voorbehouden."
+}

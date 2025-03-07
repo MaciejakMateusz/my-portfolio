@@ -1,14 +1,10 @@
 import {motion} from "framer-motion";
 import {useRef} from "react";
+import {useTechnologies} from "../../hooks/useTechnologies.ts";
 
-const skills = [
-    "Spring Boot", "Spring Data","Spring Security", "Hibernate", "JWT", "Java", "JavaScript",
-    "TypeScript", "React", "Redux", "SQL", "HTML", "CSS", "Selenium", "JUnit",
-    "Mockito", "Docker", "WebSocket", "REST"];
-const repeatedSkills = [...skills, ...skills, ...skills];
-
-export const SkillsInfiniteScroll = () => {
+export const TechsInfiniteScroll = () => {
     const containerRef = useRef(null);
+    const technologies = useTechnologies();
 
     return (
         <div className={'scroll-wrapper'}>
@@ -17,14 +13,14 @@ export const SkillsInfiniteScroll = () => {
                 className="scroll-container">
                 <motion.div
                     className="scroll-content"
-                    animate={{y: [0, -100 * skills.length]}}
+                    animate={{y: [0, -100 * technologies.length]}}
                     transition={{
                         ease: "linear",
-                        duration: 60,
+                        duration: 160,
                         repeat: Infinity,
                         repeatType: "loop"
                     }}>
-                    {repeatedSkills.map((skill, index) => (
+                    {technologies.map((skill, index) => (
                         <div key={index} className="skill-item">
                             {skill}
                         </div>

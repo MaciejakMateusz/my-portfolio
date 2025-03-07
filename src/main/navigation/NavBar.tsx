@@ -1,7 +1,6 @@
 import {useTranslation} from "react-i18next";
 import {useEffect, useState} from "react";
 import {useIntersectionObserver} from "../../hooks/useIntersectionObserver.ts";
-import {ReactSVG} from "react-svg";
 
 export const NavBar = ({
                            startRef,
@@ -54,14 +53,13 @@ export const NavBar = ({
     return (
         <nav className="nav-header">
             <div className={'nav-buttons-container'}>
-                <ReactSVG src={'/trapezium-nav-bar.svg'} className={'trapezium-nav-bar'}/>
                 <div className={'nav-buttons-wrapper'}>
                     <span className={`nav-btn ${activeBtn === 'start' ? 'active' : ''}`}
                           onClick={() => handleScrollTo(startRef, 0, 'start')}>
                         <span className={'nav-text'}>Start</span>
                     </span>
                     <span className={`nav-btn ${activeBtn === 'techStack' ? 'active' : ''}`}
-                          onClick={() => handleScrollTo(projectsRef, -100, 'techStack')}>
+                          onClick={() => handleScrollTo(techStackRef, -50, 'techStack')}>
                         <span className={'nav-text'}>{t('techStack')}</span>
                     </span>
                     <span className={`nav-btn ${activeBtn === 'projects' ? 'active' : ''}`}

@@ -17,7 +17,9 @@ export const Career = forwardRef((_, ref: any) => {
                 animate={inView ? {opacity: 1, y: 0} : {}}
                 transition={{duration: 0.8, ease: "easeOut"}}>
                 <div className={'career'}>
-                    <SectionHeader title={t('career')} description={t('careerDescription')}/>
+                    <SectionHeader title={t('career')}
+                                   description={t('careerDescription')}
+                                   lightened={true}/>
                     <JobPositions/>
                 </div>
             </motion.div>
