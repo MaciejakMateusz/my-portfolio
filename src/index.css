@@ -342,7 +342,7 @@ textarea {
 .chart-box {
     position: relative;
     background: var(--background-secondary);
-    border-radius: 20px;
+    border-radius: 40px;
 }
 
 .continuous-scroll {
@@ -445,6 +445,10 @@ textarea {
     position: relative;
     height: 18.75rem;
     width: 100%;
+}
+
+.calendar-chart-container.mobile {
+    height: 15rem;
 }
 
 .calendar-chart-legend {
@@ -1261,6 +1265,10 @@ textarea {
 }
 
 @media (max-width: 800px) {
+    .chart-box {
+        border-radius: 30px;
+    }
+
     .nav-btn {
         padding: 0 10px;
     }
