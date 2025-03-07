@@ -16,7 +16,11 @@ export const RadarChart = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            if(window.innerWidth <= 1050) {
+            if (window.innerWidth <= 600) {
+                setMargins({top: 100, right: 40, bottom: 100, left: 40});
+            } else if (window.innerWidth <= 800) {
+                setMargins({top: 100, right: 70, bottom: 100, left: 70});
+            } else if (window.innerWidth <= 1050) {
                 setMargins({top: 100, right: 130, bottom: 100, left: 130});
             } else {
                 setMargins(initialMargins);
@@ -37,7 +41,7 @@ export const RadarChart = () => {
                 valueFormat=">-.2f"
                 margin={margins}
                 gridLevels={3}
-                gridLabelOffset={35}
+                gridLabelOffset={window.innerWidth <= 600 ? 20 : 35}
                 enableDots={false}
                 dotBorderWidth={2}
                 borderColor={(datum) => {
@@ -66,7 +70,7 @@ export const RadarChart = () => {
                     axis: {
                         ticks: {
                             text: {
-                                fontSize: 15,
+                                fontSize: window.innerWidth <= 800 ? 14 : 16,
                                 fontWeight: 300,
                                 fill: '#F9F9F9',
                                 fontFamily: "Inter, serif",
@@ -81,13 +85,6 @@ export const RadarChart = () => {
                     crosshair: {
                         line: {
                             stroke: '#FFF'
-                        }
-                    },
-                    legends: {
-                        text: {
-                            fontSize: 16,
-                            fontFamily: "Inter, serif",
-                            fontWeight: 300
                         }
                     }
                 }}

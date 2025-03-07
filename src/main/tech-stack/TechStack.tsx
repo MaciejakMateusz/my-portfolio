@@ -3,12 +3,23 @@ import {SectionHeader} from "../shared/SectionHeader.tsx";
 import {RadarChart} from "./RadarChart.tsx";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import {SkillsInfiniteScroll} from "./SkillsInfiniteScroll.tsx";
-import {forwardRef} from "react";
+import {TechsInfiniteScroll} from "./TechsInfiniteScroll.tsx";
+import {forwardRef, useEffect, useState} from "react";
+import {TechsInfiniteScrollMobile} from "./TechsInfiniteScrollMobile.tsx";
 
 export const TechStack = forwardRef((_, ref: any) => {
     const {t} = useTranslation();
     const { ref: motionRef, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const [mobileMode, setMobileMode] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setMobileMode(window.innerWidth <= 1000);
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <div ref={ref}>
@@ -20,8 +31,8 @@ export const TechStack = forwardRef((_, ref: any) => {
                 <section className={'tech-stack'}>
                     <SectionHeader title={t('techStack')} description={t('techStackDescription')}/>
                     <div className={'chart-container skills-chart'}>
-                        <div className={'chart-box'}>
-                            <SkillsInfiniteScroll/>
+                        <div className={`chart-box ${mobileMode ? 'chart-box-mobile' : ''}`}>
+                            {mobileMode ? <TechsInfiniteScrollMobile/> : <TechsInfiniteScroll/>}
                             <div className={'continuous-scroll'}></div>
                             <RadarChart/>
                         </div>
