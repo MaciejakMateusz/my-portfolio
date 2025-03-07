@@ -1162,10 +1162,20 @@ textarea {
 
 /*----- END OF LOADER -----*/
 
+.chart-box-mobile {
+    padding-top: 100px;
+    padding-bottom: 180px;
+}
+
 .scroll-wrapper {
     position: absolute;
     left: 60px;
     bottom: 11px;
+}
+
+.scroll-wrapper-mobile {
+    position: absolute;
+    top: 40px;
 }
 
 .scroll-container {
@@ -1175,11 +1185,25 @@ textarea {
     height: 27rem;
 }
 
+.scroll-container-mobile {
+    overflow: hidden;
+    position: relative;
+    width: calc(100vw - 60px);
+    height: 50px;
+    left: 10px;
+}
+
 .scroll-content {
     display: flex;
     flex-direction: column;
     gap: 15px;
     justify-content: center;
+}
+
+.scroll-content-mobile {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 .skill-item {
@@ -1189,6 +1213,7 @@ textarea {
     border-radius: 10px;
     width: fit-content;
     font-weight: 300;
+    text-wrap: nowrap;
 }
 
 .gradient-top, .gradient-bottom {
@@ -1208,6 +1233,31 @@ textarea {
     bottom: 0;
     background: linear-gradient(to top, var(--background-secondary), transparent);
     height: 200px;
+}
+
+.gradient-left {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    background: linear-gradient(to right, var(--background-secondary), transparent);
+    width: 20vw;
+    height: 50px;
+}
+
+.gradient-right{
+    position: absolute;
+    top: 0;
+    right: -10px;
+    background: linear-gradient(to left, var(--background-secondary), transparent);
+    width: 20vw;
+    height: 50px;
+}
+
+@media (max-width: 1000px) {
+    .radar-chart-legend {
+        left: 40px;
+        bottom: -175px;
+    }
 }
 
 @media (max-width: 800px) {
