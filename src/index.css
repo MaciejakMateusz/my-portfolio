@@ -1478,3 +1478,23 @@ a {
         width: 100%;
     }
 }
+
+@media (max-width: 450px) {
+    .radar-chart-legend {
+        bottom: -80px;
+    }
+
+    .chart-box-mobile {
+        padding-bottom: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .radar-chart-legend {
+        bottom: -30px;
+    }
+
+    .chart-box-mobile {
+        padding-bottom: 40px;
+    }
+}

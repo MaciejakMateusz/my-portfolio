@@ -16,7 +16,11 @@ export const RadarChart = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth <= 600) {
+            if (window.innerWidth <= 400) {
+                setMargins({top: 80, right: 40, bottom: 220, left: 40});
+            } else if (window.innerWidth <= 450) {
+                setMargins({top: 80, right: 40, bottom: 180, left: 40});
+            } else if (window.innerWidth <= 600) {
                 setMargins({top: 100, right: 40, bottom: 100, left: 40});
             } else if (window.innerWidth <= 800) {
                 setMargins({top: 100, right: 70, bottom: 100, left: 70});

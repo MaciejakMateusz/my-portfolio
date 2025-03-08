@@ -16,14 +16,14 @@ export const useSkillsData = () => {
             "private": 65
         },
         {
-            "experience": "SQL",
-            "commercial": 65,
-            "private": 80
-        },
-        {
             "experience": "REST-API",
             "commercial": 70,
             "private": 90
+        },
+        {
+            "experience": "SQL",
+            "commercial": 65,
+            "private": 80
         }
     ];
 }
