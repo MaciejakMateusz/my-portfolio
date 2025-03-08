@@ -123,6 +123,26 @@ a {
     color: var(--font-white);
 }
 
+.hamburger {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    top: 18px;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.hamburger-slice {
+    width: 16px;
+    height: 0.09rem;
+    background: var(--Grey-500);
+    margin-bottom: 5px;
+    border-radius: 7px;
+}
+
 .logo-icons-wrapper {
     display: flex;
     align-items: center;
@@ -166,7 +186,10 @@ a {
     font-size: 0.85rem;
 }
 
-.lang-switcher.mobile {
+.lang-switcher-mobile-container {
+    z-index: 9999;
+    position: absolute;
+    font-size: 0.85rem;
     top: 15px;
     right: 40px;
 }
@@ -204,7 +227,7 @@ a {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .lng-mobile {
@@ -1306,6 +1329,10 @@ a {
 }
 
 @media (max-width: 800px) {
+    .lang-switcher-mobile-container {
+        right: 60px;
+    }
+
     .chart-box {
         border-radius: 30px;
     }
