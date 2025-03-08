@@ -75,6 +75,11 @@ textarea {
     resize: none;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .nav-header {
     width: 100%;
     height: 50px;
@@ -827,33 +832,6 @@ textarea {
     padding: 40px;
 }
 
-.hobby-card-wrapper {
-    display: grid;
-    grid-template-columns: 15% 85%;
-    margin-bottom: 40px;
-}
-
-.hobby-card-icon-container {
-    grid-column: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hobby-card-header {
-    grid-column: 2;
-    color: var(--font-white);
-}
-
-.hobby-card-description {
-    grid-column: 2;
-    color: var(--Grey-500);
-}
-
-.hobby-card-description.contact-type {
-    cursor: pointer;
-}
-
 .books {
     position: relative;
     margin-top: 345px;
@@ -885,11 +863,28 @@ textarea {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 40px 80px;
 }
 
 .contact-details-container {
     grid-column: 1;
-    padding: 70px 40px 20px 40px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-detail {
+    margin-bottom: 40px;
+}
+
+.contact-detail-header {
+    padding: 0;
+    margin: 0;
+    color: var(--Text-color-Heading);
+}
+
+.contact-detail-link {
+    padding: 0;
+    margin: 14px 0 0 0;
 }
 
 .contact-social-buttons-wrapper {
@@ -902,7 +897,6 @@ textarea {
 
 .form-container {
     grid-column: 2;
-    padding: 30px 40px 20px 40px;
 }
 
 .contact-form {
