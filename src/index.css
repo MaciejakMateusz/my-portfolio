@@ -809,11 +809,13 @@ a {
     position: relative;
     max-width: 1200px;
     height: fit-content;
-    margin: 40px auto 0;
+    margin: 40px 20px 0 20px;
     padding: 0 20px;
     z-index: 20;
     background: var(--background-secondary);
     border-radius: 40px;
+    display: flex;
+    justify-self: center;
 }
 
 .about-wrapper {
@@ -1385,6 +1387,30 @@ a {
     .radar-chart-legend {
         font-size: 0.85rem;
     }
+
+    .about-wrapper {
+        position: relative;
+        display: block;
+        padding: 20px;
+    }
+
+    .main-typography {
+        font-size: 0.85rem;
+    }
+
+    .about-description-container {
+        padding: 20px
+    }
+
+    .about-hobbies-container {
+        display: block;
+        padding: 0 20px;
+        gap: 25px;
+    }
+
+    .hobby-container {
+        display: block;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1400,5 +1426,16 @@ a {
     .skill-item {
         padding: 8px 10px;
         font-size: 0.85rem;
+    }
+
+    .about-photo-container {
+        position: relative;
+        width: 250px;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .about-photo {
+        width: 100%;
     }
 }
