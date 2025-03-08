@@ -518,12 +518,17 @@ textarea {
 }
 
 .carousel-item-padding {
-    display: flex;
-    justify-content: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
 }
 
 .react-multi-carousel-list {
     padding-bottom: 40px;
+}
+
+.react-multi-carousel-item {
+    display: flex;
+    justify-content: center;
 }
 
 .carousel-card {
@@ -664,15 +669,15 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 56px;
     z-index: 50;
-    padding: 0 100px;
+    margin-top: 56px;
 }
 
 .job-position-card {
     font-family: var(--font-family-secondary), serif;
     width: 380px;
     height: 460px;
+    margin-right: 15px;
     border-radius: 40px;
     background: var(--background-secondary);
     cursor: grab;
