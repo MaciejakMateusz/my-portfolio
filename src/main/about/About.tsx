@@ -20,11 +20,13 @@ export const About = forwardRef((_, ref: any) => {
                 transition={{duration: 0.8, ease: "easeOut"}}>
                 <div className={'about'}>
                     <SectionHeader title={t('about')} description={t('aboutDescription')}/>
-                    <div className={'main-container'}>
-                        <div className={'about-wrapper'}>
-                            <AboutPhotoChunk/>
-                            <AboutDescriptionChunk/>
-                            <AboutHobbiesChunk/>
+                    <div className={'main-wrapper'}>
+                        <div className={'main-container'}>
+                            <div className={'about-wrapper'}>
+                                <AboutPhotoChunk/>
+                                <AboutDescriptionChunk/>
+                                <AboutHobbiesChunk/>
+                            </div>
                         </div>
                     </div>
                 </div>

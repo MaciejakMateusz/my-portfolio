@@ -19,10 +19,12 @@ export const Contact = forwardRef((_, ref: any) => {
                 transition={{duration: 0.8, ease: "easeOut"}}>
                 <div className={'about'}>
                     <SectionHeader title={t('contact')} description={t('contactDescription')}/>
-                    <div className={'main-container'}>
-                        <div className={'contact-wrapper'}>
-                            <ContactDetails/>
-                            <ContactForm/>
+                    <div className={'main-wrapper'}>
+                        <div className={'main-container'}>
+                            <div className={'contact-wrapper'}>
+                                <ContactDetails/>
+                                <ContactForm/>
+                            </div>
                         </div>
                     </div>
                 </div>
