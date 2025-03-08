@@ -116,19 +116,19 @@ a {
 }
 
 .nav-btn.active, .nav-btn:hover {
-    color: var(--font-white);
+    color: var(--Text-color-Heading);
 }
 
 .hamburger {
     position: fixed;
     width: 20px;
     height: 20px;
-    top: 18px;
+    top: 50px;
     right: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
+    z-index: 9000;
 }
 
 .hamburger-slice {
@@ -137,6 +137,44 @@ a {
     background: var(--Grey-500);
     margin-bottom: 5px;
     border-radius: 7px;
+}
+
+.mobile-side-menu {
+    position: fixed;
+    right: -250px;
+    height: 100vh;
+    width: 250px;
+    background: var(--background-secondary);
+    transition: right 0.5s ease-in-out;
+    z-index: 9999;
+}
+
+.mobile-side-menu.expanded {
+    right: 0;
+}
+
+.mobile-side-menu-wrapper {
+    position: relative;
+}
+
+.close-menu-icon {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+}
+
+.side-menu-nav-btns {
+    padding: 130px 0 0 40px;
+}
+
+.side-menu-nav-btn {
+    margin: 20px 0;
+    font-family: var(--font-family-secondary), serif;
+    font-size: 1rem;
+}
+
+.side-menu-nav-btn.active {
+    color: var(--Text-color-Heading);
 }
 
 .logo-icons-wrapper {
@@ -190,6 +228,14 @@ a {
     right: 40px;
 }
 
+.lang-switcher-mobile-container.side-menu {
+    z-index: 9999;
+    position: absolute;
+    font-size: 0.85rem;
+    top: 50px;
+    left: 40px;
+}
+
 .lang-switcher-btn {
     display: inline-block;
     padding: 5px 0;
@@ -220,10 +266,21 @@ a {
 .lng-mobile-display, .lng-mobile {
     color: var(--Grey-500);
     font-family: var(--font-family-secondary), serif;
-    font-size: 14px;
+    font-size: 0.85rem;
     font-weight: 400;
     line-height: 20px;
     margin-right: 5px;
+}
+
+.lng-mobile-display.side-menu {
+    font-size: 1rem;
+    line-height: 22px;
+    color: var(--Text-color-Heading);
+}
+
+.lng-mobile.side-menu {
+    font-size: 1rem;
+    line-height: 22px;
 }
 
 .lng-mobile {
