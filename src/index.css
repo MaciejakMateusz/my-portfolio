@@ -266,10 +266,13 @@ a {
     font-size: 1.25rem;
     font-family: var(--font-family-secondary), serif;
     line-height: 150%;
+    padding: 0 20px;
 }
 
-.section-header-description.landing {
+.section-header-description.section-header-description.landing {
     margin-top: 50px;
+    text-wrap: nowrap;
+    padding: 0;
 }
 
 .introduction-buttons-wrapper {
@@ -437,7 +440,6 @@ a {
 }
 
 .legend-title {
-    font-size: 1rem;
     margin-bottom: 24px;
 }
 
@@ -460,12 +462,10 @@ a {
 }
 
 .legend-label-main {
-    font-size: 1rem;
     font-weight: 400;
 }
 
 .legend-label-sub {
-    font-size: 1rem;
     color: var(--Grey-500);
 }
 
@@ -1226,7 +1226,7 @@ a {
 .skill-item {
     padding: 10px 12px;
     background-color: var(--Basic-600);
-    color: white;
+    color: var(--Text-color-Heading);
     border-radius: 10px;
     width: fit-content;
     font-weight: 300;
@@ -1347,5 +1347,25 @@ a {
 
     .section-header-description {
         font-size: 1rem;
+    }
+
+    .radar-chart-legend {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .section-header-title {
+        font-size: 3rem;
+    }
+
+    .section-header-description {
+        font-size: 0.85rem;
+        line-height: 20px;
+    }
+
+    .skill-item {
+        padding: 8px 10px;
+        font-size: 0.85rem;
     }
 }
