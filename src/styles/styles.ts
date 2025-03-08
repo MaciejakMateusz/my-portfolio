@@ -82,3 +82,85 @@ export const chartStyles = {
         fontWeight: '300',
     })
 }
+
+export const mainSelect = {
+    control: (provided: any, state: any) => ({
+        ...provided,
+        cursor: 'pointer',
+        borderRadius: '10px',
+        border: 'none',
+        backgroundColor: '#FFB000',
+        color: '#090909',
+        width: '80px',
+        height: '32px',
+        minHeight: '32px',
+        textAlign: 'left',
+        fontFamily: 'Inter, serif',
+        fontSize: '0.85rem',
+        display: 'flex',
+        borderColor: state.isFocused ? 'transparent' : provided.borderColor,
+        boxShadow: state.isFocused ? 'none' : provided.boxShadow,
+        '&:hover': {
+            borderColor: state.isFocused ? 'transparent' : provided['&:hover'].borderColor,
+        }
+    }),
+    singleValue: (provided: any) => ({
+        ...provided,
+        color: '#090909',
+        maxWidth: '90%'
+    }),
+    dropdownIndicator: (provided: any, state: any) => ({
+        ...provided,
+        display: state.isDisabled ? 'none' : provided.display,
+        padding: '8px',
+        position: 'absolute',
+        right: '3px',
+        color: '#090909',
+        '& svg': {
+            width: '15px',
+            height: '15px'
+        }
+    }),
+    indicatorSeparator: (provided: any) => ({
+        ...provided,
+        display: 'none'
+    }),
+    menu: (provided: any) => ({
+        ...provided,
+        borderRadius: '10px',
+        minHeight: '32px',
+        width: '80px',
+        padding: '0px 2px',
+        boxShadow: 'none',
+        border: 'none',
+        outline: 'none',
+        backgroundColor: '#FFB000'
+    }),
+    menuList: (provided: any) => ({
+        ...provided,
+        '&::-webkit-scrollbar': {
+            display: 'none'
+        },
+        msOverflowStyle: 'none',
+        scrollbarWidth: 'none'
+    }),
+    noOptionsMessage: (provided: any) => ({
+        ...provided,
+        fontSize: '1rem',
+        color: '#090909',
+        textAlign: 'left'
+    }),
+    option: (provided: any, state: any) => ({
+        ...provided,
+        fontFamily: 'Inter, serif',
+        fontSize: '0.85rem',
+        background: state.isSelected ? '#FFB000' : '#FFB000',
+        color: '#090909',
+        '&:hover': {backgroundColor: '#FFB000'}
+    }),
+    placeholder: (provided: any, state: any) => ({
+        ...provided,
+        color: state.isDisabled ? '#888' : '#090909',
+        fontSize: '1rem'
+    })
+}
