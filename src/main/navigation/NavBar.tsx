@@ -1,6 +1,7 @@
 import {useTranslation} from "react-i18next";
 import {useEffect, useState} from "react";
 import {useIntersectionObserver} from "../../hooks/useIntersectionObserver.ts";
+import {MobileHamburger} from "./MobileHamburger.tsx";
 
 export const NavBar = ({
                            startRef,
@@ -15,6 +16,7 @@ export const NavBar = ({
     const {t} = useTranslation();
     const [activeBtn, setActiveBtn] = useState('start');
     const isWideScreen = window.innerWidth > 1000;
+    const [isMobile, setIsMobile] = useState(false);
     const intersectionOptions = {
         rootMargin: isWideScreen ? '0px' : '0px',
         threshold: isWideScreen ? 0.1 : 0.1
@@ -40,6 +42,16 @@ export const NavBar = ({
          else if (contactVisible) setActiveBtn('contact');
     }, [techStackVisible, projectsVisible, activityVisible, careerVisible, aboutVisible, booksVisible, contactVisible]);
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 800) setIsMobile(true);
+            else setIsMobile(false);
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const handleScrollTo = (ref: any, offset: number, btnName: string) => {
         setActiveBtn(btnName);
         if (ref.current) {
@@ -51,7 +63,15 @@ export const NavBar = ({
     };
 
     return (
-        <nav className="nav-header">
+        isMobile ? <MobileHamburger startRef={startRef}
+                                    techStackRef={techStackRef}
+                                    projectsRef={projectsRef}
+                                    activityRef={activityRef}
+                                    careerRef={careerRef}
+                                    aboutRef={aboutRef}
+                                    booksRef={booksRef}
+                                    contactRef={contactRef}/> :
+            <nav className="nav-header">
             <div className={'nav-buttons-container'}>
                 <div className={'nav-buttons-wrapper'}>
                     <span className={`nav-btn ${activeBtn === 'start' ? 'active' : ''}`}

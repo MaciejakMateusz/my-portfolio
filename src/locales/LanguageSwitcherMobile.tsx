@@ -31,7 +31,7 @@ export const LanguageSwitcherMobile = () => {
     }
 
     return (
-        <div className={'lang-switcher mobile'}>
+        <div className={'lang-switcher-mobile-container'}>
             <div className={'lang-switcher-mobile'} onClick={() => setIsDropped(!isDropped)}>
                 <span className={'lang-switcher-mobile-wrapper'}>
                     <span className={'lng-mobile-display'}>{formatToUppercase(activeLng)}</span>

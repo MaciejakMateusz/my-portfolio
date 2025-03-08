@@ -13,7 +13,7 @@ import 'react-multi-carousel/lib/styles.css';
 
 export const Main = () => {
     const startRef = useRef();
-    const techStack = useRef();
+    const techStackRef = useRef();
     const projectsRef = useRef();
     const activityRef = useRef();
     const careerRef = useRef();
@@ -24,7 +24,7 @@ export const Main = () => {
     return (
         <>
             <NavBar startRef={startRef}
-                    techStackRef={techStack}
+                    techStackRef={techStackRef}
                     projectsRef={projectsRef}
                     activityRef={activityRef}
                     careerRef={careerRef}
@@ -32,7 +32,7 @@ export const Main = () => {
                     booksRef={booksRef}
                     contactRef={contactRef}/>
             <Start ref={startRef} projectsRef={projectsRef}/>
-            <TechStack ref={techStack}/>
+            <TechStack ref={techStackRef}/>
             <Projects ref={projectsRef}/>
             <Activity ref={activityRef}/>
             <Career ref={careerRef}/>
