@@ -2,6 +2,7 @@ import {useTranslation} from "react-i18next";
 import {useEffect, useState} from "react";
 import {useIntersectionObserver} from "../../hooks/useIntersectionObserver.ts";
 import {MobileHamburger} from "./MobileHamburger.tsx";
+import {LanguageSwitcher} from "../../locales/LanguageSwitcher.tsx";
 
 export const NavBar = ({
                            startRef,
@@ -33,13 +34,13 @@ export const NavBar = ({
 
     useEffect(() => {
         if (startVisible) setActiveBtn('start');
-         else if (techStackVisible) setActiveBtn('techStack');
-         else if (projectsVisible) setActiveBtn('projects');
-         else if (activityVisible) setActiveBtn('activity');
-         else if (careerVisible) setActiveBtn('career');
-         else if (aboutVisible) setActiveBtn('about');
-         else if (booksVisible) setActiveBtn('books');
-         else if (contactVisible) setActiveBtn('contact');
+        else if (techStackVisible) setActiveBtn('techStack');
+        else if (projectsVisible) setActiveBtn('projects');
+        else if (activityVisible) setActiveBtn('activity');
+        else if (careerVisible) setActiveBtn('career');
+        else if (aboutVisible) setActiveBtn('about');
+        else if (booksVisible) setActiveBtn('books');
+        else if (contactVisible) setActiveBtn('contact');
     }, [techStackVisible, projectsVisible, activityVisible, careerVisible, aboutVisible, booksVisible, contactVisible]);
 
     useEffect(() => {
@@ -72,38 +73,39 @@ export const NavBar = ({
                                     booksRef={booksRef}
                                     contactRef={contactRef}/> :
             <nav className="nav-header">
-            <div className={'nav-buttons-container'}>
-                <div className={'nav-buttons-wrapper'}>
+                <div className={'nav-buttons-container'}>
+                    <div className={'nav-buttons-wrapper'}>
                     <span className={`nav-btn ${activeBtn === 'start' ? 'active' : ''}`}
                           onClick={() => handleScrollTo(startRef, 0, 'start')}>
                         <span className={'nav-text'}>Start</span>
                     </span>
-                    <span className={`nav-btn ${activeBtn === 'techStack' ? 'active' : ''}`}
-                          onClick={() => handleScrollTo(techStackRef, -50, 'techStack')}>
+                        <span className={`nav-btn ${activeBtn === 'techStack' ? 'active' : ''}`}
+                              onClick={() => handleScrollTo(techStackRef, -50, 'techStack')}>
                         <span className={'nav-text'}>{t('techStack')}</span>
                     </span>
-                    <span className={`nav-btn ${activeBtn === 'projects' ? 'active' : ''}`}
-                          onClick={() => handleScrollTo(projectsRef, -100, 'projects')}>
+                        <span className={`nav-btn ${activeBtn === 'projects' ? 'active' : ''}`}
+                              onClick={() => handleScrollTo(projectsRef, -100, 'projects')}>
                         <span className={'nav-text'}>{t('projects')}</span>
                     </span>
-                    <span className={`nav-btn ${activeBtn === 'activity' ? 'active' : ''}`}
-                          onClick={() => handleScrollTo(activityRef, -100, 'activity')}>
+                        <span className={`nav-btn ${activeBtn === 'activity' ? 'active' : ''}`}
+                              onClick={() => handleScrollTo(activityRef, -100, 'activity')}>
                         <span className={'nav-text'}>{t('activity')}</span>
                     </span>
-                    <span className={`nav-btn ${activeBtn === 'career' ? 'active' : ''}`}
-                          onClick={() => handleScrollTo(careerRef, -30, 'career')}>
+                        <span className={`nav-btn ${activeBtn === 'career' ? 'active' : ''}`}
+                              onClick={() => handleScrollTo(careerRef, -30, 'career')}>
                         <span className={'nav-text'}>{t('career')}</span>
                     </span>
-                    <span className={`nav-btn ${activeBtn === 'about' ? 'active' : ''}`}
-                          onClick={() => handleScrollTo(aboutRef, -30, 'about')}>
+                        <span className={`nav-btn ${activeBtn === 'about' ? 'active' : ''}`}
+                              onClick={() => handleScrollTo(aboutRef, -30, 'about')}>
                         <span className={'nav-text'}>{t('about')}</span>
                     </span>
-                    <span className={`nav-btn ${activeBtn === 'contact' ? 'active' : ''}`}
-                          onClick={() => handleScrollTo(contactRef, -30, 'contact')}>
+                        <span className={`nav-btn ${activeBtn === 'contact' ? 'active' : ''}`}
+                              onClick={() => handleScrollTo(contactRef, -30, 'contact')}>
                         <span className={'nav-text'}>{t('contact')}</span>
                     </span>
+                    </div>
                 </div>
-            </div>
-        </nav>
+                <LanguageSwitcher/>
+            </nav>
     );
 }

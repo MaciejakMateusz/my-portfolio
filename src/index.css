@@ -88,16 +88,12 @@ a {
     justify-content: center;
     z-index: 999;
     position: fixed;
-    background: rgb(255, 255, 255, 0%);
+    background: rgba(9, 9, 9, 0.7);
+    backdrop-filter: blur(10px);
 }
 
 .nav-buttons-container {
     position: relative;
-}
-
-.trapezium-nav-bar {
-    position: absolute;
-    margin-left: -20px;
 }
 
 .nav-buttons-wrapper {
@@ -180,7 +176,7 @@ a {
 
 .lang-switcher {
     z-index: 9999;
-    position: absolute;
+    position: fixed;
     top: 9px;
     right: 9vw;
     font-size: 0.85rem;
@@ -188,7 +184,7 @@ a {
 
 .lang-switcher-mobile-container {
     z-index: 9999;
-    position: absolute;
+    position: fixed;
     font-size: 0.85rem;
     top: 15px;
     right: 40px;
