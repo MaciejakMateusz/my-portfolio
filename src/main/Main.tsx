@@ -18,7 +18,6 @@ export const Main = () => {
     const activityRef = useRef();
     const careerRef = useRef();
     const aboutRef = useRef();
-    const booksRef = useRef();
     const contactRef = useRef();
 
     return (
@@ -29,7 +28,6 @@ export const Main = () => {
                     activityRef={activityRef}
                     careerRef={careerRef}
                     aboutRef={aboutRef}
-                    booksRef={booksRef}
                     contactRef={contactRef}/>
             <Start ref={startRef} projectsRef={projectsRef}/>
             <TechStack ref={techStackRef}/>
@@ -37,7 +35,7 @@ export const Main = () => {
             <Activity ref={activityRef}/>
             <Career ref={careerRef}/>
             <About ref={aboutRef}/>
-            <Books ref={booksRef}/>
+            <Books/>
             <Contact ref={contactRef}/>
             <Footer/>
         </>
