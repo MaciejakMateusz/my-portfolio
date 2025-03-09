@@ -1,4 +1,3 @@
-import {NavBar} from "./navigation/NavBar.tsx";
 import {Start} from "./landing/Start.tsx";
 import {TechStack} from "./tech-stack/TechStack.tsx";
 import {Projects} from "./projects/Projects.tsx";
@@ -10,6 +9,7 @@ import {Contact} from "./contact/Contact.tsx";
 import {Footer} from "./footer/Footer.tsx";
 import {useRef} from "react";
 import 'react-multi-carousel/lib/styles.css';
+import {NavController} from "./navigation/NavController.tsx";
 
 export const Main = () => {
     const startRef = useRef();
@@ -22,13 +22,13 @@ export const Main = () => {
 
     return (
         <>
-            <NavBar startRef={startRef}
-                    techStackRef={techStackRef}
-                    projectsRef={projectsRef}
-                    activityRef={activityRef}
-                    careerRef={careerRef}
-                    aboutRef={aboutRef}
-                    contactRef={contactRef}/>
+            <NavController startRef={startRef}
+                           techStackRef={techStackRef}
+                           projectsRef={projectsRef}
+                           activityRef={activityRef}
+                           careerRef={careerRef}
+                           aboutRef={aboutRef}
+                           contactRef={contactRef}/>
             <Start ref={startRef} projectsRef={projectsRef}/>
             <TechStack ref={techStackRef}/>
             <Projects ref={projectsRef}/>
