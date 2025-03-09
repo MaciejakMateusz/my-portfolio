@@ -6,11 +6,13 @@ import {LanguageSwitcherMobile} from "./LanguageSwitcherMobile.tsx";
 export const LanguageSwitcher = () => {
     const { i18n } = useTranslation();
     const activeLng = getLanguage() || 'pl-PL';
-    const [mobileMode, setMobileMode] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const [isWidescreen, setIsWidescreen] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
-            setMobileMode(window.innerWidth <= 1300);
+            setIsMobile(window.innerWidth <= 800);
+            setIsWidescreen(window.innerWidth >= 1300);
         };
         window.addEventListener('resize', handleResize);
         handleResize();
@@ -23,7 +25,7 @@ export const LanguageSwitcher = () => {
     };
 
     return (
-        mobileMode ? <LanguageSwitcherMobile/> :
+        isWidescreen ?
             <div className={'lang-switcher'}>
                 <div className={`lang-switcher-btn ${['pl', 'pl-PL'].includes(activeLng) ? 'active-lng' : ''}`}>
                     <span onClick={() => changeLanguage('pl')}>Polski</span>
@@ -37,5 +39,6 @@ export const LanguageSwitcher = () => {
                     <span onClick={() => changeLanguage('nl')}>Nederlands</span>
                 </div>
             </div>
+            : !isMobile && <LanguageSwitcherMobile/>
     );
 };

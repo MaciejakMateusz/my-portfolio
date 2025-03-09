@@ -5,6 +5,7 @@ import {useTechnologies} from "../../hooks/useTechnologies.ts";
 export const TechsInfiniteScrollMobile = () => {
     const containerRef = useRef(null);
     const technologies = useTechnologies();
+    const repeated = [...technologies, ...technologies];
 
     return (
         <div className={'scroll-wrapper-mobile'}>
@@ -16,11 +17,11 @@ export const TechsInfiniteScrollMobile = () => {
                     animate={{x: [0, -100 * technologies.length]}}
                     transition={{
                         ease: "linear",
-                        duration: 160,
+                        duration: 200,
                         repeat: Infinity,
                         repeatType: "loop"
                     }}>
-                    {technologies.map((skill, index) => (
+                    {repeated.map((skill, index) => (
                         <div key={index} className="skill-item">
                             {skill}
                         </div>

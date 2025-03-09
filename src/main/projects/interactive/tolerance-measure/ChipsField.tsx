@@ -4,6 +4,8 @@ import {useAppDispatch} from "../../../../hooks/hooks.ts";
 import {Chip} from "../../../../interfaces/Chip.ts";
 import {useTranslation} from "react-i18next";
 import {ChipsFieldProps} from "../../../../types/ChipsFieldProps.ts";
+import {CustomLabel} from "../../../shared/form/CustomLabel.tsx";
+import {chipsStyles} from "../../../../styles/selectStyles.ts";
 
 export const ChipsField = forwardRef((props: ChipsFieldProps, ref: any) => {
     const {t} = useTranslation();
@@ -31,7 +33,7 @@ export const ChipsField = forwardRef((props: ChipsFieldProps, ref: any) => {
 
     return (
         <label className={'form-field-label'}>
-            {t('measurements')}
+            <CustomLabel text={t('measurements')}/>
             <CreatableSelect
                 className={'chips-multiselect'}
                 isMulti
@@ -48,6 +50,8 @@ export const ChipsField = forwardRef((props: ChipsFieldProps, ref: any) => {
                 value={props.chips}
                 menuIsOpen={false}
                 getOptionValue={(option) => option.id.toString()}
+                placeholder={t('exampleMeasurements')}
+                styles={chipsStyles}
             />
             {props.error && <span className="validation-msg">{props.error.message}</span>}
         </label>

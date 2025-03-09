@@ -1,13 +1,11 @@
 import {useTranslation} from "react-i18next";
 import {IntroductionButtons} from "./IntroductionButtons.tsx";
 import {forwardRef} from "react";
-import {LanguageSwitcher} from "../../locales/LanguageSwitcher.tsx";
 
 export const Start =  forwardRef(({projectsRef}: any, ref: any) => {
     const {t} = useTranslation();
     return (
         <div className={'landing-section'} ref={ref}>
-            <LanguageSwitcher/>
             <div className={'centered-container'}>
                 <div className={'centered-container-wrapper'}>
                     <span className={'section-header-title'}>Full Stack</span>

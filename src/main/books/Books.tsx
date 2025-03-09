@@ -2,18 +2,17 @@ import {useTranslation} from "react-i18next";
 import {useInView} from "react-intersection-observer";
 import {motion} from "framer-motion";
 import {SectionHeader} from "../shared/SectionHeader.tsx";
-import {forwardRef} from "react";
 import {InfiniteXScroll} from "../projects/InfiniteXScroll.tsx";
 import {useBookCards} from "../../hooks/useBookCards.tsx";
 
-export const Books = forwardRef((_, ref: any) => {
+export const Books = () => {
     const {t} = useTranslation();
-    const {ref: motionRef, inView} = useInView({triggerOnce: true, threshold: 0.2});
+    const {ref, inView} = useInView({triggerOnce: true, threshold: 0.2});
     const cards = useBookCards();
     return (
-        <div ref={ref}>
+        <div>
             <motion.div
-                ref={motionRef}
+                ref={ref}
                 initial={{opacity: 0, y: 100}}
                 animate={inView ? {opacity: 1, y: 0} : {}}
                 transition={{duration: 0.8, ease: "easeOut"}}>
@@ -26,4 +25,4 @@ export const Books = forwardRef((_, ref: any) => {
             </motion.div>
         </div>
     );
-});
+};

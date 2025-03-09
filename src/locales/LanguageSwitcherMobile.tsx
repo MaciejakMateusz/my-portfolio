@@ -3,7 +3,11 @@ import {useState} from "react";
 import {getLanguage} from "../util/util.ts";
 import {useTranslation} from "react-i18next";
 
-export const LanguageSwitcherMobile = () => {
+type LanguageSwitcherMobileProps = {
+    sideMenu?: boolean;
+}
+
+export const LanguageSwitcherMobile = ({sideMenu}: LanguageSwitcherMobileProps) => {
     const {i18n} = useTranslation();
     const activeLng = getLanguage() || 'pl-PL';
     const supported = ['PL', 'EN', 'NL'];
@@ -31,14 +35,14 @@ export const LanguageSwitcherMobile = () => {
     }
 
     return (
-        <div className={'lang-switcher-mobile-container'}>
+        <div className={`lang-switcher-mobile-container ${sideMenu ? 'side-menu' : ''}`}>
             <div className={'lang-switcher-mobile'} onClick={() => setIsDropped(!isDropped)}>
                 <span className={'lang-switcher-mobile-wrapper'}>
-                    <span className={'lng-mobile-display'}>{formatToUppercase(activeLng)}</span>
+                    <span className={`lng-mobile-display ${sideMenu ? 'side-menu' : ''}`}>{formatToUppercase(activeLng)}</span>
                     <ReactSVG src={'/drop-icon.svg'} className={`drop-icon ${isDropped && 'dropped'}`}/>
                 </span>
                 {isDropped && supported.filter(l => l !== formatToUppercase(activeLng)).map(l => (
-                    <div className={'lng-mobile'}
+                    <div className={`lng-mobile ${sideMenu ? 'side-menu' : ''}`}
                          onClick={(e) => {
                              e.stopPropagation();
                              changeLanguageMobile(l);
