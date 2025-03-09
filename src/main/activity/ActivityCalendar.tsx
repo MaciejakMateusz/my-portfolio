@@ -3,7 +3,6 @@ import {useEffect, useState} from "react";
 import {fetchContributions} from "../../slices/contributionsSlice.ts";
 import {useAppDispatch} from "../../hooks/hooks.ts";
 import {useSelector} from "react-redux";
-import {useTranslation} from "react-i18next";
 import {ActivityCalendarLegend} from "./ActivityCalendarLegend.tsx";
 import {ActivityCalendarTooltip} from "./ActivityCalendarTooltip.tsx";
 import {useMonthShortNames} from "../../hooks/useMonthShortNames.ts";
@@ -14,10 +13,9 @@ interface ActivityCalendarProps {
 
 export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
     const dispatch = useAppDispatch();
-    const {t} = useTranslation();
     const initialMargins = {top: 25, right: 70, bottom: 0, left: 78};
     const [margins, setMargins] = useState(initialMargins);
-    const {data, isLoading, error} = useSelector<any, any>(state => state.contributions.contributions);
+    const {data, isLoading} = useSelector<any, any>(state => state.contributions.contributions);
 
     useEffect(() => {
         const handleResize = () => {
@@ -41,7 +39,6 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
 
     return (
         <div className="chart-box">
-            {error && <span className="server-down-msg">{t('restApiDown')}</span>}
             <div id={'nivo-tooltips'} className={'chart-tooltip-mobile'}/>
             <div className={`calendar-chart-container ${window.innerWidth <= 1200 ? 'mobile' : ''}`}>
                 <div className="chart-scroll-wrapper">

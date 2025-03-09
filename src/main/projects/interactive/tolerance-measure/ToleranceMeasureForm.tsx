@@ -28,7 +28,7 @@ export const ToleranceMeasureForm = () => {
         negTolerance,
         measurements
     }: ToleranceMeasureFields = useSelector<any, any>(state => state.toleranceMeasure.form);
-    const {isLoading, error} = useSelector<any, any>(state => state.toleranceMeasure.analysis);
+    const {isLoading} = useSelector<any, any>(state => state.toleranceMeasure.analysis);
     const schema = useToleranceMeasureFormValidator();
     const {
         reset,
@@ -102,9 +102,6 @@ export const ToleranceMeasureForm = () => {
                         )}
                     />
                     <div className={'form-button-wrapper'}>
-                        {error && <span className={'form-msg error-msg'}>
-                        {t('restApiDown')}
-                        </span>}
                         <button type={'button'}
                                 className={`secondary-button white ${isLoading && 'deactivated'}`}
                                 disabled={isLoading || isSubmitting}
