@@ -1,28 +1,25 @@
 import { useState, useEffect } from "react";
 import {useIntersectionObserver} from "./useIntersectionObserver.ts";
+import {NavRefs} from "../types/NavRefs.ts";
 
-export const useActiveNavigation = (refs: {
-    start: any;
-    techStack: any;
-    projects: any;
-    activity: any;
-    career: any;
-    about: any;
-    contact: any;
-}) => {
+type UseActiveNavigationProps = {
+    navRefs: NavRefs;
+}
+
+export const useActiveNavigation = ({navRefs}: UseActiveNavigationProps) => {
     const isWideScreen = window.innerWidth > 1000;
     const intersectionOptions = {
         rootMargin: "0px",
         threshold: isWideScreen ? 0.1 : 0.1,
     };
 
-    const startVisible = useIntersectionObserver(refs.start, intersectionOptions);
-    const techStackVisible = useIntersectionObserver(refs.techStack, intersectionOptions);
-    const projectsVisible = useIntersectionObserver(refs.projects, intersectionOptions);
-    const activityVisible = useIntersectionObserver(refs.activity, intersectionOptions);
-    const careerVisible = useIntersectionObserver(refs.career, intersectionOptions);
-    const aboutVisible = useIntersectionObserver(refs.about, intersectionOptions);
-    const contactVisible = useIntersectionObserver(refs.contact, intersectionOptions);
+    const startVisible = useIntersectionObserver(navRefs.start, intersectionOptions);
+    const techStackVisible = useIntersectionObserver(navRefs.techStack, intersectionOptions);
+    const projectsVisible = useIntersectionObserver(navRefs.projects, intersectionOptions);
+    const activityVisible = useIntersectionObserver(navRefs.activity, intersectionOptions);
+    const careerVisible = useIntersectionObserver(navRefs.career, intersectionOptions);
+    const aboutVisible = useIntersectionObserver(navRefs.about, intersectionOptions);
+    const contactVisible = useIntersectionObserver(navRefs.contact, intersectionOptions);
 
     const [activeBtn, setActiveBtn] = useState("start");
 

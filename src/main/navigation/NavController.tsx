@@ -1,27 +1,14 @@
-import {MutableRefObject, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {MobileSideMenu} from "./MobileSideMenu.tsx";
 import {NavBar} from "./NavBar.tsx";
 import {Hamburger} from "./Hamburger.tsx";
+import {NavRefs} from "../../types/NavRefs.ts";
 
 type NavControllerProps = {
-    startRef: MutableRefObject<any>;
-    techStackRef: MutableRefObject<any>;
-    projectsRef: MutableRefObject<any>;
-    activityRef: MutableRefObject<any>;
-    careerRef: MutableRefObject<any>;
-    aboutRef: MutableRefObject<any>;
-    contactRef: MutableRefObject<any>;
+    navRefs: NavRefs
 }
 
-export const NavController = ({
-                                  startRef,
-                                  techStackRef,
-                                  projectsRef,
-                                  activityRef,
-                                  careerRef,
-                                  aboutRef,
-                                  contactRef
-                              }: NavControllerProps) => {
+export const NavController = ({navRefs}: NavControllerProps) => {
     const [isMobile, setIsMobile] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -38,21 +25,10 @@ export const NavController = ({
     return (
         <>
             {isMobile ? <Hamburger expandHandler={setIsExpanded}/> :
-                <NavBar startRef={startRef}
-                        techStackRef={techStackRef}
-                        projectsRef={projectsRef}
-                        activityRef={activityRef}
-                        careerRef={careerRef}
-                        aboutRef={aboutRef}
-                        contactRef={contactRef}/>}
-            <MobileSideMenu startRef={startRef}
-                            techStackRef={techStackRef}
-                            projectsRef={projectsRef}
-                            activityRef={activityRef}
-                            careerRef={careerRef}
-                            aboutRef={aboutRef}
-                            contactRef={contactRef}
-                            expandHandler={setIsExpanded} isExpanded={isExpanded}/>
+                <NavBar navRefs={navRefs}/>}
+            <MobileSideMenu navRefs={navRefs}
+                            expandHandler={setIsExpanded}
+                            isExpanded={isExpanded}/>
         </>
     );
 }

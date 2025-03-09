@@ -10,33 +10,30 @@ import {Footer} from "./footer/Footer.tsx";
 import {useRef} from "react";
 import 'react-multi-carousel/lib/styles.css';
 import {NavController} from "./navigation/NavController.tsx";
+import {NavRefs} from "../types/NavRefs.ts";
 
 export const Main = () => {
-    const startRef = useRef();
-    const techStackRef = useRef();
-    const projectsRef = useRef();
-    const activityRef = useRef();
-    const careerRef = useRef();
-    const aboutRef = useRef();
-    const contactRef = useRef();
+    const navRefs: NavRefs = {
+        start: useRef(),
+        techStack: useRef(),
+        projects: useRef(),
+        activity: useRef(),
+        career: useRef(),
+        about: useRef(),
+        contact: useRef()
+    }
 
     return (
         <>
-            <NavController startRef={startRef}
-                           techStackRef={techStackRef}
-                           projectsRef={projectsRef}
-                           activityRef={activityRef}
-                           careerRef={careerRef}
-                           aboutRef={aboutRef}
-                           contactRef={contactRef}/>
-            <Start ref={startRef} projectsRef={projectsRef}/>
-            <TechStack ref={techStackRef}/>
-            <Projects ref={projectsRef}/>
-            <Activity ref={activityRef}/>
-            <Career ref={careerRef}/>
-            <About ref={aboutRef}/>
+            <NavController navRefs={navRefs}/>
+            <Start ref={navRefs.start} projectsRef={navRefs.projects}/>
+            <TechStack ref={navRefs.techStack}/>
+            <Projects ref={navRefs.projects}/>
+            <Activity ref={navRefs.activity}/>
+            <Career ref={navRefs.career}/>
+            <About ref={navRefs.about}/>
             <Books/>
-            <Contact ref={contactRef}/>
+            <Contact ref={navRefs.contact}/>
             <Footer/>
         </>
     );
