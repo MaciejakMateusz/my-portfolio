@@ -13,7 +13,7 @@ export const AirQuality = () => {
                 <ProjectTopper location={`${t('projects')} / Air Quality`}
                                header={'Air Quality'}
                                description={t('airQualityDescription')}/>
-                <div className={'project-container'}>
+                <div className={'project-container aq'}>
                     <AirQualityControlPanel/>
                     <AirQualityChart/>
                 </div>

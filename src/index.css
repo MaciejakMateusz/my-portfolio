@@ -1223,7 +1223,6 @@ a {
 }
 
 .aq-control-panel {
-    padding: 0 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1406,7 +1405,7 @@ a {
     color: var(--Text-color-Heading);
     font-size: 5rem;
     font-weight: 500;
-    line-height: 100px;
+    line-height: 70px;
     letter-spacing: -0.8px;
     margin-bottom: 16px;
 }
@@ -1426,6 +1425,10 @@ a {
     background: var(--background-secondary);
     box-sizing: border-box;
     padding: 60px;
+}
+
+.project-container.aq {
+    padding: 30px;
 }
 
 .translation-fields-wrapper {
@@ -1515,6 +1518,18 @@ a {
         bottom: 10px;
         right: 20px;
     }
+
+    .aq-control-panel {
+        display: block;
+    }
+
+    .aq-locality-controls {
+        display: block;
+    }
+
+    .aq-select {
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -1573,6 +1588,14 @@ a {
     .hobby-container {
         display: inline-block;
     }
+
+    .project-view {
+        padding: 40px;
+    }
+
+    .project-container {
+        border-radius: 30px;
+    }
 }
 
 @media (max-width: 800px) {
@@ -1590,6 +1613,15 @@ a {
 
     .section-header-title {
        font-size: 3.75rem;
+    }
+
+    .section-header-description {
+        font-size: 1rem;
+    }
+
+    .project-header {
+        font-size: 3.75rem;
+        line-height: 50px;
     }
 
     .section-header-description {
@@ -1622,6 +1654,11 @@ a {
 
     .hobby-container {
         display: block;
+    }
+
+    .product-fields-wrapper {
+        display: block;
+        margin-bottom: 35px;
     }
 }
 
@@ -1658,9 +1695,17 @@ a {
         bottom: 470px;
     }
 
-    .form-container {
+    .form-container.contact {
         display: block;
         margin-top: 100px
+    }
+
+    .primary-button.big {
+        font-size: 0.85rem;
+    }
+
+    .secondary-button {
+        font-size: 0.85rem;
     }
 }
 
@@ -1672,6 +1717,15 @@ a {
     .section-header-description {
         font-size: 0.85rem;
         line-height: 20px;
+    }
+
+    .project-header {
+        font-size: 3rem;
+        line-height: 40px;
+    }
+
+    .section-header-description {
+        font-size: 0.85rem;
     }
 
     .skill-item {
@@ -1689,6 +1743,20 @@ a {
     .about-photo {
         width: 100%;
     }
+
+    .project-view {
+        padding: 20px;
+    }
+
+    .project-container {
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .translation-fields-wrapper {
+        display: block;
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -1698,6 +1766,10 @@ a {
 
     .chart-box-mobile {
         padding-bottom: 100px;
+    }
+
+    .custom-label-white {
+        margin-top: 20px;
     }
 }
 

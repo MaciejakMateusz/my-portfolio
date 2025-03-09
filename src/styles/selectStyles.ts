@@ -251,6 +251,14 @@ export const secondarySelect = {
     })
 }
 
+export const secondarySelectShort = {
+    ...secondarySelect,
+    control: (provided: any, state: any) => ({
+        ...secondarySelect.control(provided, state),
+        width: '100px'
+    })
+}
+
 export const chipsStyles = {
     input: (provided: any) => ({
         ...provided,

@@ -100,7 +100,7 @@ export const TranslatorAIForm = () => {
             <div className={'form-container'}>
                 {isLoading && <div className={'loader'}/>}
                 <form className={'contact-form'} onSubmit={handleSubmit(onSubmit)}>
-                    <TextField label={<CustomLabel text={`${t('context')}&nbsp;`} subText={t('contextSub')}/>}
+                    <TextField label={<CustomLabel text={`${t('context')} `} subText={t('contextSub')}/>}
                                name={'context'}
                                register={register}
                                error={errors.context}

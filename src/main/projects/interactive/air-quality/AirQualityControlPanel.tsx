@@ -7,7 +7,7 @@ import {
     setChosenMonth,
     setChosenYear
 } from "../../../../slices/airQualitySlice.ts";
-import {secondarySelect} from "../../../../styles/selectStyles.ts";
+import {secondarySelect, secondarySelectShort} from "../../../../styles/selectStyles.ts";
 import {getMonth} from "../../../../util/util.ts";
 import {useTranslation} from "react-i18next";
 import {useAppDispatch} from "../../../../hooks/hooks.ts";
@@ -105,7 +105,7 @@ export const AirQualityControlPanel = () => {
                                 value={chosenYear}
                                 options={getYears()}
                                 onChange={(selected) => dispatch(setChosenYear(selected))}
-                                styles={secondarySelect}
+                                styles={secondarySelectShort}
                                 isSearchable={true}
                             />                        </label>
                     </div>
@@ -116,7 +116,7 @@ export const AirQualityControlPanel = () => {
                                 value={chosenMonth}
                                 options={getMonths()}
                                 onChange={(selected) => dispatch(setChosenMonth(selected))}
-                                styles={secondarySelect}
+                                styles={secondarySelectShort}
                                 isSearchable={true}
                             />
                     </div>
