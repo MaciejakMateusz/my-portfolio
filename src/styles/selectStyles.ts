@@ -164,3 +164,89 @@ export const mainSelect = {
         fontSize: '1rem'
     })
 }
+
+export const secondarySelect = {
+    control: (provided: any, state: any) => ({
+        ...provided,
+        cursor: 'pointer',
+        borderRadius: '10px',
+        border: 'none',
+        backgroundColor: '#141414',
+        color: '#FAFAFA',
+        width: '150px',
+        height: '44px',
+        minHeight: '32px',
+        textAlign: 'left',
+        fontFamily: 'Inter, serif',
+        fontSize: '0.85rem',
+        display: 'flex',
+        borderColor: state.isFocused ? 'transparent' : provided.borderColor,
+        boxShadow: state.isFocused ? 'none' : provided.boxShadow,
+        '&:hover': {
+            borderColor: state.isFocused ? 'transparent' : provided['&:hover'].borderColor,
+        }
+    }),
+    singleValue: (provided: any) => ({
+        ...provided,
+        color: '#FAFAFA',
+        maxWidth: '80%'
+    }),
+    dropdownIndicator: (provided: any, state: any) => ({
+        ...provided,
+        display: state.isDisabled ? 'none' : provided.display,
+        padding: '8px',
+        position: 'absolute',
+        right: '3px',
+        color: '#FAFAFA',
+        '& svg': {
+            width: '15px',
+            height: '15px'
+        }
+    }),
+    indicatorSeparator: (provided: any) => ({
+        ...provided,
+        display: 'none'
+    }),
+    menu: (provided: any) => ({
+        ...provided,
+        borderRadius: '10px',
+        minHeight: '32px',
+        width: '100%',
+        maxHeight: '240px',
+        padding: '0px 2px',
+        boxShadow: 'none',
+        border: 'none',
+        outline: 'none',
+        backgroundColor: '#141414'
+    }),
+    menuList: (provided: any) => ({
+        ...provided,
+        '&::-webkit-scrollbar': {
+            display: 'none'
+        },
+        msOverflowStyle: 'none',
+        scrollbarWidth: 'none'
+    }),
+    noOptionsMessage: (provided: any) => ({
+        ...provided,
+        fontSize: '1rem',
+        color: '#FAFAFA',
+        textAlign: 'left'
+    }),
+    option: (provided: any, state: any) => ({
+        ...provided,
+        fontFamily: 'Inter, serif',
+        fontSize: '0.85rem',
+        background: state.isSelected ? '#141414' : '#141414',
+        color: '#828282',
+        '&:hover': {
+            color: '#FAFAFA',
+            cursor: 'pointer'
+        }
+    }),
+    placeholder: (provided: any, state: any) => ({
+        ...provided,
+        color: state.isDisabled ? '#828282' : '#FAFAFA',
+        fontSize: '1rem'
+    })
+}

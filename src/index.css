@@ -1056,6 +1056,10 @@ a {
     border: solid #C2000B 1px;
 }
 
+.form-text-field::placeholder {
+    font-style: italic;
+}
+
 .form-text-area-field {
     display: block;
     width: 100%;
@@ -1378,6 +1382,98 @@ a {
     background: linear-gradient(to left, var(--background-secondary), transparent);
     width: 20vw;
     height: 50px;
+}
+
+.translator-ai {
+    padding: 40px 120px;
+}
+
+.project-location {
+    font-family: var(--font-family-secondary), serif;
+    font-size: 0.85rem;
+}
+
+.project-header {
+    color: var(--Text-color-Heading);
+    font-size: 5rem;
+    font-weight: 500;
+    line-height: 100px;
+    letter-spacing: -0.8px;
+    margin-bottom: 16px;
+}
+
+.project-header-description {
+    color: var(--Text-color-Subtitle);
+    font-family: var(--font-family-secondary), serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 60px;
+}
+
+.project-container {
+    border-radius: 40px;
+    border: 1px solid var(--Orange-500);
+    background: var(--background-secondary);
+    box-sizing: border-box;
+    padding: 60px;
+}
+
+.translation-fields-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-top: 55px;
+}
+
+.translation-fields {
+    width: 100%;
+}
+
+.translation-text-area {
+    display: block;
+    width: 100%;
+    height: 240px;
+    border-radius: 10px;
+    background: var(--Basic-600);
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.translation-text-area.invalid {
+    border: solid #C2000B 1px;
+}
+
+.project-description {
+    margin-top: 55px;
+    color: var(--Text-color-Subtitle);
+    font-family: var(--font-family-secondary), serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.custom-label-white {
+    color: var(--Text-color-Heading);
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.custom-label-grey {
+    color: var(--Grey-500);
+}
+
+.project-description-li {
+    margin-bottom: 10px;
+}
+
+.project-description-header {
+    font-family: var(--background-primary), serif;
+    color: var(--Text-color-Heading);
+    font-weight: 500;
 }
 
 @media (max-width: 1200px) {

@@ -7,7 +7,7 @@ import {
     setChosenMonth,
     setChosenYear
 } from "../../../../slices/airQualitySlice.ts";
-import {chartStyles} from "../../../../styles/styles.ts";
+import {chartStyles} from "../../../../styles/selectStyles.ts";
 import {getMonth} from "../../../../util/util.ts";
 import {useTranslation} from "react-i18next";
 import {useAppDispatch} from "../../../../hooks/hooks.ts";

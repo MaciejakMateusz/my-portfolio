@@ -3,7 +3,7 @@ import {Contribution} from "../../types/Contribution.ts";
 import {useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
 import Select from "react-select";
-import {mainSelect} from "../../styles/styles.ts";
+import {mainSelect} from "../../styles/selectStyles.ts";
 
 export const ActivityControlPanel = ({setChosenYear, chosenYear}: any) => {
     const {t} = useTranslation();
