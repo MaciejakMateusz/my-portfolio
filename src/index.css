@@ -841,7 +841,7 @@ a {
 }
 
 .duty-list::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
 }
 
 .duty-list::-webkit-scrollbar-track {
@@ -1048,7 +1048,7 @@ a {
 }
 
 .form-text-area-field::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
 }
 
 .form-text-area-field::-webkit-scrollbar-track {
