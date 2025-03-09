@@ -9,7 +9,7 @@ import {ActivityControlPanel} from "./ActivityControlPanel.tsx";
 export const Activity = forwardRef((_, ref: any) => {
     const {t} = useTranslation();
     const { ref: motionRef, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
-    const defaultYear: any = {value: 2024, label: 2024};
+    const defaultYear: any = {value: new Date().getFullYear(), label: new Date().getFullYear()};
     const [chosenYear, setChosenYear] = useState<any>(defaultYear);
 
     return (
