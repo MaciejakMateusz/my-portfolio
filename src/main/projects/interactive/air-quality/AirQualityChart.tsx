@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../../../hooks/hooks.ts";
 import {fetchAQMeasurements} from "../../../../slices/airQualitySlice.ts";
 import {useTranslation} from "react-i18next";
+import {CustomSliceTooltip} from "./CustomSliceTooltip.tsx";
 
 export const AirQualityChart = () => {
     const dispatch = useAppDispatch();
@@ -39,7 +40,7 @@ export const AirQualityChart = () => {
             {error && <span className={'server-down-msg'}>{t('restApiDown')}</span>}
             <ResponsiveLine
                 data={data && data.length ? data : fallbackData()}
-                margin={{top: 50, right: 110, bottom: 50, left: 100}}
+                margin={{top: 50, bottom: 50, left: 70, right: 70}}
                 xScale={{type: 'point'}}
                 yScale={{
                     type: 'linear',
@@ -56,7 +57,7 @@ export const AirQualityChart = () => {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'days',
+                    legend: t('days'),
                     legendOffset: 36,
                     legendPosition: 'middle',
                     truncateTickAt: 0
@@ -108,6 +109,45 @@ export const AirQualityChart = () => {
                         ]
                     }
                 ]}
+                theme={{
+                    grid: {
+                        line: {
+                            stroke: '#383838'
+                        },
+                    },
+                    text: {
+                        fontFamily: 'Inter, serif',
+                        stroke: '#828282',
+                        fontWeight: 200,
+                        letterSpacing: 1
+                    },
+                    annotations: {
+                        text: {
+                            fontFamily: 'Inter, serif'
+                        }
+                    },
+                    axis: {
+                        ticks: {
+                            line: {
+                                strokeWidth: '0'
+                            },
+                            text: {
+                                fill: '#93939E'
+                            }
+                        }
+                    },
+                    crosshair: {
+                        line: {
+                            stroke: '#93939E'
+                        }
+                    },
+                    legends: {
+                        text: {
+                            fill: '#93939E'
+                        }
+                    }
+                }}
+                sliceTooltip={(props) => <CustomSliceTooltip {...props} />}
             />
         </div>
     );

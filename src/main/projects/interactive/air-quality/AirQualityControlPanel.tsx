@@ -7,7 +7,7 @@ import {
     setChosenMonth,
     setChosenYear
 } from "../../../../slices/airQualitySlice.ts";
-import {chartStyles} from "../../../../styles/selectStyles.ts";
+import {secondarySelect} from "../../../../styles/selectStyles.ts";
 import {getMonth} from "../../../../util/util.ts";
 import {useTranslation} from "react-i18next";
 import {useAppDispatch} from "../../../../hooks/hooks.ts";
@@ -64,54 +64,62 @@ export const AirQualityControlPanel = () => {
             <header className={'aq-control-panel'}>
                 <div className={'aq-locality-controls'}>
                     <div className={'aq-select'}>
-                        <Select id="aq-country"
-                                name="aq-country"
-                                value={chosenCountry}
-                                options={countriesData?.results?.map((data: any) => ({
-                                    value: data.id, label: data.name
-                                }))}
-                                onChange={(selected) => dispatch(setChosenCountry(selected))}
-                                styles={chartStyles}
-                                isSearchable={true}
-                        />
+                        <label className={'custom-select-label'}>
+                            {t('country')}:
+                            <Select id="aq-country"
+                                    name="aq-country"
+                                    value={chosenCountry}
+                                    options={countriesData?.results?.map((data: any) => ({
+                                        value: data.id, label: data.name
+                                    }))}
+                                    onChange={(selected) => dispatch(setChosenCountry(selected))}
+                                    styles={secondarySelect}
+                                    isSearchable={true}
+                            />
+                        </label>
                     </div>
                     <div className={'aq-select'}>
-                        <Select
-                            id="aq-location"
-                            name="aq-location"
-                            value={chosenLocation}
-                            options={locationsData?.results?.map((data: any) => ({
-                                value: data, label: data.name
-                            }))}
-                            onChange={(selected) => dispatch(setChosenLocation(selected))}
-                            styles={chartStyles}
-                            isSearchable={true}
-                        />
+                        <label className={'custom-select-label'}>
+                            {t('location')}:
+                            <Select
+                                id="aq-location"
+                                name="aq-location"
+                                value={chosenLocation}
+                                options={locationsData?.results?.map((data: any) => ({
+                                    value: data, label: data.name
+                                }))}
+                                onChange={(selected) => dispatch(setChosenLocation(selected))}
+                                styles={secondarySelect}
+                                isSearchable={true}
+                            />
+                        </label>
                     </div>
                 </div>
                 <div className={'aq-range-control'}>
-                    <label className={'aq-select'}>
-                        <Select
-                            id="aq-year"
-                            name="aq-year"
-                            value={chosenYear}
-                            options={getYears()}
-                            onChange={(selected) => dispatch(setChosenYear(selected))}
-                            styles={chartStyles}
-                            isSearchable={true}
-                        />
-                    </label>
-                    <label className={'aq-select'}>
-                        <Select
-                            id="aq-month"
-                            name="aq-month"
-                            value={chosenMonth}
-                            options={getMonths()}
-                            onChange={(selected) => dispatch(setChosenMonth(selected))}
-                            styles={chartStyles}
-                            isSearchable={true}
-                        />
-                    </label>
+                    <div className={'aq-select'}>
+                        <label className={'custom-select-label'}>
+                            {t('date')}:
+                            <Select
+                                id="aq-year"
+                                name="aq-year"
+                                value={chosenYear}
+                                options={getYears()}
+                                onChange={(selected) => dispatch(setChosenYear(selected))}
+                                styles={secondarySelect}
+                                isSearchable={true}
+                            />                        </label>
+                    </div>
+                    <div className={'aq-select'}>
+                            <Select
+                                id="aq-month"
+                                name="aq-month"
+                                value={chosenMonth}
+                                options={getMonths()}
+                                onChange={(selected) => dispatch(setChosenMonth(selected))}
+                                styles={secondarySelect}
+                                isSearchable={true}
+                            />
+                    </div>
                 </div>
             </header>
             {isLoading ? <div className="loader"/> : <></>}
