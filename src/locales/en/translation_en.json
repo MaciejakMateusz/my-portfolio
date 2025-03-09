@@ -186,5 +186,6 @@
   "toleranceMeasure_toleranceViolations": "Tolerance violations (inside/outside limits)",
   "toleranceMeasure_largestSmallestMeasurements": "Largest and smallest measurements",
   "toleranceMeasure_measurementRange": "Measurement range and sorted results",
-  "noResults": "No results"
+  "noResults": "No results",
+  "exampleMeasurements": "e.g.: 34.331, 34.524, 34.613"
 }

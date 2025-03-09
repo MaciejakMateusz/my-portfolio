@@ -184,5 +184,6 @@
   "toleranceMeasure_toleranceViolations": "Tolerantieovertredingen (binnen/buiten de limieten)",
   "toleranceMeasure_largestSmallestMeasurements": "Grootste en kleinste metingen",
   "toleranceMeasure_measurementRange": "Meetbereik en gesorteerde resultaten",
-  "noResults": "Geen resultaten"
+  "noResults": "Geen resultaten",
+  "exampleMeasurements": "bijv.: 34.331, 34.524, 34.613"
 }
