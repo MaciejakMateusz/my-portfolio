@@ -20,6 +20,7 @@ import {useAppDispatch} from "../../../../hooks/hooks.ts";
 import {useSelector} from "react-redux";
 import {useEffect} from "react";
 import {useTranslation} from "react-i18next";
+import {CustomLabel} from "../../../shared/form/CustomLabel.tsx";
 
 export const TranslatorAIForm = () => {
     const {t} = useTranslation();
@@ -94,23 +95,12 @@ export const TranslatorAIForm = () => {
         }
     };
 
-    const renderContextPlaceholder = () => {
-        return (
-            <p className={'custom-label-white'}>
-                {t('context')}&nbsp;
-                <span className={'custom-label-grey'}>
-                    {t('contextSub')}
-                </span>
-            </p>
-        );
-    }
-
     return (
         <div className={'project-container'}>
             <div className={'form-container'}>
                 {isLoading && <div className={'loader'}/>}
                 <form className={'contact-form'} onSubmit={handleSubmit(onSubmit)}>
-                    <TextField label={renderContextPlaceholder()}
+                    <TextField label={<CustomLabel text={`${t('context')}&nbsp;`} subText={t('contextSub')}/>}
                                name={'context'}
                                register={register}
                                error={errors.context}

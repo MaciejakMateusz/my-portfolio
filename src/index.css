@@ -10,6 +10,7 @@
     --Grey-200: #D9D9D9;
     --Grey-500: #828282;
     --Grey-900: #383838;
+    --Red-500: #D60339;
     --font-black: #000;
     --font-family-primary: "Poppins";
     --font-family-secondary: "Inter";
@@ -401,16 +402,21 @@ a {
     align-items: center;
     justify-content: center;
     background: var(--Basic-600);
-    padding: 8px 12px;
+    padding: 10px 12px;
     font-size: 1rem;
     border-radius: 12px;
     margin-left: 16px;
     cursor: pointer;
     transition: color 0.3s ease;
+    font-family: var(--font-family-secondary), serif;
 }
 
 .secondary-button:hover {
     color: white;
+}
+
+.secondary-button.white {
+    color: var(--Text-color-Heading);
 }
 
 
@@ -418,6 +424,10 @@ a {
     margin-left: 5px;
     color: var(--Grey-500);
     transition: color 0.3s ease;
+}
+
+.download-icon.white svg {
+    color: var(--Text-color-Heading);
 }
 
 .secondary-button:hover .download-icon svg {
@@ -1039,6 +1049,7 @@ a {
 .form-field-label {
     font-size: 0.85rem;
     line-height: 171%;
+    width: 100%;
 }
 
 .form-text-field {
@@ -1053,7 +1064,7 @@ a {
 }
 
 .form-text-field.invalid {
-    border: solid #C2000B 1px;
+    border: solid var(--Red-500) 1px;
 }
 
 .form-text-field::placeholder {
@@ -1072,7 +1083,7 @@ a {
 }
 
 .form-text-area-field.invalid {
-    border: solid #C2000B 1px;
+    border: solid var(--Red-500) 1px;
 }
 
 .form-text-area-field::-webkit-scrollbar {
@@ -1094,6 +1105,7 @@ a {
     align-items: center;
     justify-content: flex-end;
     padding-top: 10px;
+    gap: 12px;
 }
 
 .chips-multiselect {
@@ -1137,7 +1149,7 @@ a {
 
 .error-msg {
     animation: fadeIn 1s ease-in-out forwards;
-    color: #C2000B;
+    color: var(--Red-500);
 }
 
 .confirmation-msg {
@@ -1145,13 +1157,13 @@ a {
 }
 
 .error-msg {
-    color: #C2000B;
+    color: var(--Red-500);
 }
 
 .validation-msg {
     display: block;
     font-size: 0.85rem;
-    color: #C2000B;
+    color: var(--Red-500);
     margin-top: -10px;
     margin-bottom: 10px;
 }
@@ -1165,13 +1177,11 @@ a {
     left: 15px;
     top: 15px;
     font-size: 0.85rem;
-    color: #C2000B;
+    color: var(--Red-500);
 }
 
 .analysis {
     width: 100%;
-    padding: 0 40px;
-    box-sizing: border-box;
 }
 
 .analysis-line {
@@ -1384,7 +1394,7 @@ a {
     height: 50px;
 }
 
-.translator-ai {
+.project-view {
     padding: 40px 120px;
 }
 
@@ -1444,7 +1454,7 @@ a {
 }
 
 .translation-text-area.invalid {
-    border: solid #C2000B 1px;
+    border: solid var(--Red-500) 1px;
 }
 
 .project-description {
@@ -1474,6 +1484,31 @@ a {
     font-family: var(--background-primary), serif;
     color: var(--Text-color-Heading);
     font-weight: 500;
+}
+
+.product-fields-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 35px;
+}
+
+.analysis-container {
+    border-radius: 10px;
+    background: var(--Basic-600);
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    height: fit-content;
+    min-height: 240px;
+}
+
+.download-report {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px
 }
 
 @media (max-width: 1200px) {

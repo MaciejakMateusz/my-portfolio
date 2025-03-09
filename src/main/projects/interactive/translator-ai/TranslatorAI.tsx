@@ -9,7 +9,7 @@ export const TranslatorAI = () => {
 
     return (
         <>
-            <section className={'translator-ai'}>
+            <section className={'project-view'}>
                 <ProjectTopper location={`${t('projects')} / AI Translator`}
                                header={'AI Translator'}
                                description={`${t('translatorAIDescription')}`}/>

@@ -250,3 +250,76 @@ export const secondarySelect = {
         fontSize: '1rem'
     })
 }
+
+export const chipsStyles = {
+    input: (provided: any) => ({
+        ...provided,
+        color: '#FAFAFA'
+    }),
+    control: (provided: any, state: any) => ({
+        ...provided,
+        cursor: 'pointer',
+        borderRadius: '10px',
+        border: 'none',
+        backgroundColor: '#141414',
+        color: '#FAFAFA',
+        width: '100%',
+        minHeight: '44px',
+        textAlign: 'left',
+        fontFamily: 'Inter, serif',
+        fontSize: '0.85rem',
+        display: 'flex',
+        borderColor: state.isFocused ? 'transparent' : provided.borderColor,
+        boxShadow: state.isFocused ? 'none' : provided.boxShadow,
+        '&:hover': {
+            borderColor: state.isFocused ? 'transparent' : provided['&:hover'].borderColor,
+        }
+    }),
+    multiValue: (provided: any) => ({
+        ...provided,
+        backgroundColor: '#383838',
+        borderRadius: '8px',
+        color: '#FAFAFA',
+        padding: '2px 4px',
+        margin: '3px'
+    }),
+    multiValueLabel: (provided: any) => ({
+        ...provided,
+        color: '#FAFAFA',
+        fontSize: '0.85rem'
+    }),
+    multiValueRemove: (provided: any) => ({
+        ...provided,
+        color: '#FAFAFA',
+        cursor: 'pointer',
+        '&:hover': {
+            backgroundColor: '#D60339',
+            color: '#FFFFFF'
+        }
+    }),
+    dropdownIndicator: (provided: any) => ({
+        ...provided,
+        display: 'none'
+    }),
+    indicatorSeparator: (provided: any) => ({
+        ...provided,
+        display: 'none'
+    }),
+    option: (provided: any, state: any) => ({
+        ...provided,
+        fontFamily: 'Inter, serif',
+        fontSize: '0.85rem',
+        background: state.isSelected ? '#141414' : '#141414',
+        color: '#FAFAFA',
+        '&:hover': {
+            color: '#FAFAFA',
+            cursor: 'pointer'
+        }
+    }),
+    placeholder: (provided: any) => ({
+        ...provided,
+        color: '#828282',
+        fontSize: '0.85rem',
+        fontStyle: 'italic'
+    })
+}
