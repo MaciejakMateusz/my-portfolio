@@ -119,25 +119,39 @@ a {
     color: var(--Text-color-Heading);
 }
 
+.hamburger-bun {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .hamburger {
     position: fixed;
     width: 20px;
     height: 20px;
+    padding: 8px;
     top: 50px;
     right: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9000;
+    border-radius: 10px;
+    background: rgba(9, 9, 9, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.hamburger-slices {
 }
 
 .hamburger-slice {
     width: 16px;
     height: 0.09rem;
     background: var(--Grey-500);
-    margin-bottom: 5px;
     border-radius: 7px;
+    margin: 5px 0;
 }
+
 
 .mobile-side-menu {
     position: fixed;
@@ -161,19 +175,21 @@ a {
     position: absolute;
     right: 20px;
     top: 50px;
+    cursor: pointer;
 }
 
 .side-menu-nav-btns {
-    padding: 130px 0 0 40px;
+    padding: 150px 0 0 40px;
 }
 
 .side-menu-nav-btn {
-    margin: 20px 0;
+    padding: 0 0 20px 0;
     font-family: var(--font-family-secondary), serif;
     font-size: 1rem;
+    cursor: pointer;
 }
 
-.side-menu-nav-btn.active {
+.side-menu-nav-btn.active, .side-menu-nav-btn:hover {
     color: var(--Text-color-Heading);
 }
 
@@ -256,6 +272,7 @@ a {
 }
 
 .drop-icon {
+    cursor: pointer;
 }
 
 .dropped {
@@ -270,6 +287,11 @@ a {
     font-weight: 400;
     line-height: 20px;
     margin-right: 5px;
+    cursor: pointer;
+}
+
+.lng-mobile-display:hover, .lng-mobile:hover {
+    color: var(--Text-color-Heading);
 }
 
 .lng-mobile-display.side-menu {

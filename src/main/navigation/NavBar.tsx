@@ -40,13 +40,15 @@ export const NavBar = ({
     return (
         <>
             {isMobile ?
-                <button className="hamburger" onClick={() => setIsExpanded(true)}>
-                    <div>
-                        <div className={'hamburger-slice'}/>
-                        <div className={'hamburger-slice'}/>
-                        <div className={'hamburger-slice'}/>
-                    </div>
-                </button> :
+                <div className={'hamburger-bun'}>
+                    <button className="hamburger" onClick={() => setIsExpanded(true)}>
+                        <div className={'hamburger-slices'}>
+                            <div className={'hamburger-slice'}/>
+                            <div className={'hamburger-slice'}/>
+                            <div className={'hamburger-slice'}/>
+                        </div>
+                    </button>
+                </div> :
                 <nav className="nav-header">
                     <div className={'nav-buttons-container'}>
                         <div className={'nav-buttons-wrapper'}>
