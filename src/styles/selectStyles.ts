@@ -134,7 +134,7 @@ export const mainSelect = {
         boxShadow: 'none',
         border: 'none',
         outline: 'none',
-        backgroundColor: '#FFB000'
+        backgroundColor: '#0E0E0E'
     }),
     menuList: (provided: any) => ({
         ...provided,
@@ -154,9 +154,8 @@ export const mainSelect = {
         ...provided,
         fontFamily: 'Inter, serif',
         fontSize: '0.85rem',
-        background: state.isSelected ? '#FFB000' : '#FFB000',
-        color: '#090909',
-        '&:hover': {backgroundColor: '#FFB000'}
+        background: state.isSelected ? '#0E0E0E' : '#0E0E0E',
+        color: '#FAFAFA'
     }),
     placeholder: (provided: any, state: any) => ({
         ...provided,

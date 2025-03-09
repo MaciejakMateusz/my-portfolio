@@ -81,7 +81,7 @@
   "messageSent": "Wiadomość wysłana pomyślnie",
   "invalidFieldLength": "Pole powinno mieć od {{from}} do {{to}} znaków",
   "fieldRequired": "Pole jest wymagane",
-  "restApiDown": "Serwer jest wyłączony. Proszę o kontakt, jeśli problem będzie się powtarzał.",
+  "restApiDown": "Serwer jest wyłączony. Skontaktuj się ze mną, jeśli problem będzie się powtarzać.",
   "invalidDimensionValue": "Wymiar powinien mieć od {{from}} do {{to}} mm",
   "minDimension": "Wymiar powinien mieć minimum {{dimension}} mm",
   "productLength": "Długość produktu (mm)",
