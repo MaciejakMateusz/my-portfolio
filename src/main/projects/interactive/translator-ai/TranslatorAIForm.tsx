@@ -51,7 +51,7 @@ export const TranslatorAIForm = () => {
 
     useEffect(() => {
         dispatch(setSourceLang({value: undefined, label: t("autoDetect")}));
-        dispatch(setTargetLang({value: 'EN-US', label: t('EN-US')}));
+        dispatch(setTargetLang({value: 'EN', label: t('EN')}));
     }, []);
 
     useEffect(() => {
