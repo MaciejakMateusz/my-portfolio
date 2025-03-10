@@ -5,9 +5,30 @@ export const ProjectDescription = () => {
     return (
         <div className={'project-description'}>
             <div>
+                <h1 className={'project-description-header'}>Jak działają czujniki powietrza?</h1>
+                <p>Czujniki mierzą różne parametry zanieczyszczeń w powietrzu, takie jak:</p>
+                <ul>
+                    <li className={'project-description-li'}>
+                        PM2.5 – drobne cząstki stałe o średnicy ≤ 2,5 µm
+                    </li>
+                    <li className={'project-description-li'}>
+                        PM10 – większe cząstki stałe o średnicy ≤ 10 µm
+                    </li>
+                    <li className={'project-description-li'}>
+                        NO₂ (Dwutlenek azotu) – gaz powstały głównie na skutek ruchu samochodowego i spalania paliw
+                    </li>
+                    <li className={'project-description-li'}>
+                        SO₂ (Dwutlenek siarki) – gaz powstały głównie podczas spalania węgla i ropy
+                    </li>
+                    <li className={'project-description-li'}>
+                        CO (Tlenek węgla) – gaz pochodzący ze spalania paliw
+                    </li>
+                    <li className={'project-description-li'}>
+                        O₃ (Ozon) – powstający w wyniku reakcji fotochemicznych w atmosferze
+                    </li>
+                </ul>
                 <h1 className={'project-description-header'}>{t('airQuality_projectDescription')}</h1>
                 <p>{t('airQuality_projectDescriptionText')}</p>
-
                 <h2 className={'project-description-header'}>{t('airQuality_features')}</h2>
                 <ul>
                     <li className={'project-description-li'}>
