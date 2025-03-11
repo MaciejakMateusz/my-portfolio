@@ -8,7 +8,10 @@ import {TranslatorAI} from "../main/projects/interactive/translator-ai/Translato
 
 export const Router = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true
+        }}>
             <Routes>
                 <Route path='/' element={<Main />}/>
                 <Route path='/air-quality' element={<AirQuality />}/>
