@@ -203,5 +203,13 @@
   "airQuality_techBackend": "Backend:",
   "airQuality_techBackendText": "Spring Boot, Spring Security, REST API",
   "airQuality_benefits": "Benefits",
-  "airQuality_benefitsText": "Users can easily analyze air quality data in various regions and time periods. The system allows quick filtering and retrieval of information, which is crucial for environmental, medical research, or administrative actions. The solution is scalable and can be expanded with additional functionalities such as alerts for high pollution levels or data visualizations on maps."
+  "airQuality_benefitsText": "Users can easily analyze air quality data in various regions and time periods. The system allows quick filtering and retrieval of information, which is crucial for environmental, medical research, or administrative actions. The solution is scalable and can be expanded with additional functionalities such as alerts for high pollution levels or data visualizations on maps.",
+  "airQuality_projectDescriptionHeader": "How do air sensors work?",
+  "airQuality_projectDescriptionText1": "Sensors measure various air pollution parameters such as:",
+  "airQuality_PM25": "PM2.5 – fine particulate matter with a diameter ≤ 2.5 µm",
+  "airQuality_PM10": "PM10 – larger particulate matter with a diameter ≤ 10 µm",
+  "airQuality_NO2": "NO₂ (Nitrogen Dioxide) – a gas mainly produced by vehicle traffic and fuel combustion",
+  "airQuality_SO2": "SO₂ (Sulfur Dioxide) – a gas mainly produced during the combustion of coal and oil",
+  "airQuality_CO": "CO (Carbon Monoxide) – a gas resulting from fuel combustion",
+  "airQuality_O3": "O₃ (Ozone) – formed through photochemical reactions in the atmosphere"
 }

@@ -202,5 +202,13 @@
   "airQuality_techBackend": "Backend:",
   "airQuality_techBackendText": "Spring Boot, Spring Security, REST API",
   "airQuality_benefits": "Korzyści",
-  "airQuality_benefitsText": "Użytkownicy mogą w łatwy sposób analizować dane dotyczące jakości powietrza w różnych regionach i okresach czasu. System pozwala na szybkie filtrowanie i pobieranie informacji, co jest kluczowe dla badań środowiskowych, medycznych lub działań administracyjnych. Rozwiązanie jest skalowalne i może być rozszerzone o dodatkowe funkcjonalności, takie jak alerty o wysokim poziomie zanieczyszczeń czy wizualizacje danych na mapach."
+  "airQuality_benefitsText": "Użytkownicy mogą w łatwy sposób analizować dane dotyczące jakości powietrza w różnych regionach i okresach czasu. System pozwala na szybkie filtrowanie i pobieranie informacji, co jest kluczowe dla badań środowiskowych, medycznych lub działań administracyjnych. Rozwiązanie jest skalowalne i może być rozszerzone o dodatkowe funkcjonalności, takie jak alerty o wysokim poziomie zanieczyszczeń czy wizualizacje danych na mapach.",
+  "airQuality_projectDescriptionHeader": "Jak działają czujniki powietrza?",
+  "airQuality_projectDescriptionText1": "Czujniki mierzą różne parametry zanieczyszczeń w powietrzu, takie jak:",
+  "airQuality_PM25": "PM2.5 – drobne cząstki stałe o średnicy ≤ 2,5 µm",
+  "airQuality_PM10": "PM10 – większe cząstki stałe o średnicy ≤ 10 µm",
+  "airQuality_NO2": "NO₂ (Dwutlenek azotu) – gaz powstały głównie na skutek ruchu samochodowego i spalania paliw",
+  "airQuality_SO2": "SO₂ (Dwutlenek siarki) – gaz powstały głównie podczas spalania węgla i ropy",
+  "airQuality_CO": "CO (Tlenek węgla) – gaz pochodzący ze spalania paliw",
+  "airQuality_O3": "O₃ (Ozon) – powstający w wyniku reakcji fotochemicznych w atmosferze"
 }

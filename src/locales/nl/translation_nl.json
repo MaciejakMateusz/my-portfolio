@@ -201,5 +201,13 @@
   "airQuality_techBackend": "Backend:",
   "airQuality_techBackendText": "Spring Boot, Spring Security, REST API",
   "airQuality_benefits": "Voordelen",
-  "airQuality_benefitsText": "Gebruikers kunnen eenvoudig luchtkwaliteitsgegevens analyseren in verschillende regio's en tijdsperioden. Het systeem maakt snelle filtering en gegevensopvraging mogelijk, wat essentieel is voor milieukundig, medisch onderzoek of administratieve acties. De oplossing is schaalbaar en kan worden uitgebreid met aanvullende functionaliteiten zoals waarschuwingen voor hoge vervuilingsniveaus of gegevensvisualisaties op kaarten."
+  "airQuality_benefitsText": "Gebruikers kunnen eenvoudig luchtkwaliteitsgegevens analyseren in verschillende regio's en tijdsperioden. Het systeem maakt snelle filtering en gegevensopvraging mogelijk, wat essentieel is voor milieukundig, medisch onderzoek of administratieve acties. De oplossing is schaalbaar en kan worden uitgebreid met aanvullende functionaliteiten zoals waarschuwingen voor hoge vervuilingsniveaus of gegevensvisualisaties op kaarten.",
+  "airQuality_projectDescriptionHeader": "Hoe werken luchtkwaliteitssensoren?",
+  "airQuality_projectDescriptionText1": "Sensoren meten verschillende parameters van luchtvervuiling, zoals:",
+  "airQuality_PM25": "PM2.5 – fijne deeltjes met een diameter ≤ 2,5 µm",
+  "airQuality_PM10": "PM10 – grotere deeltjes met een diameter ≤ 10 µm",
+  "airQuality_NO2": "NO₂ (Stikstofdioxide) – een gas dat voornamelijk wordt geproduceerd door verkeersverkeer en verbranding van brandstoffen",
+  "airQuality_SO2": "SO₂ (Zwaveldioxide) – een gas dat voornamelijk vrijkomt bij de verbranding van steenkool en olie",
+  "airQuality_CO": "CO (Koolmonoxide) – een gas dat vrijkomt bij de verbranding van brandstoffen",
+  "airQuality_O3": "O₃ (Ozon) – gevormd door fotochemische reacties in de atmosfeer"
 }
