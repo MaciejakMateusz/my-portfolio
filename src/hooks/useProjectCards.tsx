@@ -53,5 +53,12 @@ export const useProjectCards = (): JSX.Element[] => {
                      img="/portfolio-rest-api.png"
                      projectUrl={'/portfolio-api'}
                      githubUrl={'https://github.com/MaciejakMateusz/my-portfolio-rest'}/>,
+        <ProjectCard key={'hungryScan'}
+                     name={'HungryScan'}
+                     description={t('hungryScanDescription')}
+                     technologies={'Spring Boot, Spring Security, React, Redis'}
+                     img="/hungry-scan.png"
+                     projectUrl={'/hungry-scan'}
+                     githubUrl={'https://github.com/MaciejakMateusz/hungry-scan-core'}/>
     ];
 };
