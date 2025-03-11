@@ -777,6 +777,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 15px;
 }
 
 .carousel-card-button-container .primary-button {
