@@ -51,7 +51,7 @@ export const ActivityControlPanel = ({setChosenYear, chosenYear}: any) => {
                     {years?.map((year: any) => (
                         <button className={`primary-button spaced ${chosenYear.value !== year.value ? 'inactive' : ''}`}
                                 onClick={() => setChosenYear(year)}
-                                key={year}>
+                                key={year.value}>
                             {year.value}
                         </button>
                     ))}
