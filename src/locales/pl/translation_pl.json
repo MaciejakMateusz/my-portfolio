@@ -78,6 +78,7 @@
   "digitalMenuDescription": "Cyfrowe menu używane przez klientów restauracji, definiowane poprzez CMS restauracji.",
   "toleranceMeasureDescription": "Program do analizowania precyzji maszyn tnących, który bazuje na podanych parametrach i wymiarach produktów.",
   "portfolioApiDescription": "Serwer REST API do obsługi portfolio maciejakmateusz.pl, obsługuje potrzebną do działania strony komunikację.",
+  "hungryScanDescription": "Centralny serwer REST obsługujący system QR stworzony dla restauracji, który ułatwia klientom dostęp do interaktywnego menu.",
   "messageSent": "Wiadomość wysłana pomyślnie",
   "invalidFieldLength": "Pole powinno mieć od {{from}} do {{to}} znaków",
   "fieldRequired": "Pole jest wymagane",
