@@ -65,11 +65,11 @@ export const fetchAQCountries =
                     }
                 });
                 if (!response.ok) {
-                    return rejectWithValue(`Server responded with ${response.status} - ${response.statusText}`);
+                    return rejectWithValue(response.status.toString());
                 }
                 return await response.json();
             } catch (error: any) {
-                return rejectWithValue(error.message || 'Could not connect to server');
+                return rejectWithValue('restApiDown');
             }
         });
 
@@ -88,11 +88,7 @@ export const fetchAQCountriesSlice = createSlice(
                 state.data = action.payload;
             }).addCase(fetchAQCountries.rejected, (state: GenericState, action: any) => {
                 state.isLoading = false;
-                if (action.payload) {
-                    state.error = action.payload as string;
-                } else {
-                    state.error = action.error.message || 'Failed to fetch from OpenAQ';
-                }
+                state.error = action.payload;
             })
         }
     }

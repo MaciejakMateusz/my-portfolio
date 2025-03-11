@@ -28,7 +28,7 @@ export const sendEmail =
                 });
 
                 if (!response.ok) {
-                    return rejectWithValue(`Server responded with ${response.status} - ${response.statusText}`);
+                    return rejectWithValue(response.status.toString());
                 }
 
                 try {
@@ -37,7 +37,7 @@ export const sendEmail =
                     return {};
                 }
             } catch (error: any) {
-                return rejectWithValue(error.message || 'Could not connect to server');
+                return rejectWithValue('restApiDown');
             }
         });
 
@@ -59,11 +59,7 @@ export const sendEmailSlice = createSlice(
                 state.isLoading = false;
             }).addCase(sendEmail.rejected, (state, action) => {
                 state.isLoading = false;
-                if (action.payload) {
-                    state.error = action.payload as string;
-                } else {
-                    state.error = action.error.message || 'Failed to fetch contributions';
-                }
+                state.error = action.payload;
             })
         }
     });

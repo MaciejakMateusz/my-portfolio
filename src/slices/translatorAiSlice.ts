@@ -41,23 +41,19 @@ export const fetchTranslation =
                 );
 
                 if (!response.ok) {
-                    return rejectWithValue(
-                        `Server responded with ${response.status} - ${response.statusText}`
-                    );
+                    return rejectWithValue(response.status.toString());
                 }
 
                 return await response.json();
             } catch (error: any) {
-                return rejectWithValue(
-                    error.message || 'Could not connect to server'
-                );
+                return rejectWithValue('restApiDown');
             }
         }
     );
 
 
 export const fetchTranslationSlice = createSlice({
-    name: 'fetchAnalysis',
+    name: 'fetchTranslation',
     initialState: initialFetchState,
     reducers: {},
     extraReducers: (builder) => {
@@ -71,9 +67,7 @@ export const fetchTranslationSlice = createSlice({
             })
             .addCase(fetchTranslation.rejected, (state, action) => {
                 state.isLoading = false;
-                state.error = action.payload
-                    ? (action.payload as string)
-                    : action.error.message || 'Failed to fetch analysis.';
+                state.error = action.payload;
             });
     }
 });

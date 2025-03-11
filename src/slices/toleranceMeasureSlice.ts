@@ -21,7 +21,7 @@ const initialFormState: ToleranceMeasureFields = {
 };
 
 export const fetchAnalysis =
-    createAsyncThunk<{ pdf: string; analysis: AnalysisType }, PreparedMeasurements>(
+    createAsyncThunk<{ pdf: string; analysis: AnalysisType }, PreparedMeasurements, { rejectValue: string }>(
         'contact/fetchAnalysis',
         async (params, {rejectWithValue}) => {
             try {
@@ -38,16 +38,12 @@ export const fetchAnalysis =
                 );
 
                 if (!response.ok) {
-                    return rejectWithValue(
-                        `Server responded with ${response.status} - ${response.statusText}`
-                    );
+                    return rejectWithValue(response.status.toString());
                 }
 
                 return await response.json();
             } catch (error: any) {
-                return rejectWithValue(
-                    error.message || 'Could not connect to server'
-                );
+                return rejectWithValue('restApiDown');
             }
         }
     );
@@ -69,9 +65,7 @@ export const fetchAnalysisSlice = createSlice({
             })
             .addCase(fetchAnalysis.rejected, (state, action) => {
                 state.isLoading = false;
-                state.error = action.payload
-                    ? (action.payload as string)
-                    : action.error.message || 'Failed to fetch analysis.';
+                state.error = action.payload;
             });
     }
 });
