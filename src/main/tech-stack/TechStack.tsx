@@ -1,6 +1,6 @@
 import {useTranslation} from "react-i18next";
 import {SectionHeader} from "../shared/SectionHeader.tsx";
-import {RadarChart} from "./RadarChart.tsx";
+import {TechStackChart} from "./TechStackChart.tsx";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {TechsInfiniteScroll} from "./TechsInfiniteScroll.tsx";
@@ -34,7 +34,7 @@ export const TechStack = forwardRef((_, ref: any) => {
                         <div className={`chart-box ${mobileMode ? 'chart-box-mobile' : ''}`}>
                             {mobileMode ? <TechsInfiniteScrollMobile/> : <TechsInfiniteScroll/>}
                             <div className={'continuous-scroll'}></div>
-                            <RadarChart/>
+                            <TechStackChart/>
                         </div>
                     </div>
                 </section>

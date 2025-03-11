@@ -4,7 +4,7 @@ import {useSkillsData} from "../../hooks/useSkillsData.ts";
 import {RadarChartLegend} from "./RadarChartLegend.tsx";
 import {useEffect, useState} from "react";
 
-export const RadarChart = () => {
+export const TechStackChart = () => {
     const {t} = useTranslation();
     const data = useSkillsData();
     const initialMargins = {top: 70, right: 100, bottom: 70, left: 100};
