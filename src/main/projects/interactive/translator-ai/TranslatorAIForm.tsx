@@ -21,11 +21,13 @@ import {useSelector} from "react-redux";
 import {useEffect} from "react";
 import {useTranslation} from "react-i18next";
 import {CustomLabel} from "../../../shared/form/CustomLabel.tsx";
+import {useErrorMessage} from "../../../../hooks/useErrorMessage.ts";
 
 export const TranslatorAIForm = () => {
     const {t} = useTranslation();
     const dispatch = useAppDispatch();
     const {isLoading, error} = useSelector<any, any>(state => state.translation.translation);
+    const errorMsg = useErrorMessage({error});
     const {
         text,
         source_lang,
@@ -77,8 +79,6 @@ export const TranslatorAIForm = () => {
     }, [detectedSource, target_lang, filteredTargetOptions, dispatch]);
 
     const onSubmit = async () => {
-        console.log('submit triggered');
-
         if (isLoading || isSubmitting) return;
 
         const params: TranslationFormFields = {
@@ -147,9 +147,7 @@ export const TranslatorAIForm = () => {
                         </div>
                     </div>
                     <div className={'form-button-wrapper'}>
-                        {error && <span className={'form-msg error-msg'}>
-                            {t('restApiDown')}
-                        </span>}
+                        {error && <span className={'form-msg error-msg'}>{errorMsg}</span>}
                         <button type={'submit'}
                                 className={`primary-button ${isLoading && 'deactivated'}`}
                                 disabled={isLoading || isSubmitting}>

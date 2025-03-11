@@ -8,7 +8,6 @@ export const useErrorMessage = ({error}: useErrorMessageProps) => {
     const {t} = useTranslation();
 
     const getErrorMsg = () => {
-        console.log(error)
         if (!error) return '';
         if (error === 'restApiDown') {
             return t('restApiDown');

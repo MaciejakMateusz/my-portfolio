@@ -4,10 +4,12 @@ import {useTranslation} from "react-i18next";
 import {ProjectDescription} from "./ProjectDescription.tsx";
 import {Footer} from "../../../footer/Footer.tsx";
 import {useSelector} from "react-redux";
+import {useErrorMessage} from "../../../../hooks/useErrorMessage.ts";
 
 export const ToleranceMeasure = () => {
     const {t} = useTranslation();
     const {error} = useSelector<any, any>(state => state.toleranceMeasure.analysis);
+    const errorMsg = useErrorMessage({error});
 
     return (
         <>
@@ -16,9 +18,7 @@ export const ToleranceMeasure = () => {
                                header={'Tolerance Measure'}
                                description={`${t('toleranceMeasureDescription')}`}/>
                 <ToleranceMeasureForm/>
-                {error && <span className={'form-msg error-msg'}>
-                        {t('restApiDown')}
-                        </span>}
+                {error && <span className={'form-msg error-msg'}>{errorMsg}</span>}
                 <ProjectDescription/>
             </section>
             <Footer/>

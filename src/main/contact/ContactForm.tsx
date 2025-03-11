@@ -8,12 +8,14 @@ import {useAppDispatch} from "../../hooks/hooks.ts";
 import {useTranslation} from "react-i18next";
 import {TextField} from "../shared/form/TextField.tsx";
 import {TextAreaField} from "../shared/form/TextAreaField.tsx";
+import {useErrorMessage} from "../../hooks/useErrorMessage.ts";
 
 export const ContactForm = () => {
     const {t} = useTranslation();
     const dispatch = useAppDispatch();
     const {from, subject, text} = useSelector<any, any>(state => state.contact.form);
     const {data, isLoading, error} = useSelector<any, any>(state => state.contact.contact);
+    const errorMsg = useErrorMessage({error});
     const schema = useContactFormValidator();
     const {
         register,
@@ -64,9 +66,7 @@ export const ContactForm = () => {
                                value={text}
                                action={setText}/>
                 <div className={'form-button-wrapper'}>
-                    {error && <span className={'form-msg error-msg'}>
-                        {t('restApiDown')}
-                    </span>}
+                    {error && <span className={'form-msg error-msg'}>{errorMsg}</span>}
                     {data && <span className={'form-msg confirmation-msg'}>
                         {t('messageSent')}
                     </span>}

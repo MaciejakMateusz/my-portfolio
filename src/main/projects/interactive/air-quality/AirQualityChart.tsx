@@ -5,6 +5,7 @@ import {useAppDispatch} from "../../../../hooks/hooks.ts";
 import {fetchAQMeasurements} from "../../../../slices/airQualitySlice.ts";
 import {useTranslation} from "react-i18next";
 import {CustomSliceTooltip} from "./CustomSliceTooltip.tsx";
+import {useErrorMessage} from "../../../../hooks/useErrorMessage.ts";
 
 export const AirQualityChart = () => {
     const dispatch = useAppDispatch();
@@ -12,6 +13,7 @@ export const AirQualityChart = () => {
     const {chosenLocation, chosenYear, chosenMonth} = useSelector((state: any) => state.airQuality.view);
     const {data} = useSelector((state: any) => state.airQuality.fetchMeasurements);
     const {error} = useSelector((state: any) => state.airQuality.fetchCountries);
+    const errorMsg = useErrorMessage({error});
 
     const sensorIds = useMemo(() =>
             chosenLocation.value?.sensors?.map((sensor: any) => sensor.id).join(",") || "",
@@ -37,7 +39,7 @@ export const AirQualityChart = () => {
 
     return (
         <div className={'air-quality-chart-wrapper'}>
-            {error && <span className={'server-down-msg'}>{t('restApiDown')}</span>}
+            {error && <span className={'server-down-msg'}>{errorMsg}</span>}
             <div className={'chart-scroll-wrapper'}>
                 <div className={'chart-scroll-inner'}>
                     <ResponsiveLine
