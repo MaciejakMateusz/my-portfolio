@@ -5,6 +5,7 @@ import {AirQuality} from "../main/projects/interactive/air-quality/AirQuality.ts
 import {PortfolioApi} from "../main/projects/non-interactive/portfolio-api/PortfolioApi.tsx";
 import {ToleranceMeasure} from "../main/projects/interactive/tolerance-measure/ToleranceMeasure.tsx";
 import {TranslatorAI} from "../main/projects/interactive/translator-ai/TranslatorAI.tsx";
+import {HungryScan} from "../main/projects/non-interactive/hungry-scan/HungryScan.tsx";
 
 export const Router = () => {
     return (
@@ -18,6 +19,7 @@ export const Router = () => {
                 <Route path='/ai-translator' element={<TranslatorAI/>}/>
                 <Route path='/tolerance-measure' element={<ToleranceMeasure/>}/>
                 <Route path='/portfolio-api' element={<PortfolioApi/>}/>
+                <Route path='/hungry-scan' element={<HungryScan/>}/>
             </Routes>
         </BrowserRouter>
     )
