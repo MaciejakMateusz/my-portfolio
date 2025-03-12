@@ -2,7 +2,7 @@ import SwaggerUI from "swagger-ui-react";
 
 export const HungryScan = () => {
     return (
-        <div style={{background: '#FFF'}}>
+        <div>
             <SwaggerUI url="/json/hungry-scan-open-api.json" />
         </div>
     );

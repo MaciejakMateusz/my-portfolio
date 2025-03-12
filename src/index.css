@@ -1519,6 +1519,169 @@ a {
     margin-top: 20px
 }
 
+/* SWAGGER UI */
+
+.swagger-ui {
+    color: var(--Grey-500) !important;
+    font-family: var(--font-family-secondary), serif !important
+}
+
+.swagger-ui .scheme-container {
+    background: var(--background-primary) !important;
+}
+
+.swagger-ui .info .title {
+    color: var(--Text-color-Heading) !important;
+    font-family: var(--font-family-primary), serif !important;
+}
+
+.swagger-ui .info li, .swagger-ui .info p, .swagger-ui .info table {
+    color: var(--Grey-500) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .info a {
+    color: #4990e2;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui a.nostyle, .swagger-ui a.nostyle:visited {
+    color: var(--Text-color-Heading) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .opblock .opblock-summary-method {
+    border-radius: 4px !important;
+    color: var(--Text-color-Heading) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .opblock .opblock-summary-description {
+    color: var(--Grey-500) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .opblock-control-arrow {
+    fill: white;
+    transform: scale(0.7);
+}
+
+.swagger-ui svg:not(:root) {
+    fill: white;
+    transform: scale(0.7);
+}
+
+.swagger-ui .opblock .opblock-section-header {
+    background: inherit !important;
+}
+
+.swagger-ui .opblock .opblock-section-header h4 {
+    color: var(--Text-color-Heading) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .opblock-description-wrapper p, .swagger-ui .opblock-external-docs-wrapper p, .swagger-ui .opblock-title_normal p {
+    color: var(--Grey-500) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .tab li button.tablinks {
+    color: var(--Grey-500) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .response-col_status {
+    color: var(--Grey-500) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui table thead tr td, .swagger-ui table thead tr th {
+    color: var(--Grey-500) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .response-col_links {
+    color: var(--Grey-500) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .opblock-body pre.microlight {
+    background: var(--background-secondary) !important;
+}
+
+.swagger-ui .btn {
+    color: var(--Text-color-Heading) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui select {
+    color: var(--font-black) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui section.models h4 {
+    color: var(--Text-color-Heading) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .model-title {
+    color: var(--Text-color-Heading) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .model {
+    color: var(--Grey-500) !important;
+}
+
+.swagger-ui section.models {
+    border: 1px solid var(--Grey-500) !important;
+}
+
+.swagger-ui section.models.is-open h4 {
+    border-bottom: 1px solid var(--Grey-500) !important;
+}
+
+.swagger-ui .models-control {
+    border: none !important;
+}
+
+.swagger-ui .models-control:focus {
+    border: none !important;
+}
+
+.swagger-ui *:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+.swagger-ui textarea {
+    background: var(--background-secondary) !important;
+    color: var(--Grey-500) !important;
+    font-size: 0.85rem !important;
+}
+
+.swagger-ui .btn.cancel {
+    border-color: var(--Red-500) !important;
+    color: var(--Text-color-Heading) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .renderedMarkdown {
+    color: var(--Grey-500) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
+.swagger-ui .execute-wrapper .btn {
+    width: unset !important;
+}
+
+.swagger-ui .scheme-container {
+    display: none !important;
+}
+
+/* END OF SWAGGER UI */
+
 @media (max-width: 1200px) {
     .calendar-chart-legend {
         bottom: 10px;
@@ -1756,6 +1919,12 @@ a {
     .translation-fields-wrapper {
         display: block;
         margin-top: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .swagger-ui .opblock-tag {
+        display: block !important;
     }
 }
 
