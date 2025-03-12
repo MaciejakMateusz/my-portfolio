@@ -7,30 +7,37 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8080"
+      "url": "https://my-portfolio-rest-production.up.railway.app"
+    }
+  ],
+  "tags": [
+    {
+      "name": "GitHub Activity",
+      "description": "Get contributions from GitHub API"
+    },
+    {
+      "name": "Air Quality",
+      "description": "Endpoints related to AirQuality project"
+    },
+    {
+      "name": "ToleranceMeasure",
+      "description": "Endpoints related to ToleranceMeasure project"
+    },
+    {
+      "name": "AI Translator",
+      "description": "Endpoints for AI Translator project"
+    },
+    {
+      "name": "Contact",
+      "description": "Endpoint for sending an email through contact form"
     }
   ],
   "paths": {
-    "/api": {
-      "options": {
-        "summary": "OPTIONS api",
-        "operationId": "options_api",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/Void"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/contributions": {
       "post": {
+        "tags": [
+          "GitHub Activity"
+        ],
         "summary": "POST api/contributions",
         "operationId": "post_contributions",
         "requestBody": {
@@ -45,56 +52,56 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
+            "description": "OK"
+          }
+        }
+      },
+      "options": {
+        "tags": [
+          "GitHub Activity"
+        ],
+        "summary": "OPTIONS api/contributions",
+        "operationId": "options_api",
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
     },
     "/api/aq": {
       "options": {
+        "tags": [
+          "Air Quality"
+        ],
         "summary": "OPTIONS api/aq",
         "operationId": "options_aq",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/Void"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
     "/api/aq/countries": {
       "get": {
+        "tags": [
+          "Air Quality"
+        ],
         "summary": "GET api/aq/countries",
         "operationId": "get_aq_countries",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
     "/api/aq/locations": {
       "post": {
+        "tags": [
+          "Air Quality"
+        ],
         "summary": "POST api/aq/locations",
         "operationId": "post_aq_locations",
         "requestBody": {
@@ -110,20 +117,16 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
     "/api/aq/measurements": {
       "post": {
+        "tags": [
+          "Air Quality"
+        ],
         "summary": "POST api/aq/measurements",
         "operationId": "post_aq_measurements",
         "requestBody": {
@@ -138,38 +141,30 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
     "/api/tolerance-measure": {
       "options": {
+        "tags": [
+          "ToleranceMeasure"
+        ],
         "summary": "OPTIONS api/tolerance-measure",
         "operationId": "options_tolerance_measure",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/Void"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
     "/api/tolerance-measure/calculate": {
       "post": {
+        "tags": [
+          "ToleranceMeasure"
+        ],
         "summary": "POST api/tolerance-measure/calculate",
         "operationId": "post_tolerance_measure_calculate",
         "requestBody": {
@@ -184,20 +179,16 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
     "/api/translate": {
       "post": {
+        "tags": [
+          "AI Translator"
+        ],
         "summary": "POST api/translate",
         "operationId": "post_translate",
         "requestBody": {
@@ -212,43 +203,53 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
       "options": {
+        "tags": [
+          "AI Translator"
+        ],
         "summary": "OPTIONS api/translate",
         "operationId": "options_translate",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/Void"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
     "/api/email": {
       "post": {
+        "tags": [
+          "Contact"
+        ],
         "summary": "POST api/email",
         "operationId": "post_email",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "type": "object",
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "The sender's firstname and surname",
+                    "example": "John Smith"
+                  },
+                  "subject": {
+                    "type": "string",
+                    "description": "The subject of the email",
+                    "example": "Website Inquiry"
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "The email body content",
+                    "example": "Hello, I would like to know more about your services."
+                  }
+                },
+                "required": ["from", "subject", "text"]
               }
             }
           },
@@ -256,30 +257,19 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
       "options": {
+        "tags": [
+          "Contact"
+        ],
         "summary": "OPTIONS api/email",
         "operationId": "options_email",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/Void"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -287,45 +277,24 @@
   },
   "components": {
     "schemas": {
-      "Void": {
-        "type": "object",
-        "properties": {}
-      },
-      "Instant": {
-        "type": "object",
-        "properties": {}
-      },
       "YearRange": {
         "type": "object",
         "properties": {
           "yearBegin": {
-            "$ref": "#/components/schemas/Instant"
+            "type": "string"
           },
           "yearEnd": {
-            "$ref": "#/components/schemas/Instant"
+            "type": "string"
           }
         }
       },
       "MeasurementsDTO": {
         "type": "object",
         "properties": {
-          "productLength": {
-            "type": "number",
-            "format": "double"
-          },
-          "negTolerance": {
-            "type": "number",
-            "format": "double"
-          },
-          "posTolerance": {
-            "type": "number",
-            "format": "double"
-          },
-          "measurements": {
+          "measurement": {
             "type": "array",
             "items": {
-              "type": "number",
-              "format": "double"
+              "type": "number"
             }
           }
         }
