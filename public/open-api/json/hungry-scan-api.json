@@ -1,13 +1,14 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "hungry_scan_core API",
-    "description": "hungry_scan_core API",
-    "version": "1.0.0"
+    "title": "HungryScan API",
+    "description": "### Technologies used:\n- Spring Boot 3.x.x\n- Spring Security 6.x.x\n- Java 21\n- Hibernate Core\n- Hibernate Validator\n- Jakarta Persistence API\n- MySQL\n- Lombok\n- Redis 7.2.5\n- Embedded Redis 0.7.3\n- Embedded H2\n- Gson 2.11.0\n- JJWT 0.12.6\n- ZXing Core 3.5.3\n- ZXing Java SE 3.5.3\n- MapStruct 1.6.3\n- JUnit 5\n- Mockito",
+    "summary": "A central REST server supporting a QR system designed for restaurants, which makes it easy for customers to access an interactive menu. This API is still in development, it is not available for requests yet.",
+    "version": "0.0.7"
   },
   "servers": [
     {
-      "url": "https://hungry_scan_core"
+      "url": "http://hungry-scan-api"
     }
   ],
   "paths": {
