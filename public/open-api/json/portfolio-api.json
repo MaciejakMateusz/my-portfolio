@@ -1,8 +1,8 @@
 {
-  "openapi": "3.0.3",
+  "openapi": "3.1.0",
   "info": {
     "title": "Portfolio REST API",
-    "description": "REST API server for handling www.maciejakmateusz.pl portfolio, it handles necessary communication for the webpage to work.",
+    "description": "REST API server for handling [www.maciejakmateusz.pl](https://www.maciejakmateusz.pl) portfolio, it handles necessary communication for the webpage to work.\n\n### Technologies used:\n- Spring Boot 3.x.x\n- Spring Security 6.x.x\n- Java 21\n- iTextPDF 5.5.13.3\n- Lombok",
     "version": "1.0.0"
   },
   "servers": [
@@ -29,7 +29,7 @@
     },
     {
       "name": "Contact",
-      "description": "Endpoint for sending an email through contact form"
+      "description": "Endpoints for sending an email through contact form"
     }
   ],
   "paths": {

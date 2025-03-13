@@ -1680,6 +1680,11 @@ a {
     display: none !important;
 }
 
+.swagger-ui .info h3 {
+    color: var(--Text-color-Heading) !important;
+    font-family: var(--font-family-secondary), serif !important;
+}
+
 /* END OF SWAGGER UI */
 
 @media (max-width: 1200px) {
