@@ -14,10 +14,37 @@ export const InfiniteXScroll = ({children}: InfiniteXScrollProps) => {
     const [isPaused, setIsPaused] = useState(false);
     const speed = 1;
     const [segmentWidth, setSegmentWidth] = useState(0);
+    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const startPosition = useRef<number | null>(null);
+
+    const handlePointerDown = (event: React.PointerEvent) => {
+        startPosition.current = event.clientX;
+    };
+
+    const handlePointerUp = (event: React.PointerEvent) => {
+        const endPosition = event.clientX;
+        if (startPosition.current !== null) {
+            const movementThreshold = 5;
+            const movement = Math.abs(endPosition - startPosition.current);
+
+            if (movement < movementThreshold) {
+                setIsPaused(true);
+                if (timeoutRef.current) {
+                    clearTimeout(timeoutRef.current);
+                }
+                timeoutRef.current = setTimeout(() => {
+                    setIsPaused(false);
+                }, 3000);
+            }
+        }
+        startPosition.current = null;
+    };
+
     const handleDragStart = () => setIsPaused(true);
     const handleDragEnd = () => setIsPaused(false);
-    const handleHoverStart = () => setIsPaused(true)
-    const handleHoverEnd = () => setIsPaused(false)
+    const handleHoverStart = () => setIsPaused(true);
+    const handleHoverEnd = () => setIsPaused(false);
 
     useEffect(() => {
         if (!containerRef.current) return;
@@ -58,22 +85,33 @@ export const InfiniteXScroll = ({children}: InfiniteXScrollProps) => {
         }
     });
 
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
+
     return (
         <div className="infinite-x-container">
-            <motion.div className="infinite-x-wrapper"
-                        ref={containerRef}
-                        style={{
-                            display: 'flex',
-                            flexWrap: 'nowrap',
-                            x: x,
-                            cursor: 'grab',
-                        }}
-                        drag="x"
-                        dragElastic={0}
-                        onHoverStart={handleHoverStart}
-                        onHoverEnd={handleHoverEnd}
-                        onDragStart={handleDragStart}
-                        onDragEnd={handleDragEnd}>
+            <motion.div
+                className="infinite-x-wrapper"
+                ref={containerRef}
+                style={{
+                    display: 'flex',
+                    flexWrap: 'nowrap',
+                    x: x,
+                    cursor: 'grab',
+                }}
+                drag="x"
+                dragElastic={0}
+                onHoverStart={handleHoverStart}
+                onHoverEnd={handleHoverEnd}
+                onDragStart={handleDragStart}
+                onDragEnd={handleDragEnd}
+                onPointerDown={handlePointerDown}
+                onPointerUp={handlePointerUp}>
                 {repeatedCards.map((card, index) => (
                     <div className={'infinite-x-card-wrapper'} key={index}>
                         {card}
