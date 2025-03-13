@@ -45,6 +45,10 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/YearRange"
+              },
+              "example": {
+                "yearBegin": "2025-01-01T00:00:00Z",
+                "yearEnd": "2025-12-31T23:59:59Z"
               }
             }
           },
@@ -62,20 +66,6 @@
         ],
         "summary": "OPTIONS api/contributions",
         "operationId": "options_api",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/aq": {
-      "options": {
-        "tags": [
-          "Air Quality"
-        ],
-        "summary": "OPTIONS api/aq",
-        "operationId": "options_aq",
         "responses": {
           "200": {
             "description": "OK"
@@ -109,7 +99,8 @@
             "application/json": {
               "schema": {
                 "type": "integer",
-                "format": "int32"
+                "format": "int32",
+                "example": 156
               }
             }
           },
@@ -133,7 +124,110 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "type": "object",
+                "properties": {
+                  "sensorIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    },
+                    "example": "473, 472"
+                  },
+                  "dateFrom": {
+                    "type": "string",
+                    "format": "date",
+                    "example": "2024-01-01"
+                  },
+                  "dateTo": {
+                    "type": "string",
+                    "format": "date",
+                    "example": "2024-01-31"
+                  }
+                },
+                "required": [
+                  "sensorIds",
+                  "dateFrom",
+                  "dateTo"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/aq": {
+      "options": {
+        "tags": [
+          "Air Quality"
+        ],
+        "summary": "OPTIONS api/aq",
+        "operationId": "options_aq",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/tolerance-measure/calculate": {
+      "post": {
+        "tags": [
+          "ToleranceMeasure"
+        ],
+        "summary": "POST api/tolerance-measure/calculate",
+        "operationId": "post_tolerance_measure_calculate",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "productLength": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "negTolerance": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "posTolerance": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "measurements": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "format": "float"
+                    }
+                  }
+                },
+                "required": [
+                  "productLength",
+                  "negTolerance",
+                  "posTolerance",
+                  "measurements"
+                ]
+              },
+              "example": {
+                "productLength": 60,
+                "negTolerance": -0.7,
+                "posTolerance": 0.5,
+                "measurements": [
+                  61,
+                  60.2,
+                  60.1,
+                  59.8,
+                  60,
+                  60.1,
+                  59.4
+                ]
               }
             }
           },
@@ -160,18 +254,44 @@
         }
       }
     },
-    "/api/tolerance-measure/calculate": {
+    "/api/translator/translate": {
       "post": {
         "tags": [
-          "ToleranceMeasure"
+          "AI Translator"
         ],
-        "summary": "POST api/tolerance-measure/calculate",
-        "operationId": "post_tolerance_measure_calculate",
+        "summary": "POST /api/translator/translate",
+        "operationId": "post_translate",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MeasurementsDTO"
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "example": [
+                      "Hello, world!"
+                    ]
+                  },
+                  "source_lang": {
+                    "type": "string",
+                    "example": "EN"
+                  },
+                  "target_lang": {
+                    "type": "string",
+                    "example": "DE"
+                  },
+                  "context": {
+                    "type": "string",
+                    "example": "General conversation"
+                  }
+                },
+                "required": [
+                  "text",
+                  "source_lang",
+                  "target_lang",
+                  "context"
+                ]
               }
             }
           },
@@ -184,29 +304,7 @@
         }
       }
     },
-    "/api/translate": {
-      "post": {
-        "tags": [
-          "AI Translator"
-        ],
-        "summary": "POST api/translate",
-        "operationId": "post_translate",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/api/translator": {
       "options": {
         "tags": [
           "AI Translator"
@@ -249,7 +347,11 @@
                     "example": "Hello, I would like to know more about your services."
                   }
                 },
-                "required": ["from", "subject", "text"]
+                "required": [
+                  "from",
+                  "subject",
+                  "text"
+                ]
               }
             }
           },
@@ -281,20 +383,35 @@
         "type": "object",
         "properties": {
           "yearBegin": {
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           "yearEnd": {
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
       "MeasurementsDTO": {
         "type": "object",
         "properties": {
-          "measurement": {
+          "productLength": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "negTolerance": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "posTolerance": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "measurements": {
             "type": "array",
             "items": {
-              "type": "number"
+              "type": "number",
+              "format": "decimal"
             }
           }
         }
