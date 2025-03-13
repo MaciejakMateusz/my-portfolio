@@ -37,7 +37,7 @@ export const useProjectCards = (): JSX.Element[] => {
                      description={t('digitalMenuDescription')}
                      technologies={'Spring Boot, Redis, MySQL, React, Redux'}
                      img={'/digital-menu-image.png'}
-                     projectUrl={'https://hs-dgmenu-production.up.railway.app'}
+                     projectUrl={'https://hs-core-production.up.railway.app/api/qr/scan/3f979e48-e7eb-4669-8084-72543c8538f0'}
                      githubUrl={'https://github.com/MaciejakMateusz/hungry-scan-customer'}/>,
         <ProjectCard key={'toleranceMeasure'}
                      name={'Tolerance measure'}
