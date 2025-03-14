@@ -1,25 +1,24 @@
-import {motion} from "framer-motion";
-import {useInView} from "react-intersection-observer";
 import {SectionHeader} from "../shared/SectionHeader.tsx";
 import {useTranslation} from "react-i18next";
 import {forwardRef} from "react";
 import {AboutPhotoChunk} from "./AboutPhotoChunk.tsx";
 import {AboutDescriptionChunk} from "./AboutDescriptionChunk.tsx";
 import {AboutHobbiesChunk} from "./AboutHobbiesChunk.tsx";
+import {useInCustomView} from "../../hooks/hooks.ts";
+import {MotionWrapper} from "../shared/MotionWrapper.tsx";
 
 export const About = forwardRef((_, ref: any) => {
     const {t} = useTranslation();
-    const {ref: motionRef, inView} = useInView({triggerOnce: true, threshold: 0.2});
+    const {ref: sectionRef, inView: sectionInView} = useInCustomView();
+    const {ref: widgetRef, inView: widgetInView} = useInCustomView();
 
     return (
         <div ref={ref}>
-            <motion.div
-                ref={motionRef}
-                initial={{opacity: 0, y: 100}}
-                animate={inView ? {opacity: 1, y: 0} : {}}
-                transition={{duration: 0.8, ease: "easeOut"}}>
-                <div className={'about'}>
+            <div className={'about'}>
+                <MotionWrapper motionRef={sectionRef} inView={sectionInView} initialY={120}>
                     <SectionHeader title={t('about')} description={t('aboutDescription')}/>
+                </MotionWrapper>
+                <MotionWrapper motionRef={widgetRef} inView={widgetInView} initialY={160}>
                     <div className={'main-wrapper'}>
                         <div className={'main-container'}>
                             <div className={'about-wrapper'}>
@@ -29,8 +28,8 @@ export const About = forwardRef((_, ref: any) => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </motion.div>
+                </MotionWrapper>
+            </div>
         </div>
     );
 });

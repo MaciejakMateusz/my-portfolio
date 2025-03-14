@@ -1,15 +1,16 @@
 import {useTranslation} from "react-i18next";
 import {SectionHeader} from "../shared/SectionHeader.tsx";
 import {TechStackChart} from "./TechStackChart.tsx";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import {TechsInfiniteScroll} from "./TechsInfiniteScroll.tsx";
 import {forwardRef, useEffect, useState} from "react";
 import {TechsInfiniteScrollMobile} from "./TechsInfiniteScrollMobile.tsx";
+import {MotionWrapper} from "../shared/MotionWrapper.tsx";
+import {useInCustomView} from "../../hooks/hooks.ts";
 
 export const TechStack = forwardRef((_, ref: any) => {
     const {t} = useTranslation();
-    const { ref: motionRef, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const {ref: sectionRef, inView: sectionInView} = useInCustomView();
+    const {ref: widgetRef, inView: widgetInView} = useInCustomView();
     const [mobileMode, setMobileMode] = useState(false);
 
     useEffect(() => {
@@ -23,13 +24,11 @@ export const TechStack = forwardRef((_, ref: any) => {
 
     return (
         <div ref={ref}>
-            <motion.div
-                ref={motionRef}
-                initial={{opacity: 0, y: 60}}
-                animate={inView ? {opacity: 1, y: 0} : {}}
-                transition={{duration: 0.8, ease: "easeOut"}}>
-                <section className={'tech-stack'}>
+            <section className={'tech-stack'}>
+                <MotionWrapper motionRef={sectionRef} inView={sectionInView} initialY={120}>
                     <SectionHeader title={t('techStack')} description={t('techStackDescription')}/>
+                </MotionWrapper>
+                <MotionWrapper motionRef={widgetRef} inView={widgetInView} initialY={160}>
                     <div className={'chart-container skills-chart'}>
                         <div className={`chart-box ${mobileMode ? 'chart-box-mobile' : ''}`}>
                             {mobileMode ? <TechsInfiniteScrollMobile/> : <TechsInfiniteScroll/>}
@@ -37,8 +36,8 @@ export const TechStack = forwardRef((_, ref: any) => {
                             <TechStackChart/>
                         </div>
                     </div>
-                </section>
-            </motion.div>
+                </MotionWrapper>
+            </section>
         </div>
     );
 });

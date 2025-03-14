@@ -1,28 +1,27 @@
 import {SectionHeader} from "../shared/SectionHeader.tsx";
 import {useTranslation} from "react-i18next";
 import {JobPositions} from "./JobPositions.tsx";
-import { motion } from "framer-motion";
-import {useInView} from "react-intersection-observer";
 import {forwardRef} from "react";
+import {useInCustomView} from "../../hooks/hooks.ts";
+import {MotionWrapper} from "../shared/MotionWrapper.tsx";
 
 export const Career = forwardRef((_, ref: any) => {
     const {t} = useTranslation();
-    const { ref: motionRef, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const {ref: sectionRef, inView: sectionInView} = useInCustomView();
+    const {ref: widgetRef, inView: widgetInView} = useInCustomView();
 
     return (
         <div ref={ref}>
-            <motion.div
-                ref={motionRef}
-                initial={{opacity: 0, y: 100}}
-                animate={inView ? {opacity: 1, y: 0} : {}}
-                transition={{duration: 0.8, ease: "easeOut"}}>
-                <div className={'career'}>
+            <div className={'career'}>
+                <MotionWrapper motionRef={sectionRef} inView={sectionInView} initialY={120}>
                     <SectionHeader title={t('career')}
                                    description={t('careerDescription')}
                                    lightened={true}/>
+                </MotionWrapper>
+                <MotionWrapper motionRef={widgetRef} inView={widgetInView} initialY={160}>
                     <JobPositions/>
-                </div>
-            </motion.div>
+                </MotionWrapper>
+            </div>
         </div>
     );
 });
