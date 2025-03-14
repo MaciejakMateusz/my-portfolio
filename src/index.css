@@ -176,8 +176,8 @@ a {
 
 .close-menu-icon {
     position: absolute;
-    right: 20px;
-    top: 50px;
+    right: 30px;
+    top: 35px;
     cursor: pointer;
 }
 
@@ -251,7 +251,7 @@ a {
     z-index: 9999;
     position: absolute;
     font-size: 0.85rem;
-    top: 50px;
+    top: 35px;
     left: 40px;
 }
 
