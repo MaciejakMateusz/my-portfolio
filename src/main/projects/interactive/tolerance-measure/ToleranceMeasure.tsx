@@ -5,6 +5,7 @@ import {ProjectDescription} from "./ProjectDescription.tsx";
 import {Footer} from "../../../footer/Footer.tsx";
 import {useSelector} from "react-redux";
 import {useErrorMessage} from "../../../../hooks/useErrorMessage.ts";
+import {Helmet} from "react-helmet";
 
 export const ToleranceMeasure = () => {
     const {t} = useTranslation();
@@ -13,6 +14,9 @@ export const ToleranceMeasure = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Tolerance Measure</title>
+            </Helmet>
             <section className={'project-view'}>
                 <ProjectTopper location={`${t('projects')} / Tolerance Measure`}
                                header={'Tolerance Measure'}

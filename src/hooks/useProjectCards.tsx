@@ -19,7 +19,7 @@ export const useProjectCards = (): JSX.Element[] => {
                      projectUrl={'https://t1metrack3r.netlify.app'}
                      githubUrl={'https://github.com/MaciejakMateusz/Timetracker'}/>,
         <ProjectCard key={'translatorAI'}
-                     name={t('translatorAI')}
+                     name={'AI Translator'}
                      description={t('translatorAIDescription')}
                      technologies={'Spring Boot, React, Redux, REST, AI'}
                      img={"/translator-image.png"}

@@ -6,7 +6,7 @@ import {useInView} from "react-intersection-observer";
 
 export const Start =  forwardRef(({projectsRef}: any, ref: any) => {
     const {t} = useTranslation();
-    const {ref: sectionRef, inView} = useInView({triggerOnce: false});;
+    const {ref: sectionRef, inView} = useInView({triggerOnce: false});
 
     return (
         <div className={'landing-section'} ref={ref}>
