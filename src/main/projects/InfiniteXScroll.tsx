@@ -1,12 +1,12 @@
-import {useEffect, useRef, useState} from 'react';
+import React, {forwardRef, useEffect, useRef, useState} from 'react';
 import {motion, useMotionValue, useMotionValueEvent} from 'framer-motion';
 import {useProjectCards} from "../../hooks/useProjectCards.tsx";
 
 type InfiniteXScrollProps = {
-    children: JSX.Element[]
+    children: JSX.Element[];
 }
 
-export const InfiniteXScroll = ({children}: InfiniteXScrollProps) => {
+export const InfiniteXScroll = forwardRef(({children}: InfiniteXScrollProps, ref: any) => {
     const cards = useProjectCards();
     const repeatedCards = [...children, ...children, ...children];
     const x = useMotionValue(0);
@@ -94,7 +94,7 @@ export const InfiniteXScroll = ({children}: InfiniteXScrollProps) => {
     }, []);
 
     return (
-        <div className="infinite-x-container">
+        <div className="infinite-x-container" ref={ref}>
             <motion.div
                 className="infinite-x-wrapper"
                 ref={containerRef}
@@ -120,4 +120,4 @@ export const InfiniteXScroll = ({children}: InfiniteXScrollProps) => {
             </motion.div>
         </div>
     );
-};
+});
