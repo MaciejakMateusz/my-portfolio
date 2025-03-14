@@ -36,7 +36,7 @@ export const MotionWrapper = ({
             initial={{ opacity: 0, y: initialY }}
             animate={controls}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className={''}
+            className={'motion-wrapper'}
             {...props}>
             {children}
         </motion.div>
