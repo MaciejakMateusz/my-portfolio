@@ -7,7 +7,7 @@ export type AnalysisType = {
     insideTolerance: number;
     upperBound: number;
     lowerBound: number;
-    biggerThanUpperBound: number;
+    greaterThanUpperBound: number;
     smallerThanLowerBound: number;
     maxMeasurement: number;
     minMeasurement: number;

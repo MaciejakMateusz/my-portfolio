@@ -51,7 +51,7 @@ export const Analysis = () => {
                         <strong>{t('insideTol')}</strong>{analysis.insideTolerance}{t('pieces')}
                     </span>
                         <span className={'analysis-line'}>
-                        <strong>{t('greaterThan', {upperBound: analysis.upperBound})}</strong>{analysis.biggerThanUpperBound}{t('pieces')}
+                        <strong>{t('greaterThan', {upperBound: analysis.upperBound})}</strong>{analysis.greaterThanUpperBound}{t('pieces')}
                     </span>
                         <span className={'analysis-line'}>
                         <strong>{t('smallerThan', {lowerBound: analysis.lowerBound})}</strong>{analysis.smallerThanLowerBound}{t('pieces')}
