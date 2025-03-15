@@ -1,6 +1,6 @@
-import {SocialButton} from "../landing/SocialButton.tsx";
+import {SocialButton} from "../start/SocialButton.tsx";
 import {useTranslation} from "react-i18next";
-import {CvDownloadBtn} from "../landing/CvDownloadBtn.tsx";
+import {CvDownloadBtn} from "../start/CvDownloadBtn.tsx";
 
 export const ContactDetails = () => {
     const {t} = useTranslation();

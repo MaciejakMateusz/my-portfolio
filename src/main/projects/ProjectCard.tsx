@@ -1,5 +1,5 @@
 import {useTranslation} from "react-i18next";
-import {SocialButton} from "../landing/SocialButton.tsx";
+import {SocialButton} from "../start/SocialButton.tsx";
 
 type ProjectCardProps = {
     name: string;

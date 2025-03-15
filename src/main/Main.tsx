@@ -1,4 +1,4 @@
-import {Start} from "./landing/Start.tsx";
+import {Start} from "./start/Start.tsx";
 import {TechStack} from "./tech-stack/TechStack.tsx";
 import {Projects} from "./projects/Projects.tsx";
 import {Activity} from "./activity/Activity.tsx";
