@@ -38,8 +38,7 @@ export const ActivityCalendar = ({year}: ActivityCalendarProps) => {
     }, [year.value]);
 
     return (
-        <div className="chart-box">
-            <div id={'nivo-tooltips'} className={'chart-tooltip-mobile'}/>
+        <div className="chart-box" id={'chart-box-activity'}>
             <div className={`calendar-chart-container ${window.innerWidth <= 1200 ? 'mobile' : ''}`}>
                 <div className="chart-scroll-wrapper">
                     <div className="chart-scroll-inner">
