@@ -182,6 +182,17 @@
         ],
         "summary": "POST api/tolerance-measure/calculate",
         "operationId": "post_tolerance_measure_calculate",
+        "parameters": [
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Language preference for the response (e.g. pl, en, etc.)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "en"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {

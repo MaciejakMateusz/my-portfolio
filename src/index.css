@@ -1698,6 +1698,25 @@ a {
     font-family: var(--font-family-secondary), serif !important;
 }
 
+.swagger-ui .parameters-col_description input {
+    background: var(--background-secondary) !important;
+    color: var(--Grey-500) !important;
+    font-size: 0.85rem !important;
+    font-family: var(--background-secondary), serif !important;
+    outline: none !important;
+    border: none !important;
+}
+
+.swagger-ui .parameter__name {
+    font-family: var(--background-secondary), serif !important;
+    color: var(--Text-color-Heading) !important;
+}
+
+.swagger-ui .parameter__type {
+    color: var(--Grey-500) !important;
+    font-family: var(--background-secondary), serif !important;
+}
+
 /* END OF SWAGGER UI */
 
 @media (max-width: 1200px) {
