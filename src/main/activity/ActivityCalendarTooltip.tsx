@@ -67,6 +67,16 @@ export const ActivityCalendarTooltip = ({datum}: ActivityCalendarTooltipProps) =
         };
     }, [container]);
 
+    useEffect(() => {
+        const handleResize = () => {
+            setPosition(null);  // Clear tooltip position on window resize
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     if (!container || !position) return null;
 
     return createPortal(
