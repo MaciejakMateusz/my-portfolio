@@ -18,7 +18,7 @@ export const ActivityControlPanel = ({setChosenYear, chosenYear}: any) => {
         for (let y = 2023; y <= currentYear; y++) {
             result.push({value: y, label: y});
         }
-        setYears(result);
+        setYears(result.sort((a, b) => b.value - a.value));
     }
 
     useEffect(() => {

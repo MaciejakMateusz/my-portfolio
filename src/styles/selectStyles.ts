@@ -132,9 +132,9 @@ export const mainSelect = {
         width: '80px',
         padding: '0px 2px',
         boxShadow: 'none',
-        border: 'none',
         outline: 'none',
-        backgroundColor: '#0E0E0E'
+        backgroundColor: '#0E0E0E',
+        border: '1px solid var(--Grey-200)'
     }),
     menuList: (provided: any) => ({
         ...provided,
