@@ -18,7 +18,7 @@ export const ActivityControlPanel = ({setChosenYear, chosenYear}: any) => {
         for (let y = 2023; y <= currentYear; y++) {
             result.push({value: y, label: y});
         }
-        setYears(result.sort((a, b) => b.value - a.value));
+        setYears(result);
     }
 
     useEffect(() => {
@@ -35,29 +35,36 @@ export const ActivityControlPanel = ({setChosenYear, chosenYear}: any) => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    return (
-        <div className={'activity-control-panel'}>
-            <span className={'white-text'}>{t('commitsAmount')} {totalSum}</span>
-            {isMobile ?
+    const renderYearControls = () => {
+        if (isMobile) {
+            const sortedYears = [...(years || [])].sort((a, b) => b.value - a.value);
+            return (
                 <Select id={'activity-years'}
                         name={'activity-years'}
-                        options={years?.filter(year => year.value !== chosenYear.value)}
+                        options={sortedYears?.filter(year => year.value !== chosenYear.value)}
                         value={chosenYear}
                         onChange={(selected) => setChosenYear(selected)}
                         styles={mainSelect}
                         isSearchable={false}/>
-                :
-                <div className={'year-buttons'}>
-                    {years?.map((year: any) => (
-                        <button className={`primary-button spaced ${chosenYear.value !== year.value ? 'inactive' : ''}`}
-                                onClick={() => setChosenYear(year)}
-                                key={year.value}>
-                            {year.value}
-                        </button>
-                    ))}
-                </div>
-            }
+            );
+        }
+        return (
+            <div className={'year-buttons'}>
+                {years?.map((year: any) => (
+                    <button className={`primary-button spaced ${chosenYear.value !== year.value ? 'inactive' : ''}`}
+                            onClick={() => setChosenYear(year)}
+                            key={year.value}>
+                        {year.value}
+                    </button>
+                ))}
+            </div>
+        );
+    }
 
+    return (
+        <div className={'activity-control-panel'}>
+            <span className={'white-text'}>{t('commitsAmount')} {totalSum}</span>
+            {renderYearControls()}
         </div>
     );
 }
