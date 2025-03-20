@@ -90,7 +90,7 @@ a {
     z-index: 9999;
     position: fixed;
     background: rgba(9, 9, 9, 0.7);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(3px);
 }
 
 .nav-buttons-container {
@@ -486,7 +486,8 @@ a {
     padding: 20px 26px;
     border-radius: 10px;
     border: 1px solid var(--Grey-200);
-    background: var(--Basic-600, #141414);
+    background: rgba(9, 9, 9, 0.4);
+    backdrop-filter: blur(3px);
     font-weight: 300;
     font-size: 0.85rem;
     color: var(--Text-color-Heading);
