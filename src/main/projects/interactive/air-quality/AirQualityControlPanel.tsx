@@ -18,8 +18,9 @@ export const AirQualityControlPanel = () => {
     const dispatch = useAppDispatch();
     const {t} = useTranslation();
     const {chosenCountry, chosenLocation, chosenYear, chosenMonth} = useSelector((state: any) => state.airQuality.view);
-    const {data: countriesData, isLoading} = useSelector((state: any) => state.airQuality.fetchCountries);
+    const {data: countriesData} = useSelector((state: any) => state.airQuality.fetchCountries);
     const {data: locationsData} = useSelector((state: any) => state.airQuality.fetchLocations);
+    const {isLoading: measurementsLoading} = useSelector((state: any) => state.airQuality.fetchMeasurements);
 
     const getYears = () => {
         const currentYear = new Date().getFullYear();
@@ -127,7 +128,7 @@ export const AirQualityControlPanel = () => {
                     </div>
                 </div>
             </header>
-            {isLoading ? <div className="loader"/> : <></>}
+            {measurementsLoading ? <div className="loader"/> : <></>}
         </>
     );
 }
