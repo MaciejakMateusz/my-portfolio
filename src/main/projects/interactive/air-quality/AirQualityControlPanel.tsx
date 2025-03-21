@@ -72,6 +72,7 @@ export const AirQualityControlPanel = () => {
                                     options={countriesData?.results?.map((data: any) => ({
                                         value: data.id, label: data.name
                                     }))}
+                                    noOptionsMessage={() => t('noOptionsMsg')}
                                     onChange={(selected) => dispatch(setChosenCountry(selected))}
                                     styles={secondarySelect}
                                     isSearchable={true}
@@ -88,6 +89,7 @@ export const AirQualityControlPanel = () => {
                                 options={locationsData?.results?.map((data: any) => ({
                                     value: data, label: data.name
                                 }))}
+                                noOptionsMessage={() => t('noOptionsMsg')}
                                 onChange={(selected) => dispatch(setChosenLocation(selected))}
                                 styles={secondarySelect}
                                 isSearchable={true}
@@ -104,10 +106,12 @@ export const AirQualityControlPanel = () => {
                                 name="aq-year"
                                 value={chosenYear}
                                 options={getYears()}
+                                noOptionsMessage={() => t('noOptionsMsg')}
                                 onChange={(selected) => dispatch(setChosenYear(selected))}
                                 styles={secondarySelectShort}
                                 isSearchable={true}
-                            />                        </label>
+                            />
+                        </label>
                     </div>
                     <div className={'aq-select'}>
                             <Select
@@ -115,9 +119,10 @@ export const AirQualityControlPanel = () => {
                                 name="aq-month"
                                 value={chosenMonth}
                                 options={getMonths()}
+                                noOptionsMessage={() => t('noOptionsMsg')}
                                 onChange={(selected) => dispatch(setChosenMonth(selected))}
                                 styles={secondarySelectShort}
-                                isSearchable={true}
+                                isSearchable={false}
                             />
                     </div>
                 </div>
