@@ -214,5 +214,6 @@
   "airQuality_NO2": "NO₂ (Nitrogen Dioxide) – a gas mainly produced by vehicle traffic and fuel combustion",
   "airQuality_SO2": "SO₂ (Sulfur Dioxide) – a gas mainly produced during the combustion of coal and oil",
   "airQuality_CO": "CO (Carbon Monoxide) – a gas resulting from fuel combustion",
-  "airQuality_O3": "O₃ (Ozone) – formed through photochemical reactions in the atmosphere"
+  "airQuality_O3": "O₃ (Ozone) – formed through photochemical reactions in the atmosphere",
+  "noOptionsMsg": "No results"
 }

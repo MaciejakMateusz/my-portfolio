@@ -213,5 +213,6 @@
   "airQuality_NO2": "NO₂ (Dwutlenek azotu) – gaz powstały głównie na skutek ruchu samochodowego i spalania paliw",
   "airQuality_SO2": "SO₂ (Dwutlenek siarki) – gaz powstały głównie podczas spalania węgla i ropy",
   "airQuality_CO": "CO (Tlenek węgla) – gaz pochodzący ze spalania paliw",
-  "airQuality_O3": "O₃ (Ozon) – powstający w wyniku reakcji fotochemicznych w atmosferze"
+  "airQuality_O3": "O₃ (Ozon) – powstający w wyniku reakcji fotochemicznych w atmosferze",
+  "noOptionsMsg": "Brak wyników"
 }

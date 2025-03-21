@@ -211,5 +211,6 @@
   "airQuality_NO2": "NO₂ (Stikstofdioxide) – een gas dat voornamelijk wordt geproduceerd door verkeersverkeer en verbranding van brandstoffen",
   "airQuality_SO2": "SO₂ (Zwaveldioxide) – een gas dat voornamelijk vrijkomt bij de verbranding van steenkool en olie",
   "airQuality_CO": "CO (Koolmonoxide) – een gas dat vrijkomt bij de verbranding van brandstoffen",
-  "airQuality_O3": "O₃ (Ozon) – gevormd door fotochemische reacties in de atmosfeer"
+  "airQuality_O3": "O₃ (Ozon) – gevormd door fotochemische reacties in de atmosfeer",
+  "noOptionsMsg": "Geen resultaten"
 }
