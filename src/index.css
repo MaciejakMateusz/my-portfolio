@@ -1260,8 +1260,27 @@ a {
     display: flex;
 }
 
+.aq-range-control-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.aq-range-control-selects {
+    display: flex;
+}
+
+.aq-range-date-label {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
 .aq-select {
     margin-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
 .custom-select-label {
@@ -1991,5 +2010,29 @@ a {
 
     .chart-box-mobile {
         padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 350px) {
+    .aq-select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .aq-range-control-wrapper {
+        display: block;
+    }
+
+    .aq-range-control-selects {
+        display: block;
+    }
+
+    .aq-range-label {
+        margin-bottom: 10px;
+    }
+
+    .aq-range-date-label {
+        margin-top: 0;
+        margin-bottom: 10px;
     }
 }
