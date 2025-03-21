@@ -35,7 +35,7 @@ export const LanguageSwitcherMobile = ({sideMenu}: LanguageSwitcherMobileProps) 
     }
 
     return (
-        <div className={`lang-switcher-mobile-container ${sideMenu ? 'side-menu' : ''}`}>
+        <div className={`lang-switcher-mobile-container non-selectable ${sideMenu ? 'side-menu' : ''}`}>
             <div className={'lang-switcher-mobile'} onClick={() => setIsDropped(!isDropped)}>
                 <span className={'lang-switcher-mobile-wrapper'}>
                     <span className={`lng-mobile-display ${sideMenu ? 'side-menu' : ''}`}>{formatToUppercase(activeLng)}</span>
