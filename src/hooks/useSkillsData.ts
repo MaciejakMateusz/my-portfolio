@@ -11,14 +11,14 @@ export const useSkillsData = () => {
             "private": 65
         },
         {
-            "experience": "Redux",
-            "commercial": 30,
-            "private": 65
+            "experience": "Scala",
+            "commercial": 50,
+            "private": 0
         },
         {
-            "experience": "REST-API",
-            "commercial": 70,
-            "private": 90
+            "experience": "Spark",
+            "commercial": 50,
+            "private": 0
         },
         {
             "experience": "SQL",
