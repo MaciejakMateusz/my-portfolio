@@ -1,4 +1,4 @@
-import {duties} from "../projects/jobDuties.ts";
+import {useJobDuties} from "../../hooks/useJobDuties.ts";
 
 type JobPositionCardProps = {
     from: string;
@@ -9,6 +9,7 @@ type JobPositionCardProps = {
 }
 
 export const JobPositionCard = (props: JobPositionCardProps) => {
+    const duties = useJobDuties();
     return (
         <div className={'job-position-card non-selectable'}>
             <div className={'job-position-card-wrapper'}>
