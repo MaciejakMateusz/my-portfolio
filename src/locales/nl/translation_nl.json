@@ -212,5 +212,40 @@
   "airQuality_SO2": "SO₂ (Zwaveldioxide) – een gas dat voornamelijk vrijkomt bij de verbranding van steenkool en olie",
   "airQuality_CO": "CO (Koolmonoxide) – een gas dat vrijkomt bij de verbranding van brandstoffen",
   "airQuality_O3": "O₃ (Ozon) – gevormd door fotochemische reacties in de atmosfeer",
-  "noOptionsMsg": "Geen resultaten"
+  "noOptionsMsg": "Geen resultaten",
+
+  "dataEngineer.workWithBigData": "Werken met Big Data",
+  "dataEngineer.scalaSpark": "Scala/Spark",
+  "dataEngineer.quantexaTeam": "Quantexa Support-team",
+
+  "javaDev.scrumHybrid": "Hybride werk in een SCRUM-team",
+  "javaDev.pmsTeam": "PMS-team – loon- en HR-oplossingen",
+  "javaDev.retrospectives": "Actieve deelname aan retrospectives, planning en refinements",
+  "javaDev.selfTaskPicking": "Zelfstandig taken kiezen uit de backlog",
+  "javaDev.featureImprovements": "Functionele verbeteringen schrijven voor een complex loonalgoritmesysteem",
+  "javaDev.bugFixing": "Fouten oplossen en defecten herstellen die door testers en klanten zijn gemeld",
+  "javaDev.automatedTests": "Geautomatiseerde tests schrijven voor defectgevallen",
+  "javaDev.seleniumTests": "Selenium-tests schrijven",
+  "javaDev.jasperReports": "Rapporten maken in Jaspersoft Studio",
+  "javaDev.internalLearning": "Gebruik maken van het interne leerplatform om vaardigheden voortdurend te verbeteren",
+
+  "javaIntern.onboarding": "Inwerken in de rol van ontwikkelaar",
+  "javaIntern.scrumHybrid": "Hybride werk in een SCRUM-team",
+  "javaIntern.training": "Training over een breed scala aan onderwerpen",
+  "javaIntern.toolLearning": "Leren werken met de benodigde tools",
+
+  "careerBreak.relocation": "Verhuisd naar Polen",
+  "careerBreak.thailandTrip": "3 maanden rondgereisd in Thailand",
+  "careerBreak.learningTech": "Java, JavaScript en React leren",
+
+  "cnc.operation": "CNC-machines bedienen",
+  "cnc.programming": "CNC-programma’s schrijven (CAM of ISO)",
+  "cnc.printOrders": "Bestellingen en tekeningen afdrukken uit het systeem",
+  "cnc.machineSetup": "Machines herconfigureren voor specifieke behoeften",
+  "cnc.technicalDrawings": "Programma’s schrijven op basis van technische tekeningen",
+  "cnc.toolSelection": "Geschikte gereedschappen selecteren voor bewerkingen",
+  "cnc.optimization": "Programma beoordelen en optimaliseren indien nodig",
+  "cnc.toleranceCheck": "Producten controleren aan de hand van tekeningen om toleranties te verifiëren",
+  "cnc.orderRegistration": "Voltooide bestellingen registreren in het systeem"
+
 }

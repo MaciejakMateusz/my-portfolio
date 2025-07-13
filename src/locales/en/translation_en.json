@@ -215,5 +215,40 @@
   "airQuality_SO2": "SO₂ (Sulfur Dioxide) – a gas mainly produced during the combustion of coal and oil",
   "airQuality_CO": "CO (Carbon Monoxide) – a gas resulting from fuel combustion",
   "airQuality_O3": "O₃ (Ozone) – formed through photochemical reactions in the atmosphere",
-  "noOptionsMsg": "No results"
+  "noOptionsMsg": "No results",
+
+  "dataEngineer.workWithBigData": "Working with Big Data",
+  "dataEngineer.scalaSpark": "Scala/Spark",
+  "dataEngineer.quantexaTeam": "Quantexa Support team",
+
+  "javaDev.scrumHybrid": "Hybrid work in a SCRUM team",
+  "javaDev.pmsTeam": "PMS team – payroll and HR solutions",
+  "javaDev.retrospectives": "Active participation in retrospectives, planning, and refinements",
+  "javaDev.selfTaskPicking": "Independently selecting tasks from the backlog",
+  "javaDev.featureImprovements": "Writing functional improvements for a complex payroll algorithm system",
+  "javaDev.bugFixing": "Fixing bugs and resolving defects reported by testers and clients",
+  "javaDev.automatedTests": "Writing automated tests for defect cases",
+  "javaDev.seleniumTests": "Writing Selenium tests",
+  "javaDev.jasperReports": "Creating reports in Jaspersoft Studio",
+  "javaDev.internalLearning": "Using the internal learning platform to continuously improve skills",
+
+  "javaIntern.onboarding": "Onboarding into the developer role",
+  "javaIntern.scrumHybrid": "Hybrid work in a SCRUM team",
+  "javaIntern.training": "Training across a wide range of topics",
+  "javaIntern.toolLearning": "Learning the tools required for the job",
+
+  "careerBreak.relocation": "Relocation to Poland",
+  "careerBreak.thailandTrip": "3-month trip across Thailand",
+  "careerBreak.learningTech": "Learning Java, JavaScript, React",
+
+  "cnc.operation": "Operating CNC machines",
+  "cnc.programming": "Writing CNC programs (CAM or ISO)",
+  "cnc.printOrders": "Printing orders and drawings from the system",
+  "cnc.machineSetup": "Reconfiguring machines for specific needs",
+  "cnc.technicalDrawings": "Writing programs based on technical drawings",
+  "cnc.toolSelection": "Selecting appropriate tools for operations",
+  "cnc.optimization": "Reviewing and optimizing the program if needed",
+  "cnc.toleranceCheck": "Checking products against drawings to verify tolerances",
+  "cnc.orderRegistration": "Registering completed orders in the system"
+
 }

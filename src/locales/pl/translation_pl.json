@@ -214,5 +214,39 @@
   "airQuality_SO2": "SO₂ (Dwutlenek siarki) – gaz powstały głównie podczas spalania węgla i ropy",
   "airQuality_CO": "CO (Tlenek węgla) – gaz pochodzący ze spalania paliw",
   "airQuality_O3": "O₃ (Ozon) – powstający w wyniku reakcji fotochemicznych w atmosferze",
-  "noOptionsMsg": "Brak wyników"
+  "noOptionsMsg": "Brak wyników",
+
+  "dataEngineer.workWithBigData": "Praca z Big Data",
+  "dataEngineer.scalaSpark": "Scala/Spark",
+  "dataEngineer.quantexaTeam": "zespół Quantexa Support",
+
+  "javaDev.scrumHybrid": "hybrydowa praca w zespole SCRUM",
+  "javaDev.pmsTeam": "zespół PMS - rozwiązania kadrowo-płacowe",
+  "javaDev.retrospectives": "aktywny udział w retrospekcjach, planowaniu i refinementach",
+  "javaDev.selfTaskPicking": "samodzielne dobieranie zadań z backlogu",
+  "javaDev.featureImprovements": "pisanie usprawnień funkcjonalnych do złożonego systemu algorytmów składników płacowych",
+  "javaDev.bugFixing": "rozwiązywanie błędów i naprawianie defektów zgłoszonych przez testerów i klientów",
+  "javaDev.automatedTests": "pisanie testów automatycznych do przypadków z defektów",
+  "javaDev.seleniumTests": "pisanie testów Selenium",
+  "javaDev.jasperReports": "pisanie raportów w Jaspersoft Studio",
+  "javaDev.internalLearning": "korzystanie z wewnętrznej platformy szkoleniowej, aby stale podnosić kompetencje",
+
+  "javaIntern.onboarding": "wdrożenie w pracę programisty",
+  "javaIntern.scrumHybrid": "hybrydowa praca w zespole SCRUM",
+  "javaIntern.training": "szkolenia z szerokiego zakresu tematów",
+  "javaIntern.toolLearning": "nauka narzędzi potrzebnych do pracy",
+
+  "careerBreak.relocation": "przeprowadzka do Polski",
+  "careerBreak.thailandTrip": "3-miesięczna podróż po Tajlandii",
+  "careerBreak.learningTech": "nauka Java, JavaScript, React",
+
+  "cnc.operation": "Obsługa maszyn CNC",
+  "cnc.programming": "Pisanie programów na maszyny CNC (CAM lub ISO)",
+  "cnc.printOrders": "Drukowanie zamówień i rysunków z systemu",
+  "cnc.machineSetup": "Przebudowy maszyn pod konkretne potrzeby",
+  "cnc.technicalDrawings": "Pisanie programów na podstawie rysunków technicznych",
+  "cnc.toolSelection": "Dobór odpowiednich narzędzi do operacji",
+  "cnc.optimization": "Przeglądanie i optymalizacja programu w razie potrzeby",
+  "cnc.toleranceCheck": "Sprawdzenie wyrobów z rysunkiem w celu sprawdzenia tolerancji",
+  "cnc.orderRegistration": "Rejestracja zrealizowanych zamówień w systemie"
 }
