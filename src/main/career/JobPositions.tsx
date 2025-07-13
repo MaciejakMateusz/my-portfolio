@@ -37,8 +37,13 @@ export const JobPositions = () => {
                 itemClass="carousel-item-padding"
                 deviceType="desktop"
                 pauseOnHover={false}>
-                <JobPositionCard from={'2024-01'}
+                <JobPositionCard from={'2025-05'}
                                  to={t('currently')}
+                                 positionName={'Data Engineer'}
+                                 locality={'ING Hubs Poland'}
+                                 dutiesKey={'dataEngineer'}/>
+                <JobPositionCard from={'2024-01'}
+                                 to={t('2025-04')}
                                  positionName={'Java Developer'}
                                  locality={'EQ System, Dąbrowa Górnicza'}
                                  dutiesKey={'javaDev'}/>
