@@ -216,10 +216,15 @@
   "airQuality_CO": "CO (Carbon Monoxide) – a gas resulting from fuel combustion",
   "airQuality_O3": "O₃ (Ozone) – formed through photochemical reactions in the atmosphere",
   "noOptionsMsg": "No results",
+  "dataEngineer": "Data engineer - Quantexa",
 
-  "dataEngineer.workWithBigData": "Working with Big Data",
-  "dataEngineer.scalaSpark": "Scala/Spark",
-  "dataEngineer.quantexaTeam": "Quantexa Support team",
+  "dataEngineer.features": "Developing new features in the ETL process",
+  "dataEngineer.maintenance": "Maintenance and ongoing bug fixing",
+  "dataEngineer.upgrade": "Performing application upgrade processes",
+  "dataEngineer.runningJobs": "Running Spark jobs on the cluster",
+  "dataEngineer.testing": "writing integration and unit tests",
+  "dataEngineer.scrum": "Daily scrum, planning sessions, retrospectives, and refinements",
+  "dataEngineer.stories": "creating new user stories for improvement ideas or discovered bugs",
 
   "javaDev.scrumHybrid": "Hybrid work in a SCRUM team",
   "javaDev.pmsTeam": "PMS team – payroll and HR solutions",

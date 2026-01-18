@@ -213,10 +213,15 @@
   "airQuality_CO": "CO (Koolmonoxide) – een gas dat vrijkomt bij de verbranding van brandstoffen",
   "airQuality_O3": "O₃ (Ozon) – gevormd door fotochemische reacties in de atmosfeer",
   "noOptionsMsg": "Geen resultaten",
+  "dataEngineer": "Data engineer - Quantexa",
 
-  "dataEngineer.workWithBigData": "Werken met Big Data",
-  "dataEngineer.scalaSpark": "Scala/Spark",
-  "dataEngineer.quantexaTeam": "Quantexa Support-team",
+  "dataEngineer.features": "Ontwikkelen van nieuwe functionaliteiten in het ETL-proces",
+  "dataEngineer.maintenance": "Onderhoud en doorlopende bugfixes",
+  "dataEngineer.upgrade": "Uitvoeren van applicatie-upgradeprocessen",
+  "dataEngineer.runningJobs": "Spark-jobs uitvoeren op het cluster",
+  "dataEngineer.testing": "integratie- en unit-tests schrijven",
+  "dataEngineer.scrum": "Dagelijkse scrum, planningssessies, retrospectives en refinements",
+  "dataEngineer.stories": "Nieuwe user stories aanmaken voor verbeterideeën of ontdekte bugs",
 
   "javaDev.scrumHybrid": "Hybride werk in een SCRUM-team",
   "javaDev.pmsTeam": "PMS-team – loon- en HR-oplossingen",

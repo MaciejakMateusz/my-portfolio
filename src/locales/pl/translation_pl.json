@@ -215,10 +215,15 @@
   "airQuality_CO": "CO (Tlenek węgla) – gaz pochodzący ze spalania paliw",
   "airQuality_O3": "O₃ (Ozon) – powstający w wyniku reakcji fotochemicznych w atmosferze",
   "noOptionsMsg": "Brak wyników",
+  "dataEngineer": "Inżynier danych - Quantexa",
 
-  "dataEngineer.workWithBigData": "Praca z Big Data",
-  "dataEngineer.scalaSpark": "Scala/Spark",
-  "dataEngineer.quantexaTeam": "zespół Quantexa Support",
+  "dataEngineer.features": "Rozwijanie nowych funkcjonalności w procesie ETL",
+  "dataEngineer.maintenance": "Utrzymywanie, bieżąca naprawa błędów",
+  "dataEngineer.upgrade": "Przeprowadzanie procesów upgrade aplikacji",
+  "dataEngineer.runningJobs": "Odpalanie job’ów sparkowych na clustrze",
+  "dataEngineer.testing": "Pisanie testów integracyjnych oraz jednostkowych",
+  "dataEngineer.scrum": "Daily scrum, planowanie, retrospekcje, refinementy",
+  "dataEngineer.stories": "Tworzenie nowych stories dla swoich pomysłów na usprawnienie lub znalezione błędy",
 
   "javaDev.scrumHybrid": "hybrydowa praca w zespole SCRUM",
   "javaDev.pmsTeam": "zespół PMS - rozwiązania kadrowo-płacowe",
