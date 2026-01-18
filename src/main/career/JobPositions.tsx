@@ -39,7 +39,7 @@ export const JobPositions = () => {
                 pauseOnHover={false}>
                 <JobPositionCard from={'2025-05'}
                                  to={t('currently')}
-                                 positionName={'Data Engineer'}
+                                 positionName={t('dataEngineer')}
                                  locality={'ING Hubs Poland'}
                                  dutiesKey={'dataEngineer'}/>
                 <JobPositionCard from={'2024-01'}
