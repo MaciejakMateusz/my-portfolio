@@ -17,9 +17,9 @@ export const CvDownloadBtn = () => {
 
     const getFileName = () => {
         if (['pl', 'pl-PL'].includes(activeLng)) {
-            return 'Maciejak_Spring_React_2years_PL.pdf'
+            return 'Maciejak_Spring_Quantexa_2years_PL.pdf'
         }
-        return 'Maciejak_Spring_React_2years_EN.pdf'
+        return 'Maciejak_Spring_Quantexa_2years_EN.pdf'
     }
 
     return (
