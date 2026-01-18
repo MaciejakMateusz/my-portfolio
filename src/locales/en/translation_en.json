@@ -148,7 +148,7 @@
   "contextSub": "(optional) - Specify the subject of the translation",
   "contextPlaceholder": "e.g.: Medicine, Diseases of the nervous system",
   "translation": "Translation",
-  "translate": "Translator",
+  "translate": "Translate",
   "translator_projectDescriptionTitle": "Project Description",
   "translator_projectDescriptionText": "This project is an advanced AI-powered translation application that leverages the DeepL model to provide accurate and context-aware translations. The system is designed to seamlessly detect the source language and deliver translated content with improved contextual understanding.",
   "translator_keyFeaturesTitle": "Key Features",

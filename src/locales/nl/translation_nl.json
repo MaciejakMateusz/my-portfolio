@@ -145,7 +145,7 @@
   "contextSub": "(optioneel) - Geef het onderwerp van de vertaling op",
   "contextPlaceholder": "bijv.: Geneeskunde, Ziekten van het zenuwstelsel",
   "translation": "Vertaling",
-  "translate": "Vertaler",
+  "translate": "Vertaal",
   "translator_projectDescriptionTitle": "Projectbeschrijving",
   "translator_projectDescriptionText": "Dit project is een geavanceerde AI-gestuurde vertaalapplicatie die gebruik maakt van het DeepL-model om nauwkeurige en contextbewuste vertalingen te bieden. Het systeem is ontworpen om automatisch de brontaal te detecteren en vertaalde inhoud met verbeterd contextueel begrip te leveren.",
   "translator_keyFeaturesTitle": "Belangrijkste kenmerken",
