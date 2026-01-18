@@ -5,9 +5,13 @@ export const useJobDuties = () => {
     const duties: Map<string, string[]> = new Map();
 
     duties.set('dataEngineer', [
-        t('dataEngineer.workWithBigData'),
-        t('dataEngineer.scalaSpark'),
-        t('dataEngineer.quantexaTeam')
+        t('dataEngineer.features'),
+        t('dataEngineer.maintenance'),
+        t('dataEngineer.upgrade'),
+        t('dataEngineer.runningJobs'),
+        t('dataEngineer.testing'),
+        t('dataEngineer.scrum'),
+        t('dataEngineer.stories')
     ]);
 
     duties.set('javaDev', [
